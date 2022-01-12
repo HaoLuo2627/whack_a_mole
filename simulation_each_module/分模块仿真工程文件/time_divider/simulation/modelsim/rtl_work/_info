@@ -1,0 +1,54 @@
+m255
+K4
+z2
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+Z0 dE:/intelProjects/time_divider/simulation/modelsim
+vtime_divider
+Z1 !s110 1545807999
+!i10b 1
+!s100 dXXSAC1e:[QeXB]lmnE;@0
+IRF8fn=^E_R^dO`j8Q6lEi2
+Z2 VDg1SIo80bB@j0V0VzS_@n1
+R0
+w1545807393
+8E:/intelProjects/time_divider/time_divider.v
+FE:/intelProjects/time_divider/time_divider.v
+L0 1
+Z3 OV;L;10.5b;63
+r1
+!s85 0
+31
+Z4 !s108 1545807999.000000
+!s107 E:/intelProjects/time_divider/time_divider.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+E:/intelProjects/time_divider|E:/intelProjects/time_divider/time_divider.v|
+!i113 1
+Z5 o-vlog01compat -work work
+!s92 -vlog01compat -work work +incdir+E:/intelProjects/time_divider
+Z6 tCvgOpt 0
+vtime_divider_vlg_tst
+R1
+!i10b 1
+!s100 cehD0lad?i4KY<^3N1XW90
+I3Y36^0?3N=G5D?kRI7K<S2
+R2
+R0
+w1545807987
+8E:/intelProjects/time_divider/simulation/modelsim/time_divider.vt
+FE:/intelProjects/time_divider/simulation/modelsim/time_divider.vt
+L0 28
+R3
+r1
+!s85 0
+31
+R4
+!s107 E:/intelProjects/time_divider/simulation/modelsim/time_divider.vt|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+E:/intelProjects/time_divider/simulation/modelsim|E:/intelProjects/time_divider/simulation/modelsim/time_divider.vt|
+!i113 1
+R5
+!s92 -vlog01compat -work work +incdir+E:/intelProjects/time_divider/simulation/modelsim
+R6

@@ -1,0 +1,85 @@
+------------------------------------------------------------
+Timing Analyzer Summary
+------------------------------------------------------------
+
+Type  : Setup 'clk'
+Slack : -6.601
+TNS   : -180.260
+
+Type  : Setup 'time_divider:td_50|clk_out'
+Slack : -5.504
+TNS   : -70.792
+
+Type  : Setup 'time_divider:td_1|clk_out'
+Slack : -4.645
+TNS   : -38.853
+
+Type  : Setup 'time_divider:td_half|clk_out'
+Slack : -3.375
+TNS   : -11.056
+
+Type  : Setup 'time_divider:td_500|clk_out'
+Slack : -2.394
+TNS   : -15.309
+
+Type  : Setup 'time_divider:td_1k|clk_out'
+Slack : -1.497
+TNS   : -8.976
+
+Type  : Hold 'time_divider:td_50|clk_out'
+Slack : -2.774
+TNS   : -2.981
+
+Type  : Hold 'clk'
+Slack : -2.521
+TNS   : -2.521
+
+Type  : Hold 'time_divider:td_500|clk_out'
+Slack : -2.379
+TNS   : -2.379
+
+Type  : Hold 'time_divider:td_1|clk_out'
+Slack : -2.156
+TNS   : -2.156
+
+Type  : Hold 'time_divider:td_1k|clk_out'
+Slack : -1.327
+TNS   : -1.327
+
+Type  : Hold 'time_divider:td_half|clk_out'
+Slack : 1.676
+TNS   : 0.000
+
+Type  : Recovery 'time_divider:td_half|clk_out'
+Slack : -4.403
+TNS   : -4.403
+
+Type  : Removal 'time_divider:td_half|clk_out'
+Slack : 4.849
+TNS   : 0.000
+
+Type  : Minimum Pulse Width 'clk'
+Slack : -2.289
+TNS   : -2.289
+
+Type  : Minimum Pulse Width 'time_divider:td_1k|clk_out'
+Slack : 0.234
+TNS   : 0.000
+
+Type  : Minimum Pulse Width 'time_divider:td_1|clk_out'
+Slack : 0.234
+TNS   : 0.000
+
+Type  : Minimum Pulse Width 'time_divider:td_500|clk_out'
+Slack : 0.234
+TNS   : 0.000
+
+Type  : Minimum Pulse Width 'time_divider:td_50|clk_out'
+Slack : 0.234
+TNS   : 0.000
+
+Type  : Minimum Pulse Width 'time_divider:td_half|clk_out'
+Slack : 0.234
+TNS   : 0.000
+
+------------------------------------------------------------

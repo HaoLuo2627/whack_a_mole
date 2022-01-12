@@ -1,0 +1,53 @@
+|getrandom
+clk => clk.IN6
+rst => rst.IN6
+ran1[0] <= ran_tmp3.DB_MAX_OUTPUT_PORT_TYPE
+ran1[1] <= Add0.DB_MAX_OUTPUT_PORT_TYPE
+ran1[2] <= Add0.DB_MAX_OUTPUT_PORT_TYPE
+ran2[0] <= ran_tmp0.DB_MAX_OUTPUT_PORT_TYPE
+ran2[1] <= Add1.DB_MAX_OUTPUT_PORT_TYPE
+ran2[2] <= Add1.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|getrandom|D_ff:FF0
+clk => Q~reg0.CLK
+clr => Q.OUTPUTSELECT
+D => Q.DATAA
+Q <= Q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|getrandom|D_ff:FF1
+clk => Q~reg0.CLK
+clr => Q.OUTPUTSELECT
+D => Q.DATAA
+Q <= Q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|getrandom|D_ff:FF2
+clk => Q~reg0.CLK
+clr => Q.OUTPUTSELECT
+D => Q.DATAA
+Q <= Q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|getrandom|D_ff:FF3
+clk => Q~reg0.CLK
+clr => Q.OUTPUTSELECT
+D => Q.DATAA
+Q <= Q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|getrandom|D_ff:FF4
+clk => Q~reg0.CLK
+clr => Q.OUTPUTSELECT
+D => Q.DATAA
+Q <= Q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|getrandom|D_ff:FF5
+clk => Q~reg0.CLK
+clr => Q.OUTPUTSELECT
+D => Q.DATAA
+Q <= Q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+

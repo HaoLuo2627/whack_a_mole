@@ -1,0 +1,21 @@
+-- begin_signature
+-- decoder
+-- end_signature
+WIDTH=8;
+DEPTH=10;
+
+ADDRESS_RADIX=UNS;
+DATA_RADIX=BIN;
+
+CONTENT BEGIN
+	9 :	11110110;
+	8 :	11111110;
+	7 :	11100000;
+	6 :	10111110;
+	5 :	10110110;
+	4 :	01100110;
+	3 :	11110010;
+	2 :	11011010;
+	1 :	01100000;
+	0 :	11111100;
+END;

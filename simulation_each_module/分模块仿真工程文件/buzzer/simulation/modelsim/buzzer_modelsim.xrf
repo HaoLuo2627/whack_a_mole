@@ -1,0 +1,11 @@
+vendor_name = ModelSim
+source_file = 1, E:/intelProjects/buzzer/buzzer.v
+source_file = 1, E:/intelProjects/buzzer/db/buzzer.cbx.xml
+design_name = buzzer
+instance = comp, \clk_50~I , clk_50, buzzer, 1
+instance = comp, \hit~I , hit, buzzer, 1
+instance = comp, \clk_half~I , clk_half, buzzer, 1
+instance = comp, \rst~I , rst, buzzer, 1
+instance = comp, \clk_fa~I , clk_fa, buzzer, 1
+instance = comp, \beep~0 , beep~0, buzzer, 1
+instance = comp, \beep~I , beep, buzzer, 1

@@ -1,0 +1,63 @@
+|controller
+rowran[0] => Equal1.IN62
+rowran[1] => Equal1.IN61
+rowran[2] => Equal1.IN60
+colran[0] => Equal2.IN62
+colran[1] => Equal2.IN61
+colran[2] => Equal2.IN60
+row[0] => Equal1.IN63
+row[1] => Add0.IN4
+row[2] => Add0.IN3
+col[0] => Equal2.IN63
+col[1] => Add1.IN4
+col[2] => Add1.IN3
+time_shi[0] => Equal4.IN31
+time_shi[1] => Equal4.IN30
+time_shi[2] => Equal4.IN29
+time_shi[3] => Equal4.IN28
+time_ge[0] => Equal5.IN31
+time_ge[1] => Equal5.IN30
+time_ge[2] => Equal5.IN29
+time_ge[3] => Equal5.IN28
+clk => clk.IN1
+clk_50 => score_ge[0]~reg0.CLK
+clk_50 => score_ge[1]~reg0.CLK
+clk_50 => score_ge[2]~reg0.CLK
+clk_50 => score_ge[3]~reg0.CLK
+clk_50 => score_shi[0]~reg0.CLK
+clk_50 => score_shi[1]~reg0.CLK
+clk_50 => score_shi[2]~reg0.CLK
+clk_50 => score_shi[3]~reg0.CLK
+clk_50 => flag.CLK
+clk_50 => hit~reg0.CLK
+clk_half => hit_tmp.CLK
+rst => rst.IN1
+hit << hit~reg0.DB_MAX_OUTPUT_PORT_TYPE
+state[0] << fsm:central_fsm.port2
+state[1] << fsm:central_fsm.port2
+score_shi[0] << score_shi[0]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+score_shi[1] << score_shi[1]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+score_shi[2] << score_shi[2]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+score_shi[3] << score_shi[3]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+score_ge[0] << score_ge[0]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+score_ge[1] << score_ge[1]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+score_ge[2] << score_ge[2]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+score_ge[3] << score_ge[3]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|controller|fsm:central_fsm
+clk => state[0]~reg0.CLK
+clk => state[1]~reg0.CLK
+rst => state[0]~reg0.ACLR
+rst => state[1]~reg0.ACLR
+rst => Mux0.IN2
+rst => Mux0.IN3
+rst => Mux1.IN2
+rst => Mux1.IN3
+state[0] <= state[0]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+state[1] <= state[1]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+Ts => next_state.OUTPUTSELECT
+Ts => Mux1.IN1
+Tt => next_state.DATAA
+
+

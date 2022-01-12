@@ -1,0 +1,52 @@
+# Reading E:/Download/intelFPGA_lite/18.0/modelsim_ase/tcl/vsim/pref.tcl
+# do fsm_run_msim_rtl_verilog.do
+# if {[file exists rtl_work]} {
+# 	vdel -lib rtl_work -all
+# }
+# vlib rtl_work
+# vmap work rtl_work
+# Model Technology ModelSim - Intel FPGA Edition vmap 10.5b Lib Mapping Utility 2016.10 Oct  5 2016
+# vmap work rtl_work 
+# Copying E:/Download/intelFPGA_lite/18.0/modelsim_ase/win32aloem/../modelsim.ini to modelsim.ini
+# Modifying modelsim.ini
+# 
+# vlog -vlog01compat -work work +incdir+E:/intelProjects/fsm {E:/intelProjects/fsm/fsm.v}
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 14:43:00 on Dec 26,2018
+# vlog -reportprogress 300 -vlog01compat -work work "+incdir+E:/intelProjects/fsm" E:/intelProjects/fsm/fsm.v 
+# -- Compiling module fsm
+# 
+# Top level modules:
+# 	fsm
+# End time: 14:43:00 on Dec 26,2018, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# 
+# vlog -vlog01compat -work work +incdir+E:/intelProjects/fsm/simulation/modelsim {E:/intelProjects/fsm/simulation/modelsim/fsm.vt}
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 14:43:01 on Dec 26,2018
+# vlog -reportprogress 300 -vlog01compat -work work "+incdir+E:/intelProjects/fsm/simulation/modelsim" E:/intelProjects/fsm/simulation/modelsim/fsm.vt 
+# -- Compiling module fsm_vlg_tst
+# 
+# Top level modules:
+# 	fsm_vlg_tst
+# End time: 14:43:01 on Dec 26,2018, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# 
+# vsim -t 1ps -L altera_ver -L lpm_ver -L sgate_ver -L altera_mf_ver -L altera_lnsim_ver -L maxii_ver -L rtl_work -L work -voptargs="+acc"  fsm_vlg_tst
+# vsim -t 1ps -L altera_ver -L lpm_ver -L sgate_ver -L altera_mf_ver -L altera_lnsim_ver -L maxii_ver -L rtl_work -L work -voptargs=""+acc"" fsm_vlg_tst 
+# Start time: 14:43:01 on Dec 26,2018
+# Loading work.fsm_vlg_tst
+# Loading work.fsm
+# 
+# add wave *
+# view structure
+# .main_pane.structure.interior.cs.body.struct
+# view signals
+# .main_pane.objects.interior.cs.body.tree
+# run -all
+# Running testbench
+# ** Note: $stop    : E:/intelProjects/fsm/simulation/modelsim/fsm.vt(62)
+#    Time: 900 ps  Iteration: 0  Instance: /fsm_vlg_tst
+# Break in Module fsm_vlg_tst at E:/intelProjects/fsm/simulation/modelsim/fsm.vt line 62
+# End time: 14:53:13 on Dec 26,2018, Elapsed time: 0:10:12
+# Errors: 0, Warnings: 0

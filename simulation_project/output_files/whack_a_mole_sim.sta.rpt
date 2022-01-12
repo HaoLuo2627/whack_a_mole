@@ -1,0 +1,1262 @@
+Timing Analyzer report for whack_a_mole_sim
+Thu Dec 27 11:17:27 2018
+Quartus Prime Version 18.0.0 Build 614 04/24/2018 SJ Lite Edition
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. Timing Analyzer Summary
+  3. Parallel Compilation
+  4. Clocks
+  5. Fmax Summary
+  6. Setup Summary
+  7. Hold Summary
+  8. Recovery Summary
+  9. Removal Summary
+ 10. Minimum Pulse Width Summary
+ 11. Setup: 'clk'
+ 12. Setup: 'time_divider:td_50|clk_out'
+ 13. Setup: 'time_divider:td_1|clk_out'
+ 14. Setup: 'time_divider:td_half|clk_out'
+ 15. Setup: 'time_divider:td_500|clk_out'
+ 16. Setup: 'time_divider:td_1k|clk_out'
+ 17. Hold: 'time_divider:td_50|clk_out'
+ 18. Hold: 'clk'
+ 19. Hold: 'time_divider:td_500|clk_out'
+ 20. Hold: 'time_divider:td_1|clk_out'
+ 21. Hold: 'time_divider:td_1k|clk_out'
+ 22. Hold: 'time_divider:td_half|clk_out'
+ 23. Recovery: 'time_divider:td_half|clk_out'
+ 24. Removal: 'time_divider:td_half|clk_out'
+ 25. Setup Transfers
+ 26. Hold Transfers
+ 27. Recovery Transfers
+ 28. Removal Transfers
+ 29. Report TCCS
+ 30. Report RSKM
+ 31. Unconstrained Paths Summary
+ 32. Clock Status Summary
+ 33. Unconstrained Input Ports
+ 34. Unconstrained Output Ports
+ 35. Unconstrained Input Ports
+ 36. Unconstrained Output Ports
+ 37. Timing Analyzer Messages
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 2018  Intel Corporation. All rights reserved.
+Your use of Intel Corporation's design tools, logic functions 
+and other software and tools, and its AMPP partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Intel Program License 
+Subscription Agreement, the Intel Quartus Prime License Agreement,
+the Intel FPGA IP License Agreement, or other applicable license
+agreement, including, without limitation, that your use is for
+the sole purpose of programming logic devices manufactured by
+Intel and sold by Intel or its authorized distributors.  Please
+refer to the applicable agreement for further details.
+
+
+
++-----------------------------------------------------------------------------+
+; Timing Analyzer Summary                                                     ;
++-----------------------+-----------------------------------------------------+
+; Quartus Prime Version ; Version 18.0.0 Build 614 04/24/2018 SJ Lite Edition ;
+; Timing Analyzer       ; Legacy Timing Analyzer                              ;
+; Revision Name         ; whack_a_mole_sim                                    ;
+; Device Family         ; MAX II                                              ;
+; Device Name           ; EPM1270T144C5                                       ;
+; Timing Models         ; Final                                               ;
+; Delay Model           ; Slow Model                                          ;
+; Rise/Fall Delays      ; Unavailable                                         ;
++-----------------------+-----------------------------------------------------+
+
+
++------------------------------------------+
+; Parallel Compilation                     ;
++----------------------------+-------------+
+; Processors                 ; Number      ;
++----------------------------+-------------+
+; Number detected on machine ; 4           ;
+; Maximum allowed            ; 4           ;
+;                            ;             ;
+; Average used               ; 1.00        ;
+; Maximum used               ; 1           ;
+;                            ;             ;
+; Usage by Processor         ; % Time Used ;
+;     Processor 1            ; 100.0%      ;
++----------------------------+-------------+
+
+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Clocks                                                                                                                                                                                                                     ;
++------------------------------+------+--------+------------+-------+-------+------------+-----------+-------------+-------+--------+-----------+------------+----------+--------+--------+----------------------------------+
+; Clock Name                   ; Type ; Period ; Frequency  ; Rise  ; Fall  ; Duty Cycle ; Divide by ; Multiply by ; Phase ; Offset ; Edge List ; Edge Shift ; Inverted ; Master ; Source ; Targets                          ;
++------------------------------+------+--------+------------+-------+-------+------------+-----------+-------------+-------+--------+-----------+------------+----------+--------+--------+----------------------------------+
+; clk                          ; Base ; 1.000  ; 1000.0 MHz ; 0.000 ; 0.500 ;            ;           ;             ;       ;        ;           ;            ;          ;        ;        ; { clk }                          ;
+; time_divider:td_1k|clk_out   ; Base ; 1.000  ; 1000.0 MHz ; 0.000 ; 0.500 ;            ;           ;             ;       ;        ;           ;            ;          ;        ;        ; { time_divider:td_1k|clk_out }   ;
+; time_divider:td_1|clk_out    ; Base ; 1.000  ; 1000.0 MHz ; 0.000 ; 0.500 ;            ;           ;             ;       ;        ;           ;            ;          ;        ;        ; { time_divider:td_1|clk_out }    ;
+; time_divider:td_50|clk_out   ; Base ; 1.000  ; 1000.0 MHz ; 0.000 ; 0.500 ;            ;           ;             ;       ;        ;           ;            ;          ;        ;        ; { time_divider:td_50|clk_out }   ;
+; time_divider:td_500|clk_out  ; Base ; 1.000  ; 1000.0 MHz ; 0.000 ; 0.500 ;            ;           ;             ;       ;        ;           ;            ;          ;        ;        ; { time_divider:td_500|clk_out }  ;
+; time_divider:td_half|clk_out ; Base ; 1.000  ; 1000.0 MHz ; 0.000 ; 0.500 ;            ;           ;             ;       ;        ;           ;            ;          ;        ;        ; { time_divider:td_half|clk_out } ;
++------------------------------+------+--------+------------+-------+-------+------------+-----------+-------------+-------+--------+-----------+------------+----------+--------+--------+----------------------------------+
+
+
++--------------------------------------------------------------------+
+; Fmax Summary                                                       ;
++------------+-----------------+------------------------------+------+
+; Fmax       ; Restricted Fmax ; Clock Name                   ; Note ;
++------------+-----------------+------------------------------+------+
+; 131.56 MHz ; 131.56 MHz      ; clk                          ;      ;
+; 171.03 MHz ; 171.03 MHz      ; time_divider:td_50|clk_out   ;      ;
+; 177.15 MHz ; 177.15 MHz      ; time_divider:td_1|clk_out    ;      ;
+; 228.57 MHz ; 228.57 MHz      ; time_divider:td_half|clk_out ;      ;
+; 294.64 MHz ; 294.64 MHz      ; time_divider:td_500|clk_out  ;      ;
+; 400.48 MHz ; 400.48 MHz      ; time_divider:td_1k|clk_out   ;      ;
++------------+-----------------+------------------------------+------+
+This panel reports FMAX for every clock in the design, regardless of the user-specified clock periods.  FMAX is only computed for paths where the source and destination registers or ports are driven by the same clock.  Paths of different clocks, including generated clocks, are ignored.  For paths between a clock and its inversion, FMAX is computed as if the rising and falling edges are scaled along with FMAX, such that the duty cycle (in terms of a percentage) is maintained. Altera recommends that you always use clock constraints and other slack reports for sign-off analysis.
+
+
++-------------------------------------------------------+
+; Setup Summary                                         ;
++------------------------------+--------+---------------+
+; Clock                        ; Slack  ; End Point TNS ;
++------------------------------+--------+---------------+
+; clk                          ; -6.601 ; -180.260      ;
+; time_divider:td_50|clk_out   ; -5.504 ; -70.792       ;
+; time_divider:td_1|clk_out    ; -4.645 ; -38.853       ;
+; time_divider:td_half|clk_out ; -3.375 ; -11.056       ;
+; time_divider:td_500|clk_out  ; -2.394 ; -15.309       ;
+; time_divider:td_1k|clk_out   ; -1.497 ; -8.976        ;
++------------------------------+--------+---------------+
+
+
++-------------------------------------------------------+
+; Hold Summary                                          ;
++------------------------------+--------+---------------+
+; Clock                        ; Slack  ; End Point TNS ;
++------------------------------+--------+---------------+
+; time_divider:td_50|clk_out   ; -2.774 ; -2.981        ;
+; clk                          ; -2.521 ; -2.521        ;
+; time_divider:td_500|clk_out  ; -2.379 ; -2.379        ;
+; time_divider:td_1|clk_out    ; -2.156 ; -2.156        ;
+; time_divider:td_1k|clk_out   ; -1.327 ; -1.327        ;
+; time_divider:td_half|clk_out ; 1.676  ; 0.000         ;
++------------------------------+--------+---------------+
+
+
++-------------------------------------------------------+
+; Recovery Summary                                      ;
++------------------------------+--------+---------------+
+; Clock                        ; Slack  ; End Point TNS ;
++------------------------------+--------+---------------+
+; time_divider:td_half|clk_out ; -4.403 ; -4.403        ;
++------------------------------+--------+---------------+
+
+
++------------------------------------------------------+
+; Removal Summary                                      ;
++------------------------------+-------+---------------+
+; Clock                        ; Slack ; End Point TNS ;
++------------------------------+-------+---------------+
+; time_divider:td_half|clk_out ; 4.849 ; 0.000         ;
++------------------------------+-------+---------------+
+
+
++-------------------------------------------------------+
+; Minimum Pulse Width Summary                           ;
++------------------------------+--------+---------------+
+; Clock                        ; Slack  ; End Point TNS ;
++------------------------------+--------+---------------+
+; clk                          ; -2.289 ; -2.289        ;
+; time_divider:td_1k|clk_out   ; 0.234  ; 0.000         ;
+; time_divider:td_1|clk_out    ; 0.234  ; 0.000         ;
+; time_divider:td_500|clk_out  ; 0.234  ; 0.000         ;
+; time_divider:td_50|clk_out   ; 0.234  ; 0.000         ;
+; time_divider:td_half|clk_out ; 0.234  ; 0.000         ;
++------------------------------+--------+---------------+
+
+
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Setup: 'clk'                                                                                                                                                                             ;
++--------+----------------------------------------+----------------------------------------------------+----------------------------+-------------+--------------+------------+------------+
+; Slack  ; From Node                              ; To Node                                            ; Launch Clock               ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
++--------+----------------------------------------+----------------------------------------------------+----------------------------+-------------+--------------+------------+------------+
+; -6.601 ; keyboard_scan:kb|cnt[1]                ; time_divider:td_fa|cnt[12]                         ; clk                        ; clk         ; 1.000        ; 0.000      ; 7.268      ;
+; -6.560 ; keyboard_scan:kb|cnt[0]                ; time_divider:td_fa|cnt[12]                         ; clk                        ; clk         ; 1.000        ; 0.000      ; 7.227      ;
+; -6.185 ; keyboard_scan:kb|cnt[1]                ; time_divider:td_fa|cnt[13]                         ; clk                        ; clk         ; 1.000        ; 0.000      ; 6.852      ;
+; -6.146 ; controller:center_control|score_shi[2] ; controller:center_control|fsm:central_fsm|state[1] ; time_divider:td_50|clk_out ; clk         ; 1.000        ; -1.085     ; 5.728      ;
+; -6.144 ; keyboard_scan:kb|cnt[0]                ; time_divider:td_fa|cnt[13]                         ; clk                        ; clk         ; 1.000        ; 0.000      ; 6.811      ;
+; -6.103 ; keyboard_scan:kb|cnt[1]                ; time_divider:td_fa|cnt[3]                          ; clk                        ; clk         ; 1.000        ; 0.000      ; 6.770      ;
+; -6.062 ; keyboard_scan:kb|cnt[1]                ; time_divider:td_fa|cnt[8]                          ; clk                        ; clk         ; 1.000        ; 0.000      ; 6.729      ;
+; -6.062 ; keyboard_scan:kb|cnt[0]                ; time_divider:td_fa|cnt[3]                          ; clk                        ; clk         ; 1.000        ; 0.000      ; 6.729      ;
+; -6.021 ; keyboard_scan:kb|cnt[0]                ; time_divider:td_fa|cnt[8]                          ; clk                        ; clk         ; 1.000        ; 0.000      ; 6.688      ;
+; -5.958 ; keyboard_scan:kb|cnt[1]                ; time_divider:td_fa|cnt[14]                         ; clk                        ; clk         ; 1.000        ; 0.000      ; 6.625      ;
+; -5.934 ; keyboard_scan:kb|cnt[1]                ; time_divider:td_fa|cnt[10]                         ; clk                        ; clk         ; 1.000        ; 0.000      ; 6.601      ;
+; -5.917 ; keyboard_scan:kb|cnt[0]                ; time_divider:td_fa|cnt[14]                         ; clk                        ; clk         ; 1.000        ; 0.000      ; 6.584      ;
+; -5.893 ; keyboard_scan:kb|cnt[0]                ; time_divider:td_fa|cnt[10]                         ; clk                        ; clk         ; 1.000        ; 0.000      ; 6.560      ;
+; -5.868 ; controller:center_control|score_shi[3] ; controller:center_control|fsm:central_fsm|state[1] ; time_divider:td_50|clk_out ; clk         ; 1.000        ; -1.085     ; 5.450      ;
+; -5.861 ; keyboard_scan:kb|cnt[1]                ; time_divider:td_fa|cnt[4]                          ; clk                        ; clk         ; 1.000        ; 0.000      ; 6.528      ;
+; -5.852 ; time_divider:td_fa|cnt[3]              ; time_divider:td_fa|cnt[12]                         ; clk                        ; clk         ; 1.000        ; 0.000      ; 6.519      ;
+; -5.820 ; keyboard_scan:kb|cnt[0]                ; time_divider:td_fa|cnt[4]                          ; clk                        ; clk         ; 1.000        ; 0.000      ; 6.487      ;
+; -5.809 ; time_divider:td_fa|cnt[5]              ; time_divider:td_fa|cnt[12]                         ; clk                        ; clk         ; 1.000        ; 0.000      ; 6.476      ;
+; -5.802 ; keyboard_scan:kb|cnt[1]                ; time_divider:td_fa|cnt[9]                          ; clk                        ; clk         ; 1.000        ; 0.000      ; 6.469      ;
+; -5.801 ; keyboard_scan:kb|cnt[1]                ; time_divider:td_fa|cnt[11]                         ; clk                        ; clk         ; 1.000        ; 0.000      ; 6.468      ;
+; -5.761 ; keyboard_scan:kb|cnt[0]                ; time_divider:td_fa|cnt[9]                          ; clk                        ; clk         ; 1.000        ; 0.000      ; 6.428      ;
+; -5.760 ; keyboard_scan:kb|cnt[0]                ; time_divider:td_fa|cnt[11]                         ; clk                        ; clk         ; 1.000        ; 0.000      ; 6.427      ;
+; -5.744 ; time_divider:td_fa|cnt[11]             ; time_divider:td_fa|cnt[8]                          ; clk                        ; clk         ; 1.000        ; 0.000      ; 6.411      ;
+; -5.743 ; time_divider:td_fa|cnt[2]              ; time_divider:td_fa|cnt[12]                         ; clk                        ; clk         ; 1.000        ; 0.000      ; 6.410      ;
+; -5.740 ; time_divider:td_1k|cnt[7]              ; time_divider:td_1k|cnt[6]                          ; clk                        ; clk         ; 1.000        ; 0.000      ; 6.407      ;
+; -5.739 ; time_divider:td_1k|cnt[7]              ; time_divider:td_1k|cnt[5]                          ; clk                        ; clk         ; 1.000        ; 0.000      ; 6.406      ;
+; -5.737 ; time_divider:td_fa|cnt[4]              ; time_divider:td_fa|cnt[12]                         ; clk                        ; clk         ; 1.000        ; 0.000      ; 6.404      ;
+; -5.735 ; time_divider:td_1k|cnt[7]              ; time_divider:td_1k|cnt[3]                          ; clk                        ; clk         ; 1.000        ; 0.000      ; 6.402      ;
+; -5.701 ; controller:center_control|score_shi[1] ; controller:center_control|fsm:central_fsm|state[1] ; time_divider:td_50|clk_out ; clk         ; 1.000        ; -1.085     ; 5.283      ;
+; -5.684 ; time_divider:td_1k|cnt[7]              ; time_divider:td_1k|clk_out                         ; clk                        ; clk         ; 1.000        ; 0.000      ; 6.351      ;
+; -5.653 ; keyboard_scan:kb|cnt[1]                ; time_divider:td_fa|cnt[5]                          ; clk                        ; clk         ; 1.000        ; 0.000      ; 6.320      ;
+; -5.634 ; keyboard_scan:kb|cnt[1]                ; time_divider:td_fa|cnt[2]                          ; clk                        ; clk         ; 1.000        ; 0.000      ; 6.301      ;
+; -5.621 ; keyboard_scan:kb|cnt[1]                ; time_divider:td_fa|cnt[6]                          ; clk                        ; clk         ; 1.000        ; 0.000      ; 6.288      ;
+; -5.612 ; keyboard_scan:kb|cnt[0]                ; time_divider:td_1k|cnt[12]                         ; clk                        ; clk         ; 1.000        ; 0.000      ; 6.279      ;
+; -5.612 ; keyboard_scan:kb|cnt[0]                ; time_divider:td_fa|cnt[5]                          ; clk                        ; clk         ; 1.000        ; 0.000      ; 6.279      ;
+; -5.593 ; keyboard_scan:kb|cnt[0]                ; time_divider:td_fa|cnt[2]                          ; clk                        ; clk         ; 1.000        ; 0.000      ; 6.260      ;
+; -5.580 ; keyboard_scan:kb|cnt[0]                ; time_divider:td_fa|cnt[6]                          ; clk                        ; clk         ; 1.000        ; 0.000      ; 6.247      ;
+; -5.578 ; keyboard_scan:kb|cnt[0]                ; time_divider:td_1k|cnt[8]                          ; clk                        ; clk         ; 1.000        ; 0.000      ; 6.245      ;
+; -5.494 ; time_divider:td_1k|cnt[3]              ; time_divider:td_1k|cnt[12]                         ; clk                        ; clk         ; 1.000        ; 0.000      ; 6.161      ;
+; -5.491 ; time_divider:td_1k|cnt[11]             ; time_divider:td_1k|cnt[4]                          ; clk                        ; clk         ; 1.000        ; 0.000      ; 6.158      ;
+; -5.486 ; time_divider:td_fa|cnt[6]              ; time_divider:td_fa|cnt[12]                         ; clk                        ; clk         ; 1.000        ; 0.000      ; 6.153      ;
+; -5.484 ; time_divider:td_1k|cnt[11]             ; time_divider:td_1k|cnt[7]                          ; clk                        ; clk         ; 1.000        ; 0.000      ; 6.151      ;
+; -5.460 ; time_divider:td_1k|cnt[3]              ; time_divider:td_1k|cnt[8]                          ; clk                        ; clk         ; 1.000        ; 0.000      ; 6.127      ;
+; -5.447 ; controller:center_control|score_shi[2] ; controller:center_control|fsm:central_fsm|state[0] ; time_divider:td_50|clk_out ; clk         ; 1.000        ; -1.085     ; 5.029      ;
+; -5.436 ; time_divider:td_fa|cnt[3]              ; time_divider:td_fa|cnt[13]                         ; clk                        ; clk         ; 1.000        ; 0.000      ; 6.103      ;
+; -5.427 ; time_divider:td_fa|cnt[7]              ; time_divider:td_fa|cnt[12]                         ; clk                        ; clk         ; 1.000        ; 0.000      ; 6.094      ;
+; -5.393 ; time_divider:td_fa|cnt[5]              ; time_divider:td_fa|cnt[13]                         ; clk                        ; clk         ; 1.000        ; 0.000      ; 6.060      ;
+; -5.363 ; time_divider:td_1k|cnt[2]              ; time_divider:td_1k|cnt[12]                         ; clk                        ; clk         ; 1.000        ; 0.000      ; 6.030      ;
+; -5.360 ; time_divider:td_1k|cnt[4]              ; time_divider:td_1k|cnt[12]                         ; clk                        ; clk         ; 1.000        ; 0.000      ; 6.027      ;
+; -5.358 ; controller:center_control|score_shi[0] ; controller:center_control|fsm:central_fsm|state[1] ; time_divider:td_50|clk_out ; clk         ; 1.000        ; -1.085     ; 4.940      ;
+; -5.351 ; keyboard_scan:kb|cnt[0]                ; time_divider:td_1k|cnt[11]                         ; clk                        ; clk         ; 1.000        ; 0.000      ; 6.018      ;
+; -5.337 ; keyboard_scan:kb|cnt[0]                ; time_divider:td_1k|cnt[10]                         ; clk                        ; clk         ; 1.000        ; 0.000      ; 6.004      ;
+; -5.329 ; time_divider:td_1k|cnt[2]              ; time_divider:td_1k|cnt[8]                          ; clk                        ; clk         ; 1.000        ; 0.000      ; 5.996      ;
+; -5.327 ; time_divider:td_fa|cnt[2]              ; time_divider:td_fa|cnt[13]                         ; clk                        ; clk         ; 1.000        ; 0.000      ; 5.994      ;
+; -5.326 ; time_divider:td_1k|cnt[4]              ; time_divider:td_1k|cnt[8]                          ; clk                        ; clk         ; 1.000        ; 0.000      ; 5.993      ;
+; -5.324 ; keyboard_scan:kb|cnt[1]                ; time_divider:td_fa|cnt[7]                          ; clk                        ; clk         ; 1.000        ; 0.000      ; 5.991      ;
+; -5.323 ; time_divider:td_1k|cnt[1]              ; time_divider:td_1k|cnt[12]                         ; clk                        ; clk         ; 1.000        ; 0.000      ; 5.990      ;
+; -5.321 ; time_divider:td_1k|cnt[6]              ; time_divider:td_1k|cnt[12]                         ; clk                        ; clk         ; 1.000        ; 0.000      ; 5.988      ;
+; -5.321 ; time_divider:td_fa|cnt[4]              ; time_divider:td_fa|cnt[13]                         ; clk                        ; clk         ; 1.000        ; 0.000      ; 5.988      ;
+; -5.313 ; time_divider:td_fa|cnt[3]              ; time_divider:td_fa|cnt[8]                          ; clk                        ; clk         ; 1.000        ; 0.000      ; 5.980      ;
+; -5.309 ; keyboard_scan:kb|cnt[0]                ; time_divider:td_1k|cnt[14]                         ; clk                        ; clk         ; 1.000        ; 0.000      ; 5.976      ;
+; -5.300 ; keyboard_scan:kb|cnt[0]                ; time_divider:td_1k|cnt[7]                          ; clk                        ; clk         ; 1.000        ; 0.000      ; 5.967      ;
+; -5.289 ; time_divider:td_1k|cnt[1]              ; time_divider:td_1k|cnt[8]                          ; clk                        ; clk         ; 1.000        ; 0.000      ; 5.956      ;
+; -5.287 ; time_divider:td_1k|cnt[6]              ; time_divider:td_1k|cnt[8]                          ; clk                        ; clk         ; 1.000        ; 0.000      ; 5.954      ;
+; -5.283 ; keyboard_scan:kb|cnt[0]                ; time_divider:td_fa|cnt[7]                          ; clk                        ; clk         ; 1.000        ; 0.000      ; 5.950      ;
+; -5.280 ; keyboard_scan:kb|cnt[0]                ; time_divider:td_1k|cnt[4]                          ; clk                        ; clk         ; 1.000        ; 0.000      ; 5.947      ;
+; -5.270 ; time_divider:td_fa|cnt[5]              ; time_divider:td_fa|cnt[8]                          ; clk                        ; clk         ; 1.000        ; 0.000      ; 5.937      ;
+; -5.268 ; time_divider:td_1k|cnt[7]              ; time_divider:td_1k|cnt[7]                          ; clk                        ; clk         ; 1.000        ; 0.000      ; 5.935      ;
+; -5.257 ; time_divider:td_1k|cnt[5]              ; time_divider:td_1k|cnt[12]                         ; clk                        ; clk         ; 1.000        ; 0.000      ; 5.924      ;
+; -5.252 ; time_divider:td_1k|cnt[7]              ; time_divider:td_1k|cnt[1]                          ; clk                        ; clk         ; 1.000        ; 0.000      ; 5.919      ;
+; -5.249 ; time_divider:td_1k|cnt[7]              ; time_divider:td_1k|cnt[4]                          ; clk                        ; clk         ; 1.000        ; 0.000      ; 5.916      ;
+; -5.245 ; time_divider:td_fa|cnt[2]              ; time_divider:td_fa|cnt[3]                          ; clk                        ; clk         ; 1.000        ; 0.000      ; 5.912      ;
+; -5.239 ; time_divider:td_fa|cnt[11]             ; time_divider:td_fa|cnt[2]                          ; clk                        ; clk         ; 1.000        ; 0.000      ; 5.906      ;
+; -5.238 ; time_divider:td_fa|cnt[11]             ; time_divider:td_fa|cnt[4]                          ; clk                        ; clk         ; 1.000        ; 0.000      ; 5.905      ;
+; -5.233 ; time_divider:td_1k|cnt[3]              ; time_divider:td_1k|cnt[11]                         ; clk                        ; clk         ; 1.000        ; 0.000      ; 5.900      ;
+; -5.231 ; time_divider:td_fa|cnt[11]             ; time_divider:td_fa|cnt[3]                          ; clk                        ; clk         ; 1.000        ; 0.000      ; 5.898      ;
+; -5.224 ; time_divider:td_fa|cnt[11]             ; time_divider:td_fa|clk_out                         ; clk                        ; clk         ; 1.000        ; 0.000      ; 5.891      ;
+; -5.223 ; time_divider:td_1k|cnt[5]              ; time_divider:td_1k|cnt[8]                          ; clk                        ; clk         ; 1.000        ; 0.000      ; 5.890      ;
+; -5.220 ; time_divider:td_1k|cnt[7]              ; time_divider:td_1k|cnt[12]                         ; clk                        ; clk         ; 1.000        ; 0.000      ; 5.887      ;
+; -5.219 ; time_divider:td_1k|cnt[3]              ; time_divider:td_1k|cnt[10]                         ; clk                        ; clk         ; 1.000        ; 0.000      ; 5.886      ;
+; -5.209 ; time_divider:td_fa|cnt[3]              ; time_divider:td_fa|cnt[14]                         ; clk                        ; clk         ; 1.000        ; 0.000      ; 5.876      ;
+; -5.204 ; time_divider:td_fa|cnt[2]              ; time_divider:td_fa|cnt[8]                          ; clk                        ; clk         ; 1.000        ; 0.000      ; 5.871      ;
+; -5.198 ; time_divider:td_fa|cnt[4]              ; time_divider:td_fa|cnt[8]                          ; clk                        ; clk         ; 1.000        ; 0.000      ; 5.865      ;
+; -5.196 ; keyboard_scan:kb|cnt[0]                ; time_divider:td_1k|cnt[9]                          ; clk                        ; clk         ; 1.000        ; 0.000      ; 5.863      ;
+; -5.191 ; time_divider:td_1k|cnt[3]              ; time_divider:td_1k|cnt[14]                         ; clk                        ; clk         ; 1.000        ; 0.000      ; 5.858      ;
+; -5.186 ; time_divider:td_1k|cnt[7]              ; time_divider:td_1k|cnt[8]                          ; clk                        ; clk         ; 1.000        ; 0.000      ; 5.853      ;
+; -5.185 ; time_divider:td_fa|cnt[3]              ; time_divider:td_fa|cnt[10]                         ; clk                        ; clk         ; 1.000        ; 0.000      ; 5.852      ;
+; -5.170 ; time_divider:td_fa|cnt[10]             ; time_divider:td_fa|cnt[8]                          ; clk                        ; clk         ; 1.000        ; 0.000      ; 5.837      ;
+; -5.169 ; controller:center_control|score_shi[3] ; controller:center_control|fsm:central_fsm|state[0] ; time_divider:td_50|clk_out ; clk         ; 1.000        ; -1.085     ; 4.751      ;
+; -5.166 ; time_divider:td_fa|cnt[5]              ; time_divider:td_fa|cnt[14]                         ; clk                        ; clk         ; 1.000        ; 0.000      ; 5.833      ;
+; -5.142 ; time_divider:td_fa|cnt[5]              ; time_divider:td_fa|cnt[10]                         ; clk                        ; clk         ; 1.000        ; 0.000      ; 5.809      ;
+; -5.135 ; keyboard_scan:kb|cnt[0]                ; time_divider:td_fa|clk_out                         ; clk                        ; clk         ; 1.000        ; 0.000      ; 5.802      ;
+; -5.106 ; time_divider:td_1k|cnt[11]             ; time_divider:td_1k|clk_out                         ; clk                        ; clk         ; 1.000        ; 0.000      ; 5.773      ;
+; -5.102 ; time_divider:td_1k|cnt[2]              ; time_divider:td_1k|cnt[11]                         ; clk                        ; clk         ; 1.000        ; 0.000      ; 5.769      ;
+; -5.100 ; time_divider:td_fa|cnt[2]              ; time_divider:td_fa|cnt[14]                         ; clk                        ; clk         ; 1.000        ; 0.000      ; 5.767      ;
+; -5.099 ; time_divider:td_1k|cnt[4]              ; time_divider:td_1k|cnt[11]                         ; clk                        ; clk         ; 1.000        ; 0.000      ; 5.766      ;
+; -5.094 ; time_divider:td_fa|cnt[4]              ; time_divider:td_fa|cnt[14]                         ; clk                        ; clk         ; 1.000        ; 0.000      ; 5.761      ;
+; -5.088 ; time_divider:td_1k|cnt[2]              ; time_divider:td_1k|cnt[10]                         ; clk                        ; clk         ; 1.000        ; 0.000      ; 5.755      ;
+; -5.085 ; time_divider:td_1k|cnt[4]              ; time_divider:td_1k|cnt[10]                         ; clk                        ; clk         ; 1.000        ; 0.000      ; 5.752      ;
+; -5.080 ; time_divider:td_fa|cnt[6]              ; time_divider:td_fa|cnt[8]                          ; clk                        ; clk         ; 1.000        ; 0.000      ; 5.747      ;
++--------+----------------------------------------+----------------------------------------------------+----------------------------+-------------+--------------+------------+------------+
+
+
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Setup: 'time_divider:td_50|clk_out'                                                                                                                                                                       ;
++--------+----------------------------------------------------+----------------------------------------+------------------------------+----------------------------+--------------+------------+------------+
+; Slack  ; From Node                                          ; To Node                                ; Launch Clock                 ; Latch Clock                ; Relationship ; Clock Skew ; Data Delay ;
++--------+----------------------------------------------------+----------------------------------------+------------------------------+----------------------------+--------------+------------+------------+
+; -5.504 ; controller:center_control|fsm:central_fsm|state[1] ; controller:center_control|hit          ; clk                          ; time_divider:td_50|clk_out ; 1.000        ; 1.085      ; 7.256      ;
+; -5.405 ; controller:center_control|fsm:central_fsm|state[0] ; controller:center_control|hit          ; clk                          ; time_divider:td_50|clk_out ; 1.000        ; 1.085      ; 7.157      ;
+; -4.847 ; time_divider:td_1|cnt[1]                           ; time_divider:td_1|cnt[4]               ; time_divider:td_50|clk_out   ; time_divider:td_50|clk_out ; 1.000        ; 0.000      ; 5.514      ;
+; -4.710 ; keyboard_scan:kb|cnt[1]                            ; controller:center_control|hit          ; clk                          ; time_divider:td_50|clk_out ; 1.000        ; 1.085      ; 6.462      ;
+; -4.603 ; time_divider:td_1|cnt[0]                           ; time_divider:td_1|cnt[4]               ; time_divider:td_50|clk_out   ; time_divider:td_50|clk_out ; 1.000        ; 0.000      ; 5.270      ;
+; -4.568 ; time_divider:td_1|cnt[4]                           ; time_divider:td_1|clk_out              ; time_divider:td_50|clk_out   ; time_divider:td_50|clk_out ; 1.000        ; 0.000      ; 5.235      ;
+; -4.507 ; controller:center_control|score_ge[2]              ; controller:center_control|score_shi[2] ; time_divider:td_50|clk_out   ; time_divider:td_50|clk_out ; 1.000        ; 0.000      ; 5.174      ;
+; -4.356 ; controller:center_control|score_ge[3]              ; controller:center_control|score_shi[2] ; time_divider:td_50|clk_out   ; time_divider:td_50|clk_out ; 1.000        ; 0.000      ; 5.023      ;
+; -4.351 ; time_divider:td_1|cnt[2]                           ; time_divider:td_1|cnt[4]               ; time_divider:td_50|clk_out   ; time_divider:td_50|clk_out ; 1.000        ; 0.000      ; 5.018      ;
+; -4.306 ; time_divider:td_1|cnt[3]                           ; time_divider:td_1|cnt[4]               ; time_divider:td_50|clk_out   ; time_divider:td_50|clk_out ; 1.000        ; 0.000      ; 4.973      ;
+; -4.264 ; time_divider:td_1|cnt[1]                           ; time_divider:td_1|cnt[3]               ; time_divider:td_50|clk_out   ; time_divider:td_50|clk_out ; 1.000        ; 0.000      ; 4.931      ;
+; -4.232 ; time_divider:td_1|cnt[4]                           ; time_divider:td_1|cnt[0]               ; time_divider:td_50|clk_out   ; time_divider:td_50|clk_out ; 1.000        ; 0.000      ; 4.899      ;
+; -4.207 ; time_divider:td_1|cnt[4]                           ; time_divider:td_1|cnt[4]               ; time_divider:td_50|clk_out   ; time_divider:td_50|clk_out ; 1.000        ; 0.000      ; 4.874      ;
+; -4.175 ; controller:center_control|score_ge[0]              ; controller:center_control|score_shi[2] ; time_divider:td_50|clk_out   ; time_divider:td_50|clk_out ; 1.000        ; 0.000      ; 4.842      ;
+; -4.159 ; time_divider:td_1|cnt[1]                           ; time_divider:td_1|cnt[5]               ; time_divider:td_50|clk_out   ; time_divider:td_50|clk_out ; 1.000        ; 0.000      ; 4.826      ;
+; -4.141 ; controller:center_control|score_shi[3]             ; controller:center_control|score_shi[3] ; time_divider:td_50|clk_out   ; time_divider:td_50|clk_out ; 1.000        ; 0.000      ; 4.808      ;
+; -4.020 ; time_divider:td_1|cnt[0]                           ; time_divider:td_1|cnt[3]               ; time_divider:td_50|clk_out   ; time_divider:td_50|clk_out ; 1.000        ; 0.000      ; 4.687      ;
+; -3.968 ; time_divider:td_1|cnt[3]                           ; time_divider:td_1|clk_out              ; time_divider:td_50|clk_out   ; time_divider:td_50|clk_out ; 1.000        ; 0.000      ; 4.635      ;
+; -3.915 ; time_divider:td_1|cnt[0]                           ; time_divider:td_1|cnt[5]               ; time_divider:td_50|clk_out   ; time_divider:td_50|clk_out ; 1.000        ; 0.000      ; 4.582      ;
+; -3.903 ; time_divider:td_1|cnt[0]                           ; time_divider:td_1|cnt[1]               ; time_divider:td_50|clk_out   ; time_divider:td_50|clk_out ; 1.000        ; 0.000      ; 4.570      ;
+; -3.900 ; time_divider:td_1|cnt[1]                           ; time_divider:td_1|cnt[2]               ; time_divider:td_50|clk_out   ; time_divider:td_50|clk_out ; 1.000        ; 0.000      ; 4.567      ;
+; -3.897 ; time_divider:td_1|cnt[4]                           ; time_divider:td_1|cnt[5]               ; time_divider:td_50|clk_out   ; time_divider:td_50|clk_out ; 1.000        ; 0.000      ; 4.564      ;
+; -3.888 ; controller:center_control|score_ge[1]              ; controller:center_control|score_shi[2] ; time_divider:td_50|clk_out   ; time_divider:td_50|clk_out ; 1.000        ; 0.000      ; 4.555      ;
+; -3.805 ; controller:center_control|score_ge[2]              ; controller:center_control|score_shi[3] ; time_divider:td_50|clk_out   ; time_divider:td_50|clk_out ; 1.000        ; 0.000      ; 4.472      ;
+; -3.768 ; time_divider:td_1|cnt[2]                           ; time_divider:td_1|cnt[3]               ; time_divider:td_50|clk_out   ; time_divider:td_50|clk_out ; 1.000        ; 0.000      ; 4.435      ;
+; -3.757 ; time_divider:td_1|cnt[4]                           ; time_divider:td_1|cnt[3]               ; time_divider:td_50|clk_out   ; time_divider:td_50|clk_out ; 1.000        ; 0.000      ; 4.424      ;
+; -3.746 ; keyboard_scan:kb|cnt[0]                            ; controller:center_control|hit          ; clk                          ; time_divider:td_50|clk_out ; 1.000        ; 1.085      ; 5.498      ;
+; -3.691 ; buzzer:bz|flag                                     ; buzzer:bz|en                           ; time_divider:td_50|clk_out   ; time_divider:td_50|clk_out ; 1.000        ; 0.000      ; 4.358      ;
+; -3.663 ; time_divider:td_1|cnt[2]                           ; time_divider:td_1|cnt[5]               ; time_divider:td_50|clk_out   ; time_divider:td_50|clk_out ; 1.000        ; 0.000      ; 4.330      ;
+; -3.656 ; time_divider:td_1|cnt[0]                           ; time_divider:td_1|cnt[2]               ; time_divider:td_50|clk_out   ; time_divider:td_50|clk_out ; 1.000        ; 0.000      ; 4.323      ;
+; -3.654 ; controller:center_control|score_ge[3]              ; controller:center_control|score_shi[3] ; time_divider:td_50|clk_out   ; time_divider:td_50|clk_out ; 1.000        ; 0.000      ; 4.321      ;
+; -3.632 ; time_divider:td_1|cnt[3]                           ; time_divider:td_1|cnt[0]               ; time_divider:td_50|clk_out   ; time_divider:td_50|clk_out ; 1.000        ; 0.000      ; 4.299      ;
+; -3.618 ; time_divider:td_1|cnt[3]                           ; time_divider:td_1|cnt[5]               ; time_divider:td_50|clk_out   ; time_divider:td_50|clk_out ; 1.000        ; 0.000      ; 4.285      ;
+; -3.608 ; time_divider:td_1|cnt[1]                           ; time_divider:td_1|clk_out              ; time_divider:td_50|clk_out   ; time_divider:td_50|clk_out ; 1.000        ; 0.000      ; 4.275      ;
+; -3.586 ; buzzer:bz|flag                                     ; controller:center_control|score_ge[1]  ; time_divider:td_50|clk_out   ; time_divider:td_50|clk_out ; 1.000        ; 0.000      ; 4.253      ;
+; -3.586 ; buzzer:bz|flag                                     ; controller:center_control|score_ge[3]  ; time_divider:td_50|clk_out   ; time_divider:td_50|clk_out ; 1.000        ; 0.000      ; 4.253      ;
+; -3.586 ; buzzer:bz|flag                                     ; controller:center_control|score_ge[2]  ; time_divider:td_50|clk_out   ; time_divider:td_50|clk_out ; 1.000        ; 0.000      ; 4.253      ;
+; -3.586 ; buzzer:bz|flag                                     ; controller:center_control|score_ge[0]  ; time_divider:td_50|clk_out   ; time_divider:td_50|clk_out ; 1.000        ; 0.000      ; 4.253      ;
+; -3.473 ; controller:center_control|score_ge[0]              ; controller:center_control|score_shi[3] ; time_divider:td_50|clk_out   ; time_divider:td_50|clk_out ; 1.000        ; 0.000      ; 4.140      ;
+; -3.448 ; time_divider:td_1|cnt[1]                           ; time_divider:td_1|cnt[1]               ; time_divider:td_50|clk_out   ; time_divider:td_50|clk_out ; 1.000        ; 0.000      ; 4.115      ;
+; -3.421 ; time_divider:td_1|cnt[2]                           ; time_divider:td_1|clk_out              ; time_divider:td_50|clk_out   ; time_divider:td_50|clk_out ; 1.000        ; 0.000      ; 4.088      ;
+; -3.309 ; controller:center_control|score_ge[2]              ; controller:center_control|score_shi[0] ; time_divider:td_50|clk_out   ; time_divider:td_50|clk_out ; 1.000        ; 0.000      ; 3.976      ;
+; -3.308 ; controller:center_control|score_ge[2]              ; controller:center_control|score_shi[1] ; time_divider:td_50|clk_out   ; time_divider:td_50|clk_out ; 1.000        ; 0.000      ; 3.975      ;
+; -3.273 ; controller:center_control|hit                      ; controller:center_control|score_shi[2] ; time_divider:td_50|clk_out   ; time_divider:td_50|clk_out ; 1.000        ; 0.000      ; 3.940      ;
+; -3.201 ; controller:center_control|hit                      ; controller:center_control|score_ge[1]  ; time_divider:td_50|clk_out   ; time_divider:td_50|clk_out ; 1.000        ; 0.000      ; 3.868      ;
+; -3.201 ; controller:center_control|hit                      ; controller:center_control|score_ge[3]  ; time_divider:td_50|clk_out   ; time_divider:td_50|clk_out ; 1.000        ; 0.000      ; 3.868      ;
+; -3.201 ; controller:center_control|hit                      ; controller:center_control|score_ge[2]  ; time_divider:td_50|clk_out   ; time_divider:td_50|clk_out ; 1.000        ; 0.000      ; 3.868      ;
+; -3.201 ; controller:center_control|hit                      ; controller:center_control|score_ge[0]  ; time_divider:td_50|clk_out   ; time_divider:td_50|clk_out ; 1.000        ; 0.000      ; 3.868      ;
+; -3.186 ; controller:center_control|score_ge[1]              ; controller:center_control|score_shi[3] ; time_divider:td_50|clk_out   ; time_divider:td_50|clk_out ; 1.000        ; 0.000      ; 3.853      ;
+; -3.158 ; controller:center_control|score_ge[3]              ; controller:center_control|score_shi[0] ; time_divider:td_50|clk_out   ; time_divider:td_50|clk_out ; 1.000        ; 0.000      ; 3.825      ;
+; -3.157 ; buzzer:bz|flag                                     ; controller:center_control|score_shi[2] ; time_divider:td_50|clk_out   ; time_divider:td_50|clk_out ; 1.000        ; 0.000      ; 3.824      ;
+; -3.157 ; time_divider:td_1|cnt[3]                           ; time_divider:td_1|cnt[3]               ; time_divider:td_50|clk_out   ; time_divider:td_50|clk_out ; 1.000        ; 0.000      ; 3.824      ;
+; -3.157 ; controller:center_control|score_ge[3]              ; controller:center_control|score_shi[1] ; time_divider:td_50|clk_out   ; time_divider:td_50|clk_out ; 1.000        ; 0.000      ; 3.824      ;
+; -3.126 ; time_divider:td_1|cnt[0]                           ; time_divider:td_1|clk_out              ; time_divider:td_50|clk_out   ; time_divider:td_50|clk_out ; 1.000        ; 0.000      ; 3.793      ;
+; -3.085 ; time_divider:td_1|cnt[2]                           ; time_divider:td_1|cnt[0]               ; time_divider:td_50|clk_out   ; time_divider:td_50|clk_out ; 1.000        ; 0.000      ; 3.752      ;
+; -2.995 ; controller:center_control|score_shi[0]             ; controller:center_control|score_shi[2] ; time_divider:td_50|clk_out   ; time_divider:td_50|clk_out ; 1.000        ; 0.000      ; 3.662      ;
+; -2.977 ; controller:center_control|score_ge[0]              ; controller:center_control|score_shi[0] ; time_divider:td_50|clk_out   ; time_divider:td_50|clk_out ; 1.000        ; 0.000      ; 3.644      ;
+; -2.976 ; controller:center_control|score_ge[0]              ; controller:center_control|score_shi[1] ; time_divider:td_50|clk_out   ; time_divider:td_50|clk_out ; 1.000        ; 0.000      ; 3.643      ;
+; -2.937 ; time_divider:td_1|cnt[1]                           ; time_divider:td_1|cnt[0]               ; time_divider:td_50|clk_out   ; time_divider:td_50|clk_out ; 1.000        ; 0.000      ; 3.604      ;
+; -2.894 ; time_divider:td_1|cnt[5]                           ; time_divider:td_1|clk_out              ; time_divider:td_50|clk_out   ; time_divider:td_50|clk_out ; 1.000        ; 0.000      ; 3.561      ;
+; -2.827 ; buzzer:bz|flag                                     ; controller:center_control|score_shi[1] ; time_divider:td_50|clk_out   ; time_divider:td_50|clk_out ; 1.000        ; 0.000      ; 3.494      ;
+; -2.705 ; time_divider:td_1|cnt[2]                           ; time_divider:td_1|cnt[2]               ; time_divider:td_50|clk_out   ; time_divider:td_50|clk_out ; 1.000        ; 0.000      ; 3.372      ;
+; -2.699 ; time_divider:td_1|cnt[0]                           ; time_divider:td_1|cnt[0]               ; time_divider:td_50|clk_out   ; time_divider:td_50|clk_out ; 1.000        ; 0.000      ; 3.366      ;
+; -2.690 ; controller:center_control|score_ge[1]              ; controller:center_control|score_shi[0] ; time_divider:td_50|clk_out   ; time_divider:td_50|clk_out ; 1.000        ; 0.000      ; 3.357      ;
+; -2.689 ; controller:center_control|score_ge[1]              ; controller:center_control|score_shi[1] ; time_divider:td_50|clk_out   ; time_divider:td_50|clk_out ; 1.000        ; 0.000      ; 3.356      ;
+; -2.571 ; controller:center_control|hit                      ; controller:center_control|score_shi[3] ; time_divider:td_50|clk_out   ; time_divider:td_50|clk_out ; 1.000        ; 0.000      ; 3.238      ;
+; -2.558 ; time_divider:td_1|cnt[5]                           ; time_divider:td_1|cnt[0]               ; time_divider:td_50|clk_out   ; time_divider:td_50|clk_out ; 1.000        ; 0.000      ; 3.225      ;
+; -2.533 ; time_divider:td_1|cnt[5]                           ; time_divider:td_1|cnt[4]               ; time_divider:td_50|clk_out   ; time_divider:td_50|clk_out ; 1.000        ; 0.000      ; 3.200      ;
+; -2.511 ; controller:center_control|score_ge[3]              ; controller:center_control|score_ge[2]  ; time_divider:td_50|clk_out   ; time_divider:td_50|clk_out ; 1.000        ; 0.000      ; 3.178      ;
+; -2.500 ; controller:center_control|score_ge[3]              ; controller:center_control|score_ge[0]  ; time_divider:td_50|clk_out   ; time_divider:td_50|clk_out ; 1.000        ; 0.000      ; 3.167      ;
+; -2.498 ; controller:center_control|score_ge[3]              ; controller:center_control|score_ge[3]  ; time_divider:td_50|clk_out   ; time_divider:td_50|clk_out ; 1.000        ; 0.000      ; 3.165      ;
+; -2.455 ; buzzer:bz|flag                                     ; controller:center_control|score_shi[3] ; time_divider:td_50|clk_out   ; time_divider:td_50|clk_out ; 1.000        ; 0.000      ; 3.122      ;
+; -2.442 ; controller:center_control|hit                      ; controller:center_control|score_shi[1] ; time_divider:td_50|clk_out   ; time_divider:td_50|clk_out ; 1.000        ; 0.000      ; 3.109      ;
+; -2.346 ; controller:center_control|hit                      ; buzzer:bz|en                           ; time_divider:td_50|clk_out   ; time_divider:td_50|clk_out ; 1.000        ; 0.000      ; 3.013      ;
+; -2.293 ; controller:center_control|score_shi[0]             ; controller:center_control|score_shi[3] ; time_divider:td_50|clk_out   ; time_divider:td_50|clk_out ; 1.000        ; 0.000      ; 2.960      ;
+; -2.284 ; controller:center_control|hit                      ; controller:center_control|score_shi[0] ; time_divider:td_50|clk_out   ; time_divider:td_50|clk_out ; 1.000        ; 0.000      ; 2.951      ;
+; -2.216 ; controller:center_control|score_shi[1]             ; controller:center_control|score_shi[3] ; time_divider:td_50|clk_out   ; time_divider:td_50|clk_out ; 1.000        ; 0.000      ; 2.883      ;
+; -2.209 ; controller:center_control|score_shi[1]             ; controller:center_control|score_shi[2] ; time_divider:td_50|clk_out   ; time_divider:td_50|clk_out ; 1.000        ; 0.000      ; 2.876      ;
+; -2.208 ; controller:center_control|score_shi[1]             ; controller:center_control|score_shi[1] ; time_divider:td_50|clk_out   ; time_divider:td_50|clk_out ; 1.000        ; 0.000      ; 2.875      ;
+; -2.207 ; controller:center_control|score_ge[3]              ; controller:center_control|score_ge[1]  ; time_divider:td_50|clk_out   ; time_divider:td_50|clk_out ; 1.000        ; 0.000      ; 2.874      ;
+; -2.200 ; controller:center_control|score_ge[0]              ; controller:center_control|score_ge[1]  ; time_divider:td_50|clk_out   ; time_divider:td_50|clk_out ; 1.000        ; 0.000      ; 2.867      ;
+; -2.199 ; controller:center_control|score_ge[0]              ; controller:center_control|score_ge[2]  ; time_divider:td_50|clk_out   ; time_divider:td_50|clk_out ; 1.000        ; 0.000      ; 2.866      ;
+; -2.190 ; controller:center_control|score_ge[0]              ; controller:center_control|score_ge[3]  ; time_divider:td_50|clk_out   ; time_divider:td_50|clk_out ; 1.000        ; 0.000      ; 2.857      ;
+; -2.188 ; controller:center_control|score_ge[0]              ; controller:center_control|score_ge[0]  ; time_divider:td_50|clk_out   ; time_divider:td_50|clk_out ; 1.000        ; 0.000      ; 2.855      ;
+; -2.187 ; controller:center_control|score_shi[0]             ; controller:center_control|score_shi[1] ; time_divider:td_50|clk_out   ; time_divider:td_50|clk_out ; 1.000        ; 0.000      ; 2.854      ;
+; -2.121 ; buzzer:bz|flag                                     ; controller:center_control|score_shi[0] ; time_divider:td_50|clk_out   ; time_divider:td_50|clk_out ; 1.000        ; 0.000      ; 2.788      ;
+; -2.115 ; buzzer:bz|flag                                     ; buzzer:bz|flag                         ; time_divider:td_50|clk_out   ; time_divider:td_50|clk_out ; 1.000        ; 0.000      ; 2.782      ;
+; -2.083 ; time_divider:td_1|cnt[5]                           ; time_divider:td_1|cnt[3]               ; time_divider:td_50|clk_out   ; time_divider:td_50|clk_out ; 1.000        ; 0.000      ; 2.750      ;
+; -1.970 ; controller:center_control|hit                      ; buzzer:bz|flag                         ; time_divider:td_50|clk_out   ; time_divider:td_50|clk_out ; 1.000        ; 0.000      ; 2.637      ;
+; -1.967 ; controller:center_control|score_ge[2]              ; controller:center_control|score_ge[3]  ; time_divider:td_50|clk_out   ; time_divider:td_50|clk_out ; 1.000        ; 0.000      ; 2.634      ;
+; -1.967 ; controller:center_control|score_ge[2]              ; controller:center_control|score_ge[0]  ; time_divider:td_50|clk_out   ; time_divider:td_50|clk_out ; 1.000        ; 0.000      ; 2.634      ;
+; -1.958 ; controller:center_control|score_ge[2]              ; controller:center_control|score_ge[2]  ; time_divider:td_50|clk_out   ; time_divider:td_50|clk_out ; 1.000        ; 0.000      ; 2.625      ;
+; -1.878 ; time_divider:td_1|cnt[5]                           ; time_divider:td_1|cnt[5]               ; time_divider:td_50|clk_out   ; time_divider:td_50|clk_out ; 1.000        ; 0.000      ; 2.545      ;
+; -1.834 ; controller:center_control|score_shi[2]             ; controller:center_control|score_shi[2] ; time_divider:td_50|clk_out   ; time_divider:td_50|clk_out ; 1.000        ; 0.000      ; 2.501      ;
+; -1.661 ; buzzer:bz|en                                       ; buzzer:bz|en                           ; time_divider:td_50|clk_out   ; time_divider:td_50|clk_out ; 1.000        ; 0.000      ; 2.328      ;
+; -1.598 ; getrandom:gr1|D_ff:FF4|Q                           ; controller:center_control|hit          ; time_divider:td_half|clk_out ; time_divider:td_50|clk_out ; 1.000        ; 2.710      ; 4.975      ;
+; -1.530 ; controller:center_control|score_shi[2]             ; controller:center_control|score_shi[3] ; time_divider:td_50|clk_out   ; time_divider:td_50|clk_out ; 1.000        ; 0.000      ; 2.197      ;
+; -1.497 ; controller:center_control|score_shi[0]             ; controller:center_control|score_shi[0] ; time_divider:td_50|clk_out   ; time_divider:td_50|clk_out ; 1.000        ; 0.000      ; 2.164      ;
+; -1.280 ; controller:center_control|score_ge[1]              ; controller:center_control|score_ge[3]  ; time_divider:td_50|clk_out   ; time_divider:td_50|clk_out ; 1.000        ; 0.000      ; 1.947      ;
+; -1.280 ; controller:center_control|score_ge[1]              ; controller:center_control|score_ge[0]  ; time_divider:td_50|clk_out   ; time_divider:td_50|clk_out ; 1.000        ; 0.000      ; 1.947      ;
++--------+----------------------------------------------------+----------------------------------------+------------------------------+----------------------------+--------------+------------+------------+
+
+
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Setup: 'time_divider:td_1|clk_out'                                                                                                                                                               ;
++--------+----------------------------------------------------+--------------------------------+------------------------------+---------------------------+--------------+------------+------------+
+; Slack  ; From Node                                          ; To Node                        ; Launch Clock                 ; Latch Clock               ; Relationship ; Clock Skew ; Data Delay ;
++--------+----------------------------------------------------+--------------------------------+------------------------------+---------------------------+--------------+------------+------------+
+; -4.645 ; timer:time_counter|time_ge[3]                      ; timer:time_counter|time_ge[1]  ; time_divider:td_1|clk_out    ; time_divider:td_1|clk_out ; 1.000        ; 0.000      ; 5.312      ;
+; -4.482 ; timer:time_counter|time_ge[0]                      ; timer:time_counter|time_ge[1]  ; time_divider:td_1|clk_out    ; time_divider:td_1|clk_out ; 1.000        ; 0.000      ; 5.149      ;
+; -4.457 ; timer:time_counter|time_shi[3]                     ; timer:time_counter|time_shi[3] ; time_divider:td_1|clk_out    ; time_divider:td_1|clk_out ; 1.000        ; 0.000      ; 5.124      ;
+; -4.456 ; timer:time_counter|time_shi[3]                     ; timer:time_counter|time_shi[2] ; time_divider:td_1|clk_out    ; time_divider:td_1|clk_out ; 1.000        ; 0.000      ; 5.123      ;
+; -4.447 ; timer:time_counter|time_shi[3]                     ; timer:time_counter|time_shi[1] ; time_divider:td_1|clk_out    ; time_divider:td_1|clk_out ; 1.000        ; 0.000      ; 5.114      ;
+; -4.446 ; timer:time_counter|time_shi[3]                     ; timer:time_counter|time_shi[0] ; time_divider:td_1|clk_out    ; time_divider:td_1|clk_out ; 1.000        ; 0.000      ; 5.113      ;
+; -4.317 ; timer:time_counter|time_ge[1]                      ; timer:time_counter|time_ge[1]  ; time_divider:td_1|clk_out    ; time_divider:td_1|clk_out ; 1.000        ; 0.000      ; 4.984      ;
+; -4.307 ; timer:time_counter|time_shi[0]                     ; timer:time_counter|time_shi[3] ; time_divider:td_1|clk_out    ; time_divider:td_1|clk_out ; 1.000        ; 0.000      ; 4.974      ;
+; -4.306 ; timer:time_counter|time_shi[0]                     ; timer:time_counter|time_shi[2] ; time_divider:td_1|clk_out    ; time_divider:td_1|clk_out ; 1.000        ; 0.000      ; 4.973      ;
+; -4.297 ; timer:time_counter|time_shi[0]                     ; timer:time_counter|time_shi[1] ; time_divider:td_1|clk_out    ; time_divider:td_1|clk_out ; 1.000        ; 0.000      ; 4.964      ;
+; -4.296 ; timer:time_counter|time_shi[0]                     ; timer:time_counter|time_shi[0] ; time_divider:td_1|clk_out    ; time_divider:td_1|clk_out ; 1.000        ; 0.000      ; 4.963      ;
+; -4.260 ; timer:time_counter|time_ge[3]                      ; timer:time_counter|time_shi[3] ; time_divider:td_1|clk_out    ; time_divider:td_1|clk_out ; 1.000        ; 0.000      ; 4.927      ;
+; -4.259 ; timer:time_counter|time_ge[3]                      ; timer:time_counter|time_shi[2] ; time_divider:td_1|clk_out    ; time_divider:td_1|clk_out ; 1.000        ; 0.000      ; 4.926      ;
+; -4.250 ; timer:time_counter|time_ge[3]                      ; timer:time_counter|time_shi[1] ; time_divider:td_1|clk_out    ; time_divider:td_1|clk_out ; 1.000        ; 0.000      ; 4.917      ;
+; -4.249 ; timer:time_counter|time_ge[3]                      ; timer:time_counter|time_shi[0] ; time_divider:td_1|clk_out    ; time_divider:td_1|clk_out ; 1.000        ; 0.000      ; 4.916      ;
+; -4.223 ; timer:time_counter|time_ge[3]                      ; timer:time_counter|time_ge[0]  ; time_divider:td_1|clk_out    ; time_divider:td_1|clk_out ; 1.000        ; 0.000      ; 4.890      ;
+; -4.190 ; timer:time_counter|time_ge[3]                      ; timer:time_counter|time_ge[3]  ; time_divider:td_1|clk_out    ; time_divider:td_1|clk_out ; 1.000        ; 0.000      ; 4.857      ;
+; -4.148 ; timer:time_counter|time_shi[3]                     ; timer:time_counter|time_ge[0]  ; time_divider:td_1|clk_out    ; time_divider:td_1|clk_out ; 1.000        ; 0.000      ; 4.815      ;
+; -4.097 ; timer:time_counter|time_ge[0]                      ; timer:time_counter|time_shi[3] ; time_divider:td_1|clk_out    ; time_divider:td_1|clk_out ; 1.000        ; 0.000      ; 4.764      ;
+; -4.096 ; timer:time_counter|time_ge[0]                      ; timer:time_counter|time_shi[2] ; time_divider:td_1|clk_out    ; time_divider:td_1|clk_out ; 1.000        ; 0.000      ; 4.763      ;
+; -4.092 ; timer:time_counter|time_shi[1]                     ; timer:time_counter|time_shi[3] ; time_divider:td_1|clk_out    ; time_divider:td_1|clk_out ; 1.000        ; 0.000      ; 4.759      ;
+; -4.091 ; timer:time_counter|time_shi[1]                     ; timer:time_counter|time_shi[2] ; time_divider:td_1|clk_out    ; time_divider:td_1|clk_out ; 1.000        ; 0.000      ; 4.758      ;
+; -4.087 ; timer:time_counter|time_ge[0]                      ; timer:time_counter|time_shi[1] ; time_divider:td_1|clk_out    ; time_divider:td_1|clk_out ; 1.000        ; 0.000      ; 4.754      ;
+; -4.086 ; timer:time_counter|time_ge[0]                      ; timer:time_counter|time_shi[0] ; time_divider:td_1|clk_out    ; time_divider:td_1|clk_out ; 1.000        ; 0.000      ; 4.753      ;
+; -4.082 ; timer:time_counter|time_shi[1]                     ; timer:time_counter|time_shi[1] ; time_divider:td_1|clk_out    ; time_divider:td_1|clk_out ; 1.000        ; 0.000      ; 4.749      ;
+; -4.081 ; timer:time_counter|time_shi[1]                     ; timer:time_counter|time_shi[0] ; time_divider:td_1|clk_out    ; time_divider:td_1|clk_out ; 1.000        ; 0.000      ; 4.748      ;
+; -4.060 ; timer:time_counter|time_ge[0]                      ; timer:time_counter|time_ge[0]  ; time_divider:td_1|clk_out    ; time_divider:td_1|clk_out ; 1.000        ; 0.000      ; 4.727      ;
+; -4.027 ; timer:time_counter|time_ge[0]                      ; timer:time_counter|time_ge[3]  ; time_divider:td_1|clk_out    ; time_divider:td_1|clk_out ; 1.000        ; 0.000      ; 4.694      ;
+; -3.998 ; timer:time_counter|time_shi[0]                     ; timer:time_counter|time_ge[0]  ; time_divider:td_1|clk_out    ; time_divider:td_1|clk_out ; 1.000        ; 0.000      ; 4.665      ;
+; -3.953 ; timer:time_counter|time_ge[2]                      ; timer:time_counter|time_ge[1]  ; time_divider:td_1|clk_out    ; time_divider:td_1|clk_out ; 1.000        ; 0.000      ; 4.620      ;
+; -3.932 ; timer:time_counter|time_ge[1]                      ; timer:time_counter|time_shi[3] ; time_divider:td_1|clk_out    ; time_divider:td_1|clk_out ; 1.000        ; 0.000      ; 4.599      ;
+; -3.931 ; timer:time_counter|time_ge[1]                      ; timer:time_counter|time_shi[2] ; time_divider:td_1|clk_out    ; time_divider:td_1|clk_out ; 1.000        ; 0.000      ; 4.598      ;
+; -3.922 ; timer:time_counter|time_ge[1]                      ; timer:time_counter|time_shi[1] ; time_divider:td_1|clk_out    ; time_divider:td_1|clk_out ; 1.000        ; 0.000      ; 4.589      ;
+; -3.921 ; controller:center_control|fsm:central_fsm|state[1] ; timer:time_counter|time_ge[3]  ; clk                          ; time_divider:td_1|clk_out ; 1.000        ; 0.122      ; 4.710      ;
+; -3.921 ; controller:center_control|fsm:central_fsm|state[1] ; timer:time_counter|time_ge[1]  ; clk                          ; time_divider:td_1|clk_out ; 1.000        ; 0.122      ; 4.710      ;
+; -3.921 ; timer:time_counter|time_ge[1]                      ; timer:time_counter|time_shi[0] ; time_divider:td_1|clk_out    ; time_divider:td_1|clk_out ; 1.000        ; 0.000      ; 4.588      ;
+; -3.895 ; timer:time_counter|time_ge[1]                      ; timer:time_counter|time_ge[0]  ; time_divider:td_1|clk_out    ; time_divider:td_1|clk_out ; 1.000        ; 0.000      ; 4.562      ;
+; -3.862 ; timer:time_counter|time_ge[1]                      ; timer:time_counter|time_ge[3]  ; time_divider:td_1|clk_out    ; time_divider:td_1|clk_out ; 1.000        ; 0.000      ; 4.529      ;
+; -3.856 ; timer:time_counter|time_shi[3]                     ; timer:time_counter|time_ge[3]  ; time_divider:td_1|clk_out    ; time_divider:td_1|clk_out ; 1.000        ; 0.000      ; 4.523      ;
+; -3.822 ; controller:center_control|fsm:central_fsm|state[0] ; timer:time_counter|time_ge[3]  ; clk                          ; time_divider:td_1|clk_out ; 1.000        ; 0.122      ; 4.611      ;
+; -3.822 ; controller:center_control|fsm:central_fsm|state[0] ; timer:time_counter|time_ge[1]  ; clk                          ; time_divider:td_1|clk_out ; 1.000        ; 0.122      ; 4.611      ;
+; -3.783 ; timer:time_counter|time_shi[1]                     ; timer:time_counter|time_ge[0]  ; time_divider:td_1|clk_out    ; time_divider:td_1|clk_out ; 1.000        ; 0.000      ; 4.450      ;
+; -3.748 ; timer:time_counter|time_shi[2]                     ; timer:time_counter|time_shi[3] ; time_divider:td_1|clk_out    ; time_divider:td_1|clk_out ; 1.000        ; 0.000      ; 4.415      ;
+; -3.747 ; timer:time_counter|time_shi[2]                     ; timer:time_counter|time_shi[2] ; time_divider:td_1|clk_out    ; time_divider:td_1|clk_out ; 1.000        ; 0.000      ; 4.414      ;
+; -3.738 ; timer:time_counter|time_shi[2]                     ; timer:time_counter|time_shi[1] ; time_divider:td_1|clk_out    ; time_divider:td_1|clk_out ; 1.000        ; 0.000      ; 4.405      ;
+; -3.737 ; timer:time_counter|time_shi[2]                     ; timer:time_counter|time_shi[0] ; time_divider:td_1|clk_out    ; time_divider:td_1|clk_out ; 1.000        ; 0.000      ; 4.404      ;
+; -3.706 ; timer:time_counter|time_shi[0]                     ; timer:time_counter|time_ge[3]  ; time_divider:td_1|clk_out    ; time_divider:td_1|clk_out ; 1.000        ; 0.000      ; 4.373      ;
+; -3.568 ; timer:time_counter|time_ge[2]                      ; timer:time_counter|time_shi[3] ; time_divider:td_1|clk_out    ; time_divider:td_1|clk_out ; 1.000        ; 0.000      ; 4.235      ;
+; -3.567 ; timer:time_counter|time_ge[2]                      ; timer:time_counter|time_shi[2] ; time_divider:td_1|clk_out    ; time_divider:td_1|clk_out ; 1.000        ; 0.000      ; 4.234      ;
+; -3.558 ; controller:center_control|fsm:central_fsm|state[1] ; timer:time_counter|time_shi[1] ; clk                          ; time_divider:td_1|clk_out ; 1.000        ; 0.122      ; 4.347      ;
+; -3.558 ; timer:time_counter|time_ge[2]                      ; timer:time_counter|time_shi[1] ; time_divider:td_1|clk_out    ; time_divider:td_1|clk_out ; 1.000        ; 0.000      ; 4.225      ;
+; -3.557 ; timer:time_counter|time_ge[2]                      ; timer:time_counter|time_shi[0] ; time_divider:td_1|clk_out    ; time_divider:td_1|clk_out ; 1.000        ; 0.000      ; 4.224      ;
+; -3.553 ; controller:center_control|fsm:central_fsm|state[1] ; timer:time_counter|time_shi[3] ; clk                          ; time_divider:td_1|clk_out ; 1.000        ; 0.122      ; 4.342      ;
+; -3.552 ; controller:center_control|fsm:central_fsm|state[1] ; timer:time_counter|time_shi[2] ; clk                          ; time_divider:td_1|clk_out ; 1.000        ; 0.122      ; 4.341      ;
+; -3.531 ; timer:time_counter|time_ge[2]                      ; timer:time_counter|time_ge[0]  ; time_divider:td_1|clk_out    ; time_divider:td_1|clk_out ; 1.000        ; 0.000      ; 4.198      ;
+; -3.502 ; controller:center_control|fsm:central_fsm|state[1] ; timer:time_counter|time_ge[2]  ; clk                          ; time_divider:td_1|clk_out ; 1.000        ; 0.122      ; 4.291      ;
+; -3.498 ; timer:time_counter|time_ge[2]                      ; timer:time_counter|time_ge[3]  ; time_divider:td_1|clk_out    ; time_divider:td_1|clk_out ; 1.000        ; 0.000      ; 4.165      ;
+; -3.491 ; timer:time_counter|time_shi[1]                     ; timer:time_counter|time_ge[3]  ; time_divider:td_1|clk_out    ; time_divider:td_1|clk_out ; 1.000        ; 0.000      ; 4.158      ;
+; -3.462 ; controller:center_control|fsm:central_fsm|state[0] ; timer:time_counter|time_shi[1] ; clk                          ; time_divider:td_1|clk_out ; 1.000        ; 0.122      ; 4.251      ;
+; -3.457 ; controller:center_control|fsm:central_fsm|state[0] ; timer:time_counter|time_shi[3] ; clk                          ; time_divider:td_1|clk_out ; 1.000        ; 0.122      ; 4.246      ;
+; -3.456 ; controller:center_control|fsm:central_fsm|state[0] ; timer:time_counter|time_shi[2] ; clk                          ; time_divider:td_1|clk_out ; 1.000        ; 0.122      ; 4.245      ;
+; -3.439 ; timer:time_counter|time_shi[2]                     ; timer:time_counter|time_ge[0]  ; time_divider:td_1|clk_out    ; time_divider:td_1|clk_out ; 1.000        ; 0.000      ; 4.106      ;
+; -3.406 ; controller:center_control|fsm:central_fsm|state[0] ; timer:time_counter|time_ge[2]  ; clk                          ; time_divider:td_1|clk_out ; 1.000        ; 0.122      ; 4.195      ;
+; -3.147 ; timer:time_counter|time_shi[2]                     ; timer:time_counter|time_ge[3]  ; time_divider:td_1|clk_out    ; time_divider:td_1|clk_out ; 1.000        ; 0.000      ; 3.814      ;
+; -3.137 ; timer:time_counter|time_ge[2]                      ; timer:time_counter|time_ge[2]  ; time_divider:td_1|clk_out    ; time_divider:td_1|clk_out ; 1.000        ; 0.000      ; 3.804      ;
+; -2.966 ; timer:time_counter|time_ge[3]                      ; timer:time_counter|time_ge[2]  ; time_divider:td_1|clk_out    ; time_divider:td_1|clk_out ; 1.000        ; 0.000      ; 3.633      ;
+; -2.930 ; controller:center_control|fsm:central_fsm|state[0] ; timer:time_counter|time_shi[0] ; clk                          ; time_divider:td_1|clk_out ; 1.000        ; 0.122      ; 3.719      ;
+; -2.912 ; timer:time_counter|time_ge[0]                      ; timer:time_counter|time_ge[2]  ; time_divider:td_1|clk_out    ; time_divider:td_1|clk_out ; 1.000        ; 0.000      ; 3.579      ;
+; -2.828 ; controller:center_control|fsm:central_fsm|state[1] ; timer:time_counter|time_shi[0] ; clk                          ; time_divider:td_1|clk_out ; 1.000        ; 0.122      ; 3.617      ;
+; -2.686 ; timer:time_counter|time_ge[1]                      ; timer:time_counter|time_ge[2]  ; time_divider:td_1|clk_out    ; time_divider:td_1|clk_out ; 1.000        ; 0.000      ; 3.353      ;
+; -2.229 ; controller:center_control|fsm:central_fsm|state[1] ; timer:time_counter|time_ge[0]  ; clk                          ; time_divider:td_1|clk_out ; 1.000        ; 0.122      ; 3.018      ;
+; -1.500 ; time_divider:td_half|cnt[0]                        ; time_divider:td_half|cnt[1]    ; time_divider:td_1|clk_out    ; time_divider:td_1|clk_out ; 1.000        ; 0.000      ; 2.167      ;
+; -1.495 ; time_divider:td_half|cnt[0]                        ; time_divider:td_half|clk_out   ; time_divider:td_1|clk_out    ; time_divider:td_1|clk_out ; 1.000        ; 0.000      ; 2.162      ;
+; -1.492 ; time_divider:td_half|cnt[0]                        ; time_divider:td_half|cnt[0]    ; time_divider:td_1|clk_out    ; time_divider:td_1|clk_out ; 1.000        ; 0.000      ; 2.159      ;
+; -1.467 ; controller:center_control|fsm:central_fsm|state[0] ; timer:time_counter|time_ge[0]  ; clk                          ; time_divider:td_1|clk_out ; 1.000        ; 0.122      ; 2.256      ;
+; -1.275 ; time_divider:td_half|cnt[1]                        ; time_divider:td_half|cnt[0]    ; time_divider:td_1|clk_out    ; time_divider:td_1|clk_out ; 1.000        ; 0.000      ; 1.942      ;
+; -1.273 ; time_divider:td_half|cnt[1]                        ; time_divider:td_half|clk_out   ; time_divider:td_1|clk_out    ; time_divider:td_1|clk_out ; 1.000        ; 0.000      ; 1.940      ;
+; -1.262 ; time_divider:td_half|cnt[1]                        ; time_divider:td_half|cnt[1]    ; time_divider:td_1|clk_out    ; time_divider:td_1|clk_out ; 1.000        ; 0.000      ; 1.929      ;
+; 2.102  ; time_divider:td_half|clk_out                       ; time_divider:td_half|clk_out   ; time_divider:td_half|clk_out ; time_divider:td_1|clk_out ; 0.500        ; 3.941      ; 2.382      ;
+; 2.602  ; time_divider:td_half|clk_out                       ; time_divider:td_half|clk_out   ; time_divider:td_half|clk_out ; time_divider:td_1|clk_out ; 1.000        ; 3.941      ; 2.382      ;
++--------+----------------------------------------------------+--------------------------------+------------------------------+---------------------------+--------------+------------+------------+
+
+
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Setup: 'time_divider:td_half|clk_out'                                                                                                                               ;
++--------+--------------------------+--------------------------+------------------------------+------------------------------+--------------+------------+------------+
+; Slack  ; From Node                ; To Node                  ; Launch Clock                 ; Latch Clock                  ; Relationship ; Clock Skew ; Data Delay ;
++--------+--------------------------+--------------------------+------------------------------+------------------------------+--------------+------------+------------+
+; -3.375 ; getrandom:gr1|D_ff:FF1|Q ; getrandom:gr1|D_ff:FF0|Q ; time_divider:td_half|clk_out ; time_divider:td_half|clk_out ; 1.000        ; 0.000      ; 4.042      ;
+; -3.250 ; getrandom:gr1|D_ff:FF0|Q ; getrandom:gr1|D_ff:FF0|Q ; time_divider:td_half|clk_out ; time_divider:td_half|clk_out ; 1.000        ; 0.000      ; 3.917      ;
+; -3.028 ; getrandom:gr1|D_ff:FF3|Q ; getrandom:gr1|D_ff:FF0|Q ; time_divider:td_half|clk_out ; time_divider:td_half|clk_out ; 1.000        ; 0.000      ; 3.695      ;
+; -2.666 ; getrandom:gr1|D_ff:FF2|Q ; getrandom:gr1|D_ff:FF0|Q ; time_divider:td_half|clk_out ; time_divider:td_half|clk_out ; 1.000        ; 0.000      ; 3.333      ;
+; -2.607 ; getrandom:gr1|D_ff:FF4|Q ; getrandom:gr1|D_ff:FF0|Q ; time_divider:td_half|clk_out ; time_divider:td_half|clk_out ; 1.000        ; -0.005     ; 3.269      ;
+; -2.444 ; getrandom:gr1|D_ff:FF5|Q ; getrandom:gr1|D_ff:FF0|Q ; time_divider:td_half|clk_out ; time_divider:td_half|clk_out ; 1.000        ; 0.000      ; 3.111      ;
+; -2.010 ; getrandom:gr1|D_ff:FF4|Q ; getrandom:gr1|D_ff:FF5|Q ; time_divider:td_half|clk_out ; time_divider:td_half|clk_out ; 1.000        ; -0.005     ; 2.672      ;
+; -1.659 ; getrandom:gr1|D_ff:FF3|Q ; getrandom:gr1|D_ff:FF4|Q ; time_divider:td_half|clk_out ; time_divider:td_half|clk_out ; 1.000        ; 0.005      ; 2.331      ;
+; -1.508 ; getrandom:gr1|D_ff:FF1|Q ; getrandom:gr1|D_ff:FF2|Q ; time_divider:td_half|clk_out ; time_divider:td_half|clk_out ; 1.000        ; 0.000      ; 2.175      ;
+; -1.274 ; getrandom:gr1|D_ff:FF0|Q ; getrandom:gr1|D_ff:FF1|Q ; time_divider:td_half|clk_out ; time_divider:td_half|clk_out ; 1.000        ; 0.000      ; 1.941      ;
+; -1.230 ; getrandom:gr1|D_ff:FF2|Q ; getrandom:gr1|D_ff:FF3|Q ; time_divider:td_half|clk_out ; time_divider:td_half|clk_out ; 1.000        ; 0.000      ; 1.897      ;
++--------+--------------------------+--------------------------+------------------------------+------------------------------+--------------+------------+------------+
+
+
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Setup: 'time_divider:td_500|clk_out'                                                                                                                                  ;
++--------+----------------------------+----------------------------+-----------------------------+-----------------------------+--------------+------------+------------+
+; Slack  ; From Node                  ; To Node                    ; Launch Clock                ; Latch Clock                 ; Relationship ; Clock Skew ; Data Delay ;
++--------+----------------------------+----------------------------+-----------------------------+-----------------------------+--------------+------------+------------+
+; -2.394 ; time_divider:td_50|cnt[0]  ; time_divider:td_50|clk_out ; time_divider:td_500|clk_out ; time_divider:td_500|clk_out ; 1.000        ; 0.000      ; 3.061      ;
+; -2.281 ; time_divider:td_50|cnt[2]  ; time_divider:td_50|clk_out ; time_divider:td_500|clk_out ; time_divider:td_500|clk_out ; 1.000        ; 0.000      ; 2.948      ;
+; -2.265 ; time_divider:td_50|cnt[2]  ; time_divider:td_50|cnt[0]  ; time_divider:td_500|clk_out ; time_divider:td_500|clk_out ; 1.000        ; 0.000      ; 2.932      ;
+; -2.264 ; time_divider:td_50|cnt[2]  ; time_divider:td_50|cnt[3]  ; time_divider:td_500|clk_out ; time_divider:td_500|clk_out ; 1.000        ; 0.000      ; 2.931      ;
+; -2.257 ; time_divider:td_50|cnt[2]  ; time_divider:td_50|cnt[2]  ; time_divider:td_500|clk_out ; time_divider:td_500|clk_out ; 1.000        ; 0.000      ; 2.924      ;
+; -2.153 ; time_divider:td_50|cnt[1]  ; time_divider:td_50|clk_out ; time_divider:td_500|clk_out ; time_divider:td_500|clk_out ; 1.000        ; 0.000      ; 2.820      ;
+; -1.764 ; time_divider:td_50|cnt[3]  ; time_divider:td_50|clk_out ; time_divider:td_500|clk_out ; time_divider:td_500|clk_out ; 1.000        ; 0.000      ; 2.431      ;
+; -1.737 ; time_divider:td_50|cnt[0]  ; time_divider:td_50|cnt[1]  ; time_divider:td_500|clk_out ; time_divider:td_500|clk_out ; 1.000        ; 0.000      ; 2.404      ;
+; -1.735 ; time_divider:td_50|cnt[0]  ; time_divider:td_50|cnt[2]  ; time_divider:td_500|clk_out ; time_divider:td_500|clk_out ; 1.000        ; 0.000      ; 2.402      ;
+; -1.730 ; time_divider:td_50|cnt[3]  ; time_divider:td_50|cnt[2]  ; time_divider:td_500|clk_out ; time_divider:td_500|clk_out ; 1.000        ; 0.000      ; 2.397      ;
+; -1.729 ; time_divider:td_50|cnt[0]  ; time_divider:td_50|cnt[3]  ; time_divider:td_500|clk_out ; time_divider:td_500|clk_out ; 1.000        ; 0.000      ; 2.396      ;
+; -1.727 ; time_divider:td_50|cnt[0]  ; time_divider:td_50|cnt[0]  ; time_divider:td_500|clk_out ; time_divider:td_500|clk_out ; 1.000        ; 0.000      ; 2.394      ;
+; -1.727 ; time_divider:td_50|cnt[3]  ; time_divider:td_50|cnt[0]  ; time_divider:td_500|clk_out ; time_divider:td_500|clk_out ; 1.000        ; 0.000      ; 2.394      ;
+; -1.725 ; time_divider:td_50|cnt[3]  ; time_divider:td_50|cnt[3]  ; time_divider:td_500|clk_out ; time_divider:td_500|clk_out ; 1.000        ; 0.000      ; 2.392      ;
+; -1.687 ; led_88:ld|cnt[1]           ; led_88:ld|cnt[2]           ; time_divider:td_500|clk_out ; time_divider:td_500|clk_out ; 1.000        ; 0.000      ; 2.354      ;
+; -1.548 ; time_divider:td_50|cnt[1]  ; time_divider:td_50|cnt[0]  ; time_divider:td_500|clk_out ; time_divider:td_500|clk_out ; 1.000        ; 0.000      ; 2.215      ;
+; -1.546 ; time_divider:td_50|cnt[1]  ; time_divider:td_50|cnt[3]  ; time_divider:td_500|clk_out ; time_divider:td_500|clk_out ; 1.000        ; 0.000      ; 2.213      ;
+; -1.535 ; time_divider:td_50|cnt[1]  ; time_divider:td_50|cnt[2]  ; time_divider:td_500|clk_out ; time_divider:td_500|clk_out ; 1.000        ; 0.000      ; 2.202      ;
+; -1.528 ; time_divider:td_50|cnt[1]  ; time_divider:td_50|cnt[1]  ; time_divider:td_500|clk_out ; time_divider:td_500|clk_out ; 1.000        ; 0.000      ; 2.195      ;
+; -1.471 ; led_88:ld|cnt[1]           ; led_88:ld|cnt[1]           ; time_divider:td_500|clk_out ; time_divider:td_500|clk_out ; 1.000        ; 0.000      ; 2.138      ;
+; -1.453 ; led_88:ld|cnt[2]           ; led_88:ld|cnt[2]           ; time_divider:td_500|clk_out ; time_divider:td_500|clk_out ; 1.000        ; 0.000      ; 2.120      ;
+; -1.236 ; led_88:ld|cnt[0]           ; led_88:ld|cnt[1]           ; time_divider:td_500|clk_out ; time_divider:td_500|clk_out ; 1.000        ; 0.000      ; 1.903      ;
+; -1.235 ; led_88:ld|cnt[0]           ; led_88:ld|cnt[2]           ; time_divider:td_500|clk_out ; time_divider:td_500|clk_out ; 1.000        ; 0.000      ; 1.902      ;
+; -1.234 ; led_88:ld|cnt[0]           ; led_88:ld|cnt[0]           ; time_divider:td_500|clk_out ; time_divider:td_500|clk_out ; 1.000        ; 0.000      ; 1.901      ;
+; 2.325  ; time_divider:td_50|clk_out ; time_divider:td_50|clk_out ; time_divider:td_50|clk_out  ; time_divider:td_500|clk_out ; 0.500        ; 3.946      ; 2.164      ;
+; 2.825  ; time_divider:td_50|clk_out ; time_divider:td_50|clk_out ; time_divider:td_50|clk_out  ; time_divider:td_500|clk_out ; 1.000        ; 3.946      ; 2.164      ;
++--------+----------------------------+----------------------------+-----------------------------+-----------------------------+--------------+------------+------------+
+
+
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Setup: 'time_divider:td_1k|clk_out'                                                                                                                                    ;
++--------+-----------------------------+-----------------------------+-----------------------------+----------------------------+--------------+------------+------------+
+; Slack  ; From Node                   ; To Node                     ; Launch Clock                ; Latch Clock                ; Relationship ; Clock Skew ; Data Delay ;
++--------+-----------------------------+-----------------------------+-----------------------------+----------------------------+--------------+------------+------------+
+; -1.497 ; time_divider:td_500|cnt[1]  ; time_divider:td_500|clk_out ; time_divider:td_1k|clk_out  ; time_divider:td_1k|clk_out ; 1.000        ; 0.000      ; 2.164      ;
+; -1.494 ; time_divider:td_500|cnt[1]  ; time_divider:td_500|cnt[0]  ; time_divider:td_1k|clk_out  ; time_divider:td_1k|clk_out ; 1.000        ; 0.000      ; 2.161      ;
+; -1.493 ; time_divider:td_500|cnt[1]  ; time_divider:td_500|cnt[1]  ; time_divider:td_1k|clk_out  ; time_divider:td_1k|clk_out ; 1.000        ; 0.000      ; 2.160      ;
+; -1.239 ; time_divider:td_500|cnt[0]  ; time_divider:td_500|clk_out ; time_divider:td_1k|clk_out  ; time_divider:td_1k|clk_out ; 1.000        ; 0.000      ; 1.906      ;
+; -1.235 ; time_divider:td_500|cnt[0]  ; time_divider:td_500|cnt[1]  ; time_divider:td_1k|clk_out  ; time_divider:td_1k|clk_out ; 1.000        ; 0.000      ; 1.902      ;
+; -1.233 ; time_divider:td_500|cnt[0]  ; time_divider:td_500|cnt[0]  ; time_divider:td_1k|clk_out  ; time_divider:td_1k|clk_out ; 1.000        ; 0.000      ; 1.900      ;
+; -1.228 ; dig_select[0]~reg0          ; dig_select[1]~reg0          ; time_divider:td_1k|clk_out  ; time_divider:td_1k|clk_out ; 1.000        ; 0.000      ; 1.895      ;
+; -1.226 ; dig_select[3]~reg0          ; dig_select[0]~reg0          ; time_divider:td_1k|clk_out  ; time_divider:td_1k|clk_out ; 1.000        ; 0.000      ; 1.893      ;
+; -1.025 ; dig_select[2]~reg0          ; dig_select[3]~reg0          ; time_divider:td_1k|clk_out  ; time_divider:td_1k|clk_out ; 1.000        ; 0.000      ; 1.692      ;
+; -1.013 ; dig_select[1]~reg0          ; dig_select[2]~reg0          ; time_divider:td_1k|clk_out  ; time_divider:td_1k|clk_out ; 1.000        ; 0.000      ; 1.680      ;
+; 1.273  ; time_divider:td_500|clk_out ; time_divider:td_500|clk_out ; time_divider:td_500|clk_out ; time_divider:td_1k|clk_out ; 0.500        ; 3.059      ; 2.329      ;
+; 1.773  ; time_divider:td_500|clk_out ; time_divider:td_500|clk_out ; time_divider:td_500|clk_out ; time_divider:td_1k|clk_out ; 1.000        ; 3.059      ; 2.329      ;
++--------+-----------------------------+-----------------------------+-----------------------------+----------------------------+--------------+------------+------------+
+
+
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Hold: 'time_divider:td_50|clk_out'                                                                                                                                                            ;
++--------+----------------------------------------+----------------------------------------+------------------------------+----------------------------+--------------+------------+------------+
+; Slack  ; From Node                              ; To Node                                ; Launch Clock                 ; Latch Clock                ; Relationship ; Clock Skew ; Data Delay ;
++--------+----------------------------------------+----------------------------------------+------------------------------+----------------------------+--------------+------------+------------+
+; -2.774 ; time_divider:td_1|clk_out              ; time_divider:td_1|clk_out              ; time_divider:td_1|clk_out    ; time_divider:td_50|clk_out ; 0.000        ; 4.904      ; 2.727      ;
+; -2.274 ; time_divider:td_1|clk_out              ; time_divider:td_1|clk_out              ; time_divider:td_1|clk_out    ; time_divider:td_50|clk_out ; -0.500       ; 4.904      ; 2.727      ;
+; -0.207 ; buzzer:bz|hit_tmp                      ; buzzer:bz|flag                         ; time_divider:td_half|clk_out ; time_divider:td_50|clk_out ; 0.000        ; 1.869      ; 1.883      ;
+; 0.559  ; getrandom:gr1|D_ff:FF3|Q               ; controller:center_control|hit          ; time_divider:td_half|clk_out ; time_divider:td_50|clk_out ; 0.000        ; 2.715      ; 3.495      ;
+; 1.409  ; getrandom:gr1|D_ff:FF0|Q               ; controller:center_control|hit          ; time_divider:td_half|clk_out ; time_divider:td_50|clk_out ; 0.000        ; 2.715      ; 4.345      ;
+; 1.614  ; getrandom:gr1|D_ff:FF1|Q               ; controller:center_control|hit          ; time_divider:td_half|clk_out ; time_divider:td_50|clk_out ; 0.000        ; 2.715      ; 4.550      ;
+; 1.712  ; controller:center_control|score_ge[1]  ; controller:center_control|score_ge[1]  ; time_divider:td_50|clk_out   ; time_divider:td_50|clk_out ; 0.000        ; 0.000      ; 1.933      ;
+; 1.717  ; controller:center_control|score_ge[1]  ; controller:center_control|score_ge[2]  ; time_divider:td_50|clk_out   ; time_divider:td_50|clk_out ; 0.000        ; 0.000      ; 1.938      ;
+; 1.726  ; controller:center_control|score_ge[1]  ; controller:center_control|score_ge[3]  ; time_divider:td_50|clk_out   ; time_divider:td_50|clk_out ; 0.000        ; 0.000      ; 1.947      ;
+; 1.726  ; controller:center_control|score_ge[1]  ; controller:center_control|score_ge[0]  ; time_divider:td_50|clk_out   ; time_divider:td_50|clk_out ; 0.000        ; 0.000      ; 1.947      ;
+; 1.855  ; getrandom:gr1|D_ff:FF4|Q               ; controller:center_control|hit          ; time_divider:td_half|clk_out ; time_divider:td_50|clk_out ; 0.000        ; 2.710      ; 4.786      ;
+; 1.935  ; time_divider:td_1|cnt[0]               ; time_divider:td_1|cnt[0]               ; time_divider:td_50|clk_out   ; time_divider:td_50|clk_out ; 0.000        ; 0.000      ; 2.156      ;
+; 1.943  ; controller:center_control|score_shi[0] ; controller:center_control|score_shi[0] ; time_divider:td_50|clk_out   ; time_divider:td_50|clk_out ; 0.000        ; 0.000      ; 2.164      ;
+; 1.976  ; controller:center_control|score_shi[2] ; controller:center_control|score_shi[3] ; time_divider:td_50|clk_out   ; time_divider:td_50|clk_out ; 0.000        ; 0.000      ; 2.197      ;
+; 2.107  ; buzzer:bz|en                           ; buzzer:bz|en                           ; time_divider:td_50|clk_out   ; time_divider:td_50|clk_out ; 0.000        ; 0.000      ; 2.328      ;
+; 2.280  ; controller:center_control|score_shi[2] ; controller:center_control|score_shi[2] ; time_divider:td_50|clk_out   ; time_divider:td_50|clk_out ; 0.000        ; 0.000      ; 2.501      ;
+; 2.324  ; time_divider:td_1|cnt[5]               ; time_divider:td_1|cnt[5]               ; time_divider:td_50|clk_out   ; time_divider:td_50|clk_out ; 0.000        ; 0.000      ; 2.545      ;
+; 2.404  ; controller:center_control|score_ge[2]  ; controller:center_control|score_ge[2]  ; time_divider:td_50|clk_out   ; time_divider:td_50|clk_out ; 0.000        ; 0.000      ; 2.625      ;
+; 2.413  ; controller:center_control|score_ge[2]  ; controller:center_control|score_ge[3]  ; time_divider:td_50|clk_out   ; time_divider:td_50|clk_out ; 0.000        ; 0.000      ; 2.634      ;
+; 2.413  ; controller:center_control|score_ge[2]  ; controller:center_control|score_ge[0]  ; time_divider:td_50|clk_out   ; time_divider:td_50|clk_out ; 0.000        ; 0.000      ; 2.634      ;
+; 2.416  ; controller:center_control|hit          ; buzzer:bz|flag                         ; time_divider:td_50|clk_out   ; time_divider:td_50|clk_out ; 0.000        ; 0.000      ; 2.637      ;
+; 2.529  ; time_divider:td_1|cnt[5]               ; time_divider:td_1|cnt[3]               ; time_divider:td_50|clk_out   ; time_divider:td_50|clk_out ; 0.000        ; 0.000      ; 2.750      ;
+; 2.561  ; buzzer:bz|flag                         ; buzzer:bz|flag                         ; time_divider:td_50|clk_out   ; time_divider:td_50|clk_out ; 0.000        ; 0.000      ; 2.782      ;
+; 2.567  ; buzzer:bz|flag                         ; controller:center_control|score_shi[0] ; time_divider:td_50|clk_out   ; time_divider:td_50|clk_out ; 0.000        ; 0.000      ; 2.788      ;
+; 2.633  ; controller:center_control|score_shi[0] ; controller:center_control|score_shi[1] ; time_divider:td_50|clk_out   ; time_divider:td_50|clk_out ; 0.000        ; 0.000      ; 2.854      ;
+; 2.634  ; controller:center_control|score_ge[0]  ; controller:center_control|score_ge[0]  ; time_divider:td_50|clk_out   ; time_divider:td_50|clk_out ; 0.000        ; 0.000      ; 2.855      ;
+; 2.636  ; controller:center_control|score_ge[0]  ; controller:center_control|score_ge[3]  ; time_divider:td_50|clk_out   ; time_divider:td_50|clk_out ; 0.000        ; 0.000      ; 2.857      ;
+; 2.645  ; controller:center_control|score_ge[0]  ; controller:center_control|score_ge[2]  ; time_divider:td_50|clk_out   ; time_divider:td_50|clk_out ; 0.000        ; 0.000      ; 2.866      ;
+; 2.646  ; controller:center_control|score_ge[0]  ; controller:center_control|score_ge[1]  ; time_divider:td_50|clk_out   ; time_divider:td_50|clk_out ; 0.000        ; 0.000      ; 2.867      ;
+; 2.653  ; controller:center_control|score_ge[3]  ; controller:center_control|score_ge[1]  ; time_divider:td_50|clk_out   ; time_divider:td_50|clk_out ; 0.000        ; 0.000      ; 2.874      ;
+; 2.654  ; controller:center_control|score_shi[1] ; controller:center_control|score_shi[1] ; time_divider:td_50|clk_out   ; time_divider:td_50|clk_out ; 0.000        ; 0.000      ; 2.875      ;
+; 2.655  ; controller:center_control|score_shi[1] ; controller:center_control|score_shi[2] ; time_divider:td_50|clk_out   ; time_divider:td_50|clk_out ; 0.000        ; 0.000      ; 2.876      ;
+; 2.662  ; controller:center_control|score_shi[1] ; controller:center_control|score_shi[3] ; time_divider:td_50|clk_out   ; time_divider:td_50|clk_out ; 0.000        ; 0.000      ; 2.883      ;
+; 2.730  ; controller:center_control|hit          ; controller:center_control|score_shi[0] ; time_divider:td_50|clk_out   ; time_divider:td_50|clk_out ; 0.000        ; 0.000      ; 2.951      ;
+; 2.739  ; controller:center_control|score_shi[0] ; controller:center_control|score_shi[3] ; time_divider:td_50|clk_out   ; time_divider:td_50|clk_out ; 0.000        ; 0.000      ; 2.960      ;
+; 2.792  ; controller:center_control|hit          ; buzzer:bz|en                           ; time_divider:td_50|clk_out   ; time_divider:td_50|clk_out ; 0.000        ; 0.000      ; 3.013      ;
+; 2.888  ; controller:center_control|hit          ; controller:center_control|score_shi[1] ; time_divider:td_50|clk_out   ; time_divider:td_50|clk_out ; 0.000        ; 0.000      ; 3.109      ;
+; 2.901  ; buzzer:bz|flag                         ; controller:center_control|score_shi[3] ; time_divider:td_50|clk_out   ; time_divider:td_50|clk_out ; 0.000        ; 0.000      ; 3.122      ;
+; 2.944  ; controller:center_control|score_ge[3]  ; controller:center_control|score_ge[3]  ; time_divider:td_50|clk_out   ; time_divider:td_50|clk_out ; 0.000        ; 0.000      ; 3.165      ;
+; 2.946  ; controller:center_control|score_ge[3]  ; controller:center_control|score_ge[0]  ; time_divider:td_50|clk_out   ; time_divider:td_50|clk_out ; 0.000        ; 0.000      ; 3.167      ;
+; 2.957  ; controller:center_control|score_ge[3]  ; controller:center_control|score_ge[2]  ; time_divider:td_50|clk_out   ; time_divider:td_50|clk_out ; 0.000        ; 0.000      ; 3.178      ;
+; 2.979  ; time_divider:td_1|cnt[5]               ; time_divider:td_1|cnt[4]               ; time_divider:td_50|clk_out   ; time_divider:td_50|clk_out ; 0.000        ; 0.000      ; 3.200      ;
+; 3.004  ; time_divider:td_1|cnt[5]               ; time_divider:td_1|cnt[0]               ; time_divider:td_50|clk_out   ; time_divider:td_50|clk_out ; 0.000        ; 0.000      ; 3.225      ;
+; 3.017  ; controller:center_control|hit          ; controller:center_control|score_shi[3] ; time_divider:td_50|clk_out   ; time_divider:td_50|clk_out ; 0.000        ; 0.000      ; 3.238      ;
+; 3.056  ; time_divider:td_1|cnt[2]               ; time_divider:td_1|cnt[3]               ; time_divider:td_50|clk_out   ; time_divider:td_50|clk_out ; 0.000        ; 0.000      ; 3.277      ;
+; 3.084  ; time_divider:td_1|cnt[1]               ; time_divider:td_1|cnt[4]               ; time_divider:td_50|clk_out   ; time_divider:td_50|clk_out ; 0.000        ; 0.000      ; 3.305      ;
+; 3.135  ; controller:center_control|score_ge[1]  ; controller:center_control|score_shi[1] ; time_divider:td_50|clk_out   ; time_divider:td_50|clk_out ; 0.000        ; 0.000      ; 3.356      ;
+; 3.136  ; controller:center_control|score_ge[1]  ; controller:center_control|score_shi[0] ; time_divider:td_50|clk_out   ; time_divider:td_50|clk_out ; 0.000        ; 0.000      ; 3.357      ;
+; 3.151  ; time_divider:td_1|cnt[2]               ; time_divider:td_1|cnt[2]               ; time_divider:td_50|clk_out   ; time_divider:td_50|clk_out ; 0.000        ; 0.000      ; 3.372      ;
+; 3.273  ; buzzer:bz|flag                         ; controller:center_control|score_shi[1] ; time_divider:td_50|clk_out   ; time_divider:td_50|clk_out ; 0.000        ; 0.000      ; 3.494      ;
+; 3.305  ; time_divider:td_1|cnt[1]               ; time_divider:td_1|cnt[3]               ; time_divider:td_50|clk_out   ; time_divider:td_50|clk_out ; 0.000        ; 0.000      ; 3.526      ;
+; 3.340  ; time_divider:td_1|cnt[5]               ; time_divider:td_1|clk_out              ; time_divider:td_50|clk_out   ; time_divider:td_50|clk_out ; 0.000        ; 0.000      ; 3.561      ;
+; 3.361  ; time_divider:td_1|cnt[0]               ; time_divider:td_1|cnt[3]               ; time_divider:td_50|clk_out   ; time_divider:td_50|clk_out ; 0.000        ; 0.000      ; 3.582      ;
+; 3.367  ; time_divider:td_1|cnt[0]               ; time_divider:td_1|cnt[4]               ; time_divider:td_50|clk_out   ; time_divider:td_50|clk_out ; 0.000        ; 0.000      ; 3.588      ;
+; 3.383  ; time_divider:td_1|cnt[1]               ; time_divider:td_1|cnt[0]               ; time_divider:td_50|clk_out   ; time_divider:td_50|clk_out ; 0.000        ; 0.000      ; 3.604      ;
+; 3.401  ; time_divider:td_1|cnt[3]               ; time_divider:td_1|cnt[3]               ; time_divider:td_50|clk_out   ; time_divider:td_50|clk_out ; 0.000        ; 0.000      ; 3.622      ;
+; 3.422  ; controller:center_control|score_ge[0]  ; controller:center_control|score_shi[1] ; time_divider:td_50|clk_out   ; time_divider:td_50|clk_out ; 0.000        ; 0.000      ; 3.643      ;
+; 3.423  ; controller:center_control|score_ge[0]  ; controller:center_control|score_shi[0] ; time_divider:td_50|clk_out   ; time_divider:td_50|clk_out ; 0.000        ; 0.000      ; 3.644      ;
+; 3.441  ; controller:center_control|score_shi[0] ; controller:center_control|score_shi[2] ; time_divider:td_50|clk_out   ; time_divider:td_50|clk_out ; 0.000        ; 0.000      ; 3.662      ;
+; 3.506  ; time_divider:td_1|cnt[2]               ; time_divider:td_1|cnt[4]               ; time_divider:td_50|clk_out   ; time_divider:td_50|clk_out ; 0.000        ; 0.000      ; 3.727      ;
+; 3.531  ; time_divider:td_1|cnt[2]               ; time_divider:td_1|cnt[0]               ; time_divider:td_50|clk_out   ; time_divider:td_50|clk_out ; 0.000        ; 0.000      ; 3.752      ;
+; 3.572  ; time_divider:td_1|cnt[0]               ; time_divider:td_1|clk_out              ; time_divider:td_50|clk_out   ; time_divider:td_50|clk_out ; 0.000        ; 0.000      ; 3.793      ;
+; 3.603  ; controller:center_control|score_ge[3]  ; controller:center_control|score_shi[1] ; time_divider:td_50|clk_out   ; time_divider:td_50|clk_out ; 0.000        ; 0.000      ; 3.824      ;
+; 3.603  ; buzzer:bz|flag                         ; controller:center_control|score_shi[2] ; time_divider:td_50|clk_out   ; time_divider:td_50|clk_out ; 0.000        ; 0.000      ; 3.824      ;
+; 3.604  ; controller:center_control|score_ge[3]  ; controller:center_control|score_shi[0] ; time_divider:td_50|clk_out   ; time_divider:td_50|clk_out ; 0.000        ; 0.000      ; 3.825      ;
+; 3.632  ; controller:center_control|score_ge[1]  ; controller:center_control|score_shi[3] ; time_divider:td_50|clk_out   ; time_divider:td_50|clk_out ; 0.000        ; 0.000      ; 3.853      ;
+; 3.647  ; controller:center_control|hit          ; controller:center_control|score_ge[1]  ; time_divider:td_50|clk_out   ; time_divider:td_50|clk_out ; 0.000        ; 0.000      ; 3.868      ;
+; 3.647  ; controller:center_control|hit          ; controller:center_control|score_ge[3]  ; time_divider:td_50|clk_out   ; time_divider:td_50|clk_out ; 0.000        ; 0.000      ; 3.868      ;
+; 3.647  ; controller:center_control|hit          ; controller:center_control|score_ge[2]  ; time_divider:td_50|clk_out   ; time_divider:td_50|clk_out ; 0.000        ; 0.000      ; 3.868      ;
+; 3.647  ; controller:center_control|hit          ; controller:center_control|score_ge[0]  ; time_divider:td_50|clk_out   ; time_divider:td_50|clk_out ; 0.000        ; 0.000      ; 3.868      ;
+; 3.719  ; controller:center_control|hit          ; controller:center_control|score_shi[2] ; time_divider:td_50|clk_out   ; time_divider:td_50|clk_out ; 0.000        ; 0.000      ; 3.940      ;
+; 3.754  ; controller:center_control|score_ge[2]  ; controller:center_control|score_shi[1] ; time_divider:td_50|clk_out   ; time_divider:td_50|clk_out ; 0.000        ; 0.000      ; 3.975      ;
+; 3.755  ; controller:center_control|score_ge[2]  ; controller:center_control|score_shi[0] ; time_divider:td_50|clk_out   ; time_divider:td_50|clk_out ; 0.000        ; 0.000      ; 3.976      ;
+; 3.867  ; time_divider:td_1|cnt[2]               ; time_divider:td_1|clk_out              ; time_divider:td_50|clk_out   ; time_divider:td_50|clk_out ; 0.000        ; 0.000      ; 4.088      ;
+; 3.894  ; time_divider:td_1|cnt[1]               ; time_divider:td_1|cnt[1]               ; time_divider:td_50|clk_out   ; time_divider:td_50|clk_out ; 0.000        ; 0.000      ; 4.115      ;
+; 3.919  ; controller:center_control|score_ge[0]  ; controller:center_control|score_shi[3] ; time_divider:td_50|clk_out   ; time_divider:td_50|clk_out ; 0.000        ; 0.000      ; 4.140      ;
+; 4.032  ; buzzer:bz|flag                         ; controller:center_control|score_ge[1]  ; time_divider:td_50|clk_out   ; time_divider:td_50|clk_out ; 0.000        ; 0.000      ; 4.253      ;
+; 4.032  ; buzzer:bz|flag                         ; controller:center_control|score_ge[3]  ; time_divider:td_50|clk_out   ; time_divider:td_50|clk_out ; 0.000        ; 0.000      ; 4.253      ;
+; 4.032  ; buzzer:bz|flag                         ; controller:center_control|score_ge[2]  ; time_divider:td_50|clk_out   ; time_divider:td_50|clk_out ; 0.000        ; 0.000      ; 4.253      ;
+; 4.032  ; buzzer:bz|flag                         ; controller:center_control|score_ge[0]  ; time_divider:td_50|clk_out   ; time_divider:td_50|clk_out ; 0.000        ; 0.000      ; 4.253      ;
+; 4.053  ; time_divider:td_1|cnt[3]               ; time_divider:td_1|cnt[4]               ; time_divider:td_50|clk_out   ; time_divider:td_50|clk_out ; 0.000        ; 0.000      ; 4.274      ;
+; 4.054  ; time_divider:td_1|cnt[1]               ; time_divider:td_1|clk_out              ; time_divider:td_50|clk_out   ; time_divider:td_50|clk_out ; 0.000        ; 0.000      ; 4.275      ;
+; 4.064  ; time_divider:td_1|cnt[3]               ; time_divider:td_1|cnt[5]               ; time_divider:td_50|clk_out   ; time_divider:td_50|clk_out ; 0.000        ; 0.000      ; 4.285      ;
+; 4.075  ; time_divider:td_1|cnt[0]               ; time_divider:td_1|cnt[2]               ; time_divider:td_50|clk_out   ; time_divider:td_50|clk_out ; 0.000        ; 0.000      ; 4.296      ;
+; 4.078  ; time_divider:td_1|cnt[3]               ; time_divider:td_1|cnt[0]               ; time_divider:td_50|clk_out   ; time_divider:td_50|clk_out ; 0.000        ; 0.000      ; 4.299      ;
+; 4.096  ; time_divider:td_1|cnt[2]               ; time_divider:td_1|cnt[5]               ; time_divider:td_50|clk_out   ; time_divider:td_50|clk_out ; 0.000        ; 0.000      ; 4.317      ;
+; 4.100  ; controller:center_control|score_ge[3]  ; controller:center_control|score_shi[3] ; time_divider:td_50|clk_out   ; time_divider:td_50|clk_out ; 0.000        ; 0.000      ; 4.321      ;
+; 4.137  ; buzzer:bz|flag                         ; buzzer:bz|en                           ; time_divider:td_50|clk_out   ; time_divider:td_50|clk_out ; 0.000        ; 0.000      ; 4.358      ;
+; 4.152  ; time_divider:td_1|cnt[4]               ; time_divider:td_1|cnt[4]               ; time_divider:td_50|clk_out   ; time_divider:td_50|clk_out ; 0.000        ; 0.000      ; 4.373      ;
+; 4.192  ; keyboard_scan:kb|cnt[0]                ; controller:center_control|hit          ; clk                          ; time_divider:td_50|clk_out ; 0.000        ; 1.085      ; 5.498      ;
+; 4.203  ; time_divider:td_1|cnt[4]               ; time_divider:td_1|cnt[3]               ; time_divider:td_50|clk_out   ; time_divider:td_50|clk_out ; 0.000        ; 0.000      ; 4.424      ;
+; 4.251  ; controller:center_control|score_ge[2]  ; controller:center_control|score_shi[3] ; time_divider:td_50|clk_out   ; time_divider:td_50|clk_out ; 0.000        ; 0.000      ; 4.472      ;
+; 4.324  ; time_divider:td_1|cnt[0]               ; time_divider:td_1|cnt[5]               ; time_divider:td_50|clk_out   ; time_divider:td_50|clk_out ; 0.000        ; 0.000      ; 4.545      ;
+; 4.327  ; time_divider:td_1|cnt[4]               ; time_divider:td_1|cnt[5]               ; time_divider:td_50|clk_out   ; time_divider:td_50|clk_out ; 0.000        ; 0.000      ; 4.548      ;
+; 4.331  ; time_divider:td_1|cnt[1]               ; time_divider:td_1|cnt[2]               ; time_divider:td_50|clk_out   ; time_divider:td_50|clk_out ; 0.000        ; 0.000      ; 4.552      ;
+; 4.334  ; controller:center_control|score_ge[1]  ; controller:center_control|score_shi[2] ; time_divider:td_50|clk_out   ; time_divider:td_50|clk_out ; 0.000        ; 0.000      ; 4.555      ;
+; 4.334  ; time_divider:td_1|cnt[0]               ; time_divider:td_1|cnt[1]               ; time_divider:td_50|clk_out   ; time_divider:td_50|clk_out ; 0.000        ; 0.000      ; 4.555      ;
+; 4.414  ; time_divider:td_1|cnt[3]               ; time_divider:td_1|clk_out              ; time_divider:td_50|clk_out   ; time_divider:td_50|clk_out ; 0.000        ; 0.000      ; 4.635      ;
+; 4.580  ; time_divider:td_1|cnt[1]               ; time_divider:td_1|cnt[5]               ; time_divider:td_50|clk_out   ; time_divider:td_50|clk_out ; 0.000        ; 0.000      ; 4.801      ;
+; 4.587  ; controller:center_control|score_shi[3] ; controller:center_control|score_shi[3] ; time_divider:td_50|clk_out   ; time_divider:td_50|clk_out ; 0.000        ; 0.000      ; 4.808      ;
++--------+----------------------------------------+----------------------------------------+------------------------------+----------------------------+--------------+------------+------------+
+
+
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Hold: 'clk'                                                                                                                                                                                          ;
++--------+----------------------------------------------------+----------------------------------------------------+----------------------------+-------------+--------------+------------+------------+
+; Slack  ; From Node                                          ; To Node                                            ; Launch Clock               ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
++--------+----------------------------------------------------+----------------------------------------------------+----------------------------+-------------+--------------+------------+------------+
+; -2.521 ; time_divider:td_1k|clk_out                         ; time_divider:td_1k|clk_out                         ; time_divider:td_1k|clk_out ; clk         ; 0.000        ; 3.819      ; 1.895      ;
+; -2.021 ; time_divider:td_1k|clk_out                         ; time_divider:td_1k|clk_out                         ; time_divider:td_1k|clk_out ; clk         ; -0.500       ; 3.819      ; 1.895      ;
+; 1.928  ; keyboard_scan:kb|cnt[0]                            ; keyboard_scan:kb|cnt[0]                            ; clk                        ; clk         ; 0.000        ; 0.000      ; 2.149      ;
+; 2.014  ; controller:center_control|fsm:central_fsm|state[0] ; controller:center_control|fsm:central_fsm|state[0] ; clk                        ; clk         ; 0.000        ; 0.000      ; 2.235      ;
+; 2.127  ; time_divider:td_fa|clk_out                         ; time_divider:td_fa|clk_out                         ; clk                        ; clk         ; 0.000        ; 0.000      ; 2.348      ;
+; 2.273  ; controller:center_control|fsm:central_fsm|state[1] ; controller:center_control|fsm:central_fsm|state[1] ; clk                        ; clk         ; 0.000        ; 0.000      ; 2.494      ;
+; 2.398  ; controller:center_control|fsm:central_fsm|state[0] ; controller:center_control|fsm:central_fsm|state[1] ; clk                        ; clk         ; 0.000        ; 0.000      ; 2.619      ;
+; 2.601  ; time_divider:td_fa|cnt[14]                         ; time_divider:td_fa|clk_out                         ; clk                        ; clk         ; 0.000        ; 0.000      ; 2.822      ;
+; 2.608  ; time_divider:td_fa|cnt[14]                         ; time_divider:td_fa|cnt[3]                          ; clk                        ; clk         ; 0.000        ; 0.000      ; 2.829      ;
+; 2.615  ; time_divider:td_fa|cnt[14]                         ; time_divider:td_fa|cnt[4]                          ; clk                        ; clk         ; 0.000        ; 0.000      ; 2.836      ;
+; 2.616  ; time_divider:td_fa|cnt[14]                         ; time_divider:td_fa|cnt[2]                          ; clk                        ; clk         ; 0.000        ; 0.000      ; 2.837      ;
+; 2.688  ; time_divider:td_1k|cnt[2]                          ; time_divider:td_1k|cnt[1]                          ; clk                        ; clk         ; 0.000        ; 0.000      ; 2.909      ;
+; 2.693  ; time_divider:td_1k|cnt[2]                          ; time_divider:td_1k|cnt[3]                          ; clk                        ; clk         ; 0.000        ; 0.000      ; 2.914      ;
+; 2.695  ; time_divider:td_1k|cnt[2]                          ; time_divider:td_1k|cnt[5]                          ; clk                        ; clk         ; 0.000        ; 0.000      ; 2.916      ;
+; 2.696  ; time_divider:td_1k|cnt[2]                          ; time_divider:td_1k|cnt[6]                          ; clk                        ; clk         ; 0.000        ; 0.000      ; 2.917      ;
+; 2.786  ; controller:center_control|fsm:central_fsm|state[1] ; controller:center_control|fsm:central_fsm|state[0] ; clk                        ; clk         ; 0.000        ; 0.000      ; 3.007      ;
+; 2.852  ; time_divider:td_1k|cnt[14]                         ; time_divider:td_1k|cnt[5]                          ; clk                        ; clk         ; 0.000        ; 0.000      ; 3.073      ;
+; 2.854  ; time_divider:td_1k|cnt[14]                         ; time_divider:td_1k|cnt[6]                          ; clk                        ; clk         ; 0.000        ; 0.000      ; 3.075      ;
+; 2.856  ; time_divider:td_1k|cnt[14]                         ; time_divider:td_1k|cnt[3]                          ; clk                        ; clk         ; 0.000        ; 0.000      ; 3.077      ;
+; 2.961  ; time_divider:td_1k|cnt[2]                          ; time_divider:td_1k|clk_out                         ; clk                        ; clk         ; 0.000        ; 0.000      ; 3.182      ;
+; 2.981  ; time_divider:td_1k|cnt[13]                         ; time_divider:td_1k|cnt[13]                         ; clk                        ; clk         ; 0.000        ; 0.000      ; 3.202      ;
+; 3.068  ; time_divider:td_1k|cnt[2]                          ; time_divider:td_1k|cnt[4]                          ; clk                        ; clk         ; 0.000        ; 0.000      ; 3.289      ;
+; 3.068  ; time_divider:td_1k|cnt[14]                         ; time_divider:td_1k|cnt[1]                          ; clk                        ; clk         ; 0.000        ; 0.000      ; 3.289      ;
+; 3.076  ; time_divider:td_1k|cnt[2]                          ; time_divider:td_1k|cnt[7]                          ; clk                        ; clk         ; 0.000        ; 0.000      ; 3.297      ;
+; 3.097  ; time_divider:td_1k|cnt[14]                         ; time_divider:td_1k|cnt[14]                         ; clk                        ; clk         ; 0.000        ; 0.000      ; 3.318      ;
+; 3.115  ; time_divider:td_fa|cnt[11]                         ; time_divider:td_fa|cnt[11]                         ; clk                        ; clk         ; 0.000        ; 0.000      ; 3.336      ;
+; 3.121  ; time_divider:td_fa|cnt[14]                         ; time_divider:td_fa|cnt[8]                          ; clk                        ; clk         ; 0.000        ; 0.000      ; 3.342      ;
+; 3.145  ; time_divider:td_1k|cnt[9]                          ; time_divider:td_1k|cnt[9]                          ; clk                        ; clk         ; 0.000        ; 0.000      ; 3.366      ;
+; 3.194  ; time_divider:td_fa|cnt[7]                          ; time_divider:td_fa|clk_out                         ; clk                        ; clk         ; 0.000        ; 0.000      ; 3.415      ;
+; 3.195  ; time_divider:td_fa|cnt[7]                          ; time_divider:td_fa|cnt[3]                          ; clk                        ; clk         ; 0.000        ; 0.000      ; 3.416      ;
+; 3.200  ; time_divider:td_fa|cnt[7]                          ; time_divider:td_fa|cnt[4]                          ; clk                        ; clk         ; 0.000        ; 0.000      ; 3.421      ;
+; 3.201  ; time_divider:td_fa|cnt[7]                          ; time_divider:td_fa|cnt[2]                          ; clk                        ; clk         ; 0.000        ; 0.000      ; 3.422      ;
+; 3.257  ; time_divider:td_1k|cnt[10]                         ; time_divider:td_1k|cnt[10]                         ; clk                        ; clk         ; 0.000        ; 0.000      ; 3.478      ;
+; 3.272  ; time_divider:td_fa|cnt[9]                          ; time_divider:td_fa|cnt[9]                          ; clk                        ; clk         ; 0.000        ; 0.000      ; 3.493      ;
+; 3.351  ; time_divider:td_1k|cnt[12]                         ; time_divider:td_1k|cnt[5]                          ; clk                        ; clk         ; 0.000        ; 0.000      ; 3.572      ;
+; 3.353  ; time_divider:td_1k|cnt[12]                         ; time_divider:td_1k|cnt[6]                          ; clk                        ; clk         ; 0.000        ; 0.000      ; 3.574      ;
+; 3.355  ; time_divider:td_1k|cnt[12]                         ; time_divider:td_1k|cnt[3]                          ; clk                        ; clk         ; 0.000        ; 0.000      ; 3.576      ;
+; 3.358  ; time_divider:td_1k|cnt[14]                         ; time_divider:td_1k|clk_out                         ; clk                        ; clk         ; 0.000        ; 0.000      ; 3.579      ;
+; 3.376  ; time_divider:td_fa|cnt[8]                          ; time_divider:td_fa|cnt[8]                          ; clk                        ; clk         ; 0.000        ; 0.000      ; 3.597      ;
+; 3.377  ; time_divider:td_1k|cnt[10]                         ; time_divider:td_1k|cnt[4]                          ; clk                        ; clk         ; 0.000        ; 0.000      ; 3.598      ;
+; 3.380  ; time_divider:td_1k|cnt[10]                         ; time_divider:td_1k|cnt[1]                          ; clk                        ; clk         ; 0.000        ; 0.000      ; 3.601      ;
+; 3.396  ; time_divider:td_1k|cnt[10]                         ; time_divider:td_1k|cnt[7]                          ; clk                        ; clk         ; 0.000        ; 0.000      ; 3.617      ;
+; 3.438  ; timer:time_counter|time_ge[2]                      ; controller:center_control|fsm:central_fsm|state[1] ; time_divider:td_1|clk_out  ; clk         ; 0.000        ; -0.122     ; 3.537      ;
+; 3.556  ; time_divider:td_fa|cnt[3]                          ; time_divider:td_fa|clk_out                         ; clk                        ; clk         ; 0.000        ; 0.000      ; 3.777      ;
+; 3.557  ; time_divider:td_fa|cnt[3]                          ; time_divider:td_fa|cnt[3]                          ; clk                        ; clk         ; 0.000        ; 0.000      ; 3.778      ;
+; 3.562  ; time_divider:td_fa|cnt[3]                          ; time_divider:td_fa|cnt[4]                          ; clk                        ; clk         ; 0.000        ; 0.000      ; 3.783      ;
+; 3.563  ; time_divider:td_fa|cnt[3]                          ; time_divider:td_fa|cnt[2]                          ; clk                        ; clk         ; 0.000        ; 0.000      ; 3.784      ;
+; 3.567  ; time_divider:td_1k|cnt[12]                         ; time_divider:td_1k|cnt[1]                          ; clk                        ; clk         ; 0.000        ; 0.000      ; 3.788      ;
+; 3.611  ; time_divider:td_fa|cnt[7]                          ; time_divider:td_fa|cnt[7]                          ; clk                        ; clk         ; 0.000        ; 0.000      ; 3.832      ;
+; 3.736  ; time_divider:td_1k|cnt[14]                         ; time_divider:td_1k|cnt[7]                          ; clk                        ; clk         ; 0.000        ; 0.000      ; 3.957      ;
+; 3.736  ; time_divider:td_1k|cnt[1]                          ; time_divider:td_1k|cnt[1]                          ; clk                        ; clk         ; 0.000        ; 0.000      ; 3.957      ;
+; 3.741  ; time_divider:td_1k|cnt[1]                          ; time_divider:td_1k|cnt[3]                          ; clk                        ; clk         ; 0.000        ; 0.000      ; 3.962      ;
+; 3.743  ; time_divider:td_1k|cnt[14]                         ; time_divider:td_1k|cnt[4]                          ; clk                        ; clk         ; 0.000        ; 0.000      ; 3.964      ;
+; 3.743  ; time_divider:td_1k|cnt[1]                          ; time_divider:td_1k|cnt[5]                          ; clk                        ; clk         ; 0.000        ; 0.000      ; 3.964      ;
+; 3.744  ; time_divider:td_1k|cnt[1]                          ; time_divider:td_1k|cnt[6]                          ; clk                        ; clk         ; 0.000        ; 0.000      ; 3.965      ;
+; 3.773  ; time_divider:td_fa|cnt[10]                         ; time_divider:td_fa|cnt[10]                         ; clk                        ; clk         ; 0.000        ; 0.000      ; 3.994      ;
+; 3.802  ; timer:time_counter|time_ge[1]                      ; controller:center_control|fsm:central_fsm|state[1] ; time_divider:td_1|clk_out  ; clk         ; 0.000        ; -0.122     ; 3.901      ;
+; 3.812  ; time_divider:td_1k|cnt[10]                         ; time_divider:td_1k|clk_out                         ; clk                        ; clk         ; 0.000        ; 0.000      ; 4.033      ;
+; 3.816  ; time_divider:td_fa|cnt[14]                         ; time_divider:td_fa|cnt[14]                         ; clk                        ; clk         ; 0.000        ; 0.000      ; 4.037      ;
+; 3.857  ; time_divider:td_1k|cnt[12]                         ; time_divider:td_1k|clk_out                         ; clk                        ; clk         ; 0.000        ; 0.000      ; 4.078      ;
+; 3.863  ; time_divider:td_1k|cnt[10]                         ; time_divider:td_1k|cnt[3]                          ; clk                        ; clk         ; 0.000        ; 0.000      ; 4.084      ;
+; 3.867  ; time_divider:td_1k|cnt[10]                         ; time_divider:td_1k|cnt[5]                          ; clk                        ; clk         ; 0.000        ; 0.000      ; 4.088      ;
+; 3.868  ; time_divider:td_1k|cnt[10]                         ; time_divider:td_1k|cnt[6]                          ; clk                        ; clk         ; 0.000        ; 0.000      ; 4.089      ;
+; 3.896  ; time_divider:td_fa|cnt[13]                         ; time_divider:td_fa|cnt[13]                         ; clk                        ; clk         ; 0.000        ; 0.000      ; 4.117      ;
+; 3.898  ; time_divider:td_fa|cnt[4]                          ; time_divider:td_fa|clk_out                         ; clk                        ; clk         ; 0.000        ; 0.000      ; 4.119      ;
+; 3.899  ; time_divider:td_fa|cnt[4]                          ; time_divider:td_fa|cnt[3]                          ; clk                        ; clk         ; 0.000        ; 0.000      ; 4.120      ;
+; 3.904  ; time_divider:td_fa|cnt[4]                          ; time_divider:td_fa|cnt[4]                          ; clk                        ; clk         ; 0.000        ; 0.000      ; 4.125      ;
+; 3.905  ; time_divider:td_fa|cnt[4]                          ; time_divider:td_fa|cnt[2]                          ; clk                        ; clk         ; 0.000        ; 0.000      ; 4.126      ;
+; 3.905  ; time_divider:td_1k|cnt[9]                          ; time_divider:td_1k|cnt[4]                          ; clk                        ; clk         ; 0.000        ; 0.000      ; 4.126      ;
+; 3.908  ; time_divider:td_1k|cnt[9]                          ; time_divider:td_1k|cnt[1]                          ; clk                        ; clk         ; 0.000        ; 0.000      ; 4.129      ;
+; 3.914  ; keyboard_scan:kb|cnt[0]                            ; time_divider:td_1k|cnt[1]                          ; clk                        ; clk         ; 0.000        ; 0.000      ; 4.135      ;
+; 3.917  ; time_divider:td_1k|cnt[8]                          ; time_divider:td_1k|cnt[8]                          ; clk                        ; clk         ; 0.000        ; 0.000      ; 4.138      ;
+; 3.919  ; keyboard_scan:kb|cnt[0]                            ; time_divider:td_1k|cnt[3]                          ; clk                        ; clk         ; 0.000        ; 0.000      ; 4.140      ;
+; 3.920  ; time_divider:td_fa|cnt[6]                          ; time_divider:td_fa|cnt[6]                          ; clk                        ; clk         ; 0.000        ; 0.000      ; 4.141      ;
+; 3.921  ; keyboard_scan:kb|cnt[0]                            ; time_divider:td_1k|cnt[5]                          ; clk                        ; clk         ; 0.000        ; 0.000      ; 4.142      ;
+; 3.922  ; keyboard_scan:kb|cnt[0]                            ; time_divider:td_1k|cnt[6]                          ; clk                        ; clk         ; 0.000        ; 0.000      ; 4.143      ;
+; 3.923  ; time_divider:td_fa|cnt[8]                          ; time_divider:td_fa|cnt[9]                          ; clk                        ; clk         ; 0.000        ; 0.000      ; 4.144      ;
+; 3.924  ; time_divider:td_1k|cnt[9]                          ; time_divider:td_1k|cnt[7]                          ; clk                        ; clk         ; 0.000        ; 0.000      ; 4.145      ;
+; 3.929  ; time_divider:td_1k|cnt[5]                          ; time_divider:td_1k|cnt[5]                          ; clk                        ; clk         ; 0.000        ; 0.000      ; 4.150      ;
+; 3.930  ; time_divider:td_1k|cnt[3]                          ; time_divider:td_1k|cnt[3]                          ; clk                        ; clk         ; 0.000        ; 0.000      ; 4.151      ;
+; 3.936  ; time_divider:td_fa|cnt[7]                          ; time_divider:td_fa|cnt[8]                          ; clk                        ; clk         ; 0.000        ; 0.000      ; 4.157      ;
+; 3.967  ; timer:time_counter|time_ge[0]                      ; controller:center_control|fsm:central_fsm|state[1] ; time_divider:td_1|clk_out  ; clk         ; 0.000        ; -0.122     ; 4.066      ;
+; 3.983  ; keyboard_scan:kb|cnt[1]                            ; time_divider:td_fa|clk_out                         ; clk                        ; clk         ; 0.000        ; 0.000      ; 4.204      ;
+; 3.990  ; keyboard_scan:kb|cnt[1]                            ; time_divider:td_fa|cnt[3]                          ; clk                        ; clk         ; 0.000        ; 0.000      ; 4.211      ;
+; 3.997  ; keyboard_scan:kb|cnt[1]                            ; time_divider:td_fa|cnt[4]                          ; clk                        ; clk         ; 0.000        ; 0.000      ; 4.218      ;
+; 3.998  ; keyboard_scan:kb|cnt[1]                            ; time_divider:td_fa|cnt[2]                          ; clk                        ; clk         ; 0.000        ; 0.000      ; 4.219      ;
+; 4.009  ; time_divider:td_1k|cnt[1]                          ; time_divider:td_1k|clk_out                         ; clk                        ; clk         ; 0.000        ; 0.000      ; 4.230      ;
+; 4.047  ; timer:time_counter|time_shi[2]                     ; controller:center_control|fsm:central_fsm|state[1] ; time_divider:td_1|clk_out  ; clk         ; 0.000        ; -0.122     ; 4.146      ;
+; 4.048  ; time_divider:td_fa|cnt[12]                         ; time_divider:td_fa|clk_out                         ; clk                        ; clk         ; 0.000        ; 0.000      ; 4.269      ;
+; 4.055  ; time_divider:td_fa|cnt[12]                         ; time_divider:td_fa|cnt[3]                          ; clk                        ; clk         ; 0.000        ; 0.000      ; 4.276      ;
+; 4.060  ; time_divider:td_1k|cnt[6]                          ; time_divider:td_1k|cnt[6]                          ; clk                        ; clk         ; 0.000        ; 0.000      ; 4.281      ;
+; 4.062  ; time_divider:td_fa|cnt[12]                         ; time_divider:td_fa|cnt[4]                          ; clk                        ; clk         ; 0.000        ; 0.000      ; 4.283      ;
+; 4.063  ; time_divider:td_fa|cnt[12]                         ; time_divider:td_fa|cnt[2]                          ; clk                        ; clk         ; 0.000        ; 0.000      ; 4.284      ;
+; 4.069  ; time_divider:td_1k|cnt[12]                         ; time_divider:td_1k|cnt[12]                         ; clk                        ; clk         ; 0.000        ; 0.000      ; 4.290      ;
+; 4.078  ; time_divider:td_1k|cnt[10]                         ; time_divider:td_1k|cnt[11]                         ; clk                        ; clk         ; 0.000        ; 0.000      ; 4.299      ;
+; 4.093  ; time_divider:td_1k|cnt[9]                          ; time_divider:td_1k|cnt[10]                         ; clk                        ; clk         ; 0.000        ; 0.000      ; 4.314      ;
+; 4.095  ; time_divider:td_fa|cnt[5]                          ; time_divider:td_fa|cnt[5]                          ; clk                        ; clk         ; 0.000        ; 0.000      ; 4.316      ;
+; 4.116  ; time_divider:td_1k|cnt[1]                          ; time_divider:td_1k|cnt[4]                          ; clk                        ; clk         ; 0.000        ; 0.000      ; 4.337      ;
+; 4.121  ; time_divider:td_1k|cnt[5]                          ; time_divider:td_1k|cnt[1]                          ; clk                        ; clk         ; 0.000        ; 0.000      ; 4.342      ;
+; 4.124  ; time_divider:td_1k|cnt[1]                          ; time_divider:td_1k|cnt[7]                          ; clk                        ; clk         ; 0.000        ; 0.000      ; 4.345      ;
++--------+----------------------------------------------------+----------------------------------------------------+----------------------------+-------------+--------------+------------+------------+
+
+
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Hold: 'time_divider:td_500|clk_out'                                                                                                                                   ;
++--------+----------------------------+----------------------------+-----------------------------+-----------------------------+--------------+------------+------------+
+; Slack  ; From Node                  ; To Node                    ; Launch Clock                ; Latch Clock                 ; Relationship ; Clock Skew ; Data Delay ;
++--------+----------------------------+----------------------------+-----------------------------+-----------------------------+--------------+------------+------------+
+; -2.379 ; time_divider:td_50|clk_out ; time_divider:td_50|clk_out ; time_divider:td_50|clk_out  ; time_divider:td_500|clk_out ; 0.000        ; 3.946      ; 2.164      ;
+; -1.879 ; time_divider:td_50|clk_out ; time_divider:td_50|clk_out ; time_divider:td_50|clk_out  ; time_divider:td_500|clk_out ; -0.500       ; 3.946      ; 2.164      ;
+; 1.680  ; led_88:ld|cnt[0]           ; led_88:ld|cnt[0]           ; time_divider:td_500|clk_out ; time_divider:td_500|clk_out ; 0.000        ; 0.000      ; 1.901      ;
+; 1.681  ; led_88:ld|cnt[0]           ; led_88:ld|cnt[2]           ; time_divider:td_500|clk_out ; time_divider:td_500|clk_out ; 0.000        ; 0.000      ; 1.902      ;
+; 1.682  ; led_88:ld|cnt[0]           ; led_88:ld|cnt[1]           ; time_divider:td_500|clk_out ; time_divider:td_500|clk_out ; 0.000        ; 0.000      ; 1.903      ;
+; 1.899  ; led_88:ld|cnt[2]           ; led_88:ld|cnt[2]           ; time_divider:td_500|clk_out ; time_divider:td_500|clk_out ; 0.000        ; 0.000      ; 2.120      ;
+; 1.917  ; led_88:ld|cnt[1]           ; led_88:ld|cnt[1]           ; time_divider:td_500|clk_out ; time_divider:td_500|clk_out ; 0.000        ; 0.000      ; 2.138      ;
+; 1.974  ; time_divider:td_50|cnt[1]  ; time_divider:td_50|cnt[1]  ; time_divider:td_500|clk_out ; time_divider:td_500|clk_out ; 0.000        ; 0.000      ; 2.195      ;
+; 1.981  ; time_divider:td_50|cnt[1]  ; time_divider:td_50|cnt[2]  ; time_divider:td_500|clk_out ; time_divider:td_500|clk_out ; 0.000        ; 0.000      ; 2.202      ;
+; 1.992  ; time_divider:td_50|cnt[1]  ; time_divider:td_50|cnt[3]  ; time_divider:td_500|clk_out ; time_divider:td_500|clk_out ; 0.000        ; 0.000      ; 2.213      ;
+; 1.994  ; time_divider:td_50|cnt[1]  ; time_divider:td_50|cnt[0]  ; time_divider:td_500|clk_out ; time_divider:td_500|clk_out ; 0.000        ; 0.000      ; 2.215      ;
+; 2.133  ; led_88:ld|cnt[1]           ; led_88:ld|cnt[2]           ; time_divider:td_500|clk_out ; time_divider:td_500|clk_out ; 0.000        ; 0.000      ; 2.354      ;
+; 2.171  ; time_divider:td_50|cnt[3]  ; time_divider:td_50|cnt[3]  ; time_divider:td_500|clk_out ; time_divider:td_500|clk_out ; 0.000        ; 0.000      ; 2.392      ;
+; 2.173  ; time_divider:td_50|cnt[0]  ; time_divider:td_50|cnt[0]  ; time_divider:td_500|clk_out ; time_divider:td_500|clk_out ; 0.000        ; 0.000      ; 2.394      ;
+; 2.173  ; time_divider:td_50|cnt[3]  ; time_divider:td_50|cnt[0]  ; time_divider:td_500|clk_out ; time_divider:td_500|clk_out ; 0.000        ; 0.000      ; 2.394      ;
+; 2.175  ; time_divider:td_50|cnt[0]  ; time_divider:td_50|cnt[3]  ; time_divider:td_500|clk_out ; time_divider:td_500|clk_out ; 0.000        ; 0.000      ; 2.396      ;
+; 2.176  ; time_divider:td_50|cnt[3]  ; time_divider:td_50|cnt[2]  ; time_divider:td_500|clk_out ; time_divider:td_500|clk_out ; 0.000        ; 0.000      ; 2.397      ;
+; 2.181  ; time_divider:td_50|cnt[0]  ; time_divider:td_50|cnt[2]  ; time_divider:td_500|clk_out ; time_divider:td_500|clk_out ; 0.000        ; 0.000      ; 2.402      ;
+; 2.183  ; time_divider:td_50|cnt[0]  ; time_divider:td_50|cnt[1]  ; time_divider:td_500|clk_out ; time_divider:td_500|clk_out ; 0.000        ; 0.000      ; 2.404      ;
+; 2.210  ; time_divider:td_50|cnt[3]  ; time_divider:td_50|clk_out ; time_divider:td_500|clk_out ; time_divider:td_500|clk_out ; 0.000        ; 0.000      ; 2.431      ;
+; 2.599  ; time_divider:td_50|cnt[1]  ; time_divider:td_50|clk_out ; time_divider:td_500|clk_out ; time_divider:td_500|clk_out ; 0.000        ; 0.000      ; 2.820      ;
+; 2.703  ; time_divider:td_50|cnt[2]  ; time_divider:td_50|cnt[2]  ; time_divider:td_500|clk_out ; time_divider:td_500|clk_out ; 0.000        ; 0.000      ; 2.924      ;
+; 2.710  ; time_divider:td_50|cnt[2]  ; time_divider:td_50|cnt[3]  ; time_divider:td_500|clk_out ; time_divider:td_500|clk_out ; 0.000        ; 0.000      ; 2.931      ;
+; 2.711  ; time_divider:td_50|cnt[2]  ; time_divider:td_50|cnt[0]  ; time_divider:td_500|clk_out ; time_divider:td_500|clk_out ; 0.000        ; 0.000      ; 2.932      ;
+; 2.727  ; time_divider:td_50|cnt[2]  ; time_divider:td_50|clk_out ; time_divider:td_500|clk_out ; time_divider:td_500|clk_out ; 0.000        ; 0.000      ; 2.948      ;
+; 2.840  ; time_divider:td_50|cnt[0]  ; time_divider:td_50|clk_out ; time_divider:td_500|clk_out ; time_divider:td_500|clk_out ; 0.000        ; 0.000      ; 3.061      ;
++--------+----------------------------+----------------------------+-----------------------------+-----------------------------+--------------+------------+------------+
+
+
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Hold: 'time_divider:td_1|clk_out'                                                                                                                                                                ;
++--------+----------------------------------------------------+--------------------------------+------------------------------+---------------------------+--------------+------------+------------+
+; Slack  ; From Node                                          ; To Node                        ; Launch Clock                 ; Latch Clock               ; Relationship ; Clock Skew ; Data Delay ;
++--------+----------------------------------------------------+--------------------------------+------------------------------+---------------------------+--------------+------------+------------+
+; -2.156 ; time_divider:td_half|clk_out                       ; time_divider:td_half|clk_out   ; time_divider:td_half|clk_out ; time_divider:td_1|clk_out ; 0.000        ; 3.941      ; 2.382      ;
+; -1.656 ; time_divider:td_half|clk_out                       ; time_divider:td_half|clk_out   ; time_divider:td_half|clk_out ; time_divider:td_1|clk_out ; -0.500       ; 3.941      ; 2.382      ;
+; 1.708  ; time_divider:td_half|cnt[1]                        ; time_divider:td_half|cnt[1]    ; time_divider:td_1|clk_out    ; time_divider:td_1|clk_out ; 0.000        ; 0.000      ; 1.929      ;
+; 1.719  ; time_divider:td_half|cnt[1]                        ; time_divider:td_half|clk_out   ; time_divider:td_1|clk_out    ; time_divider:td_1|clk_out ; 0.000        ; 0.000      ; 1.940      ;
+; 1.721  ; time_divider:td_half|cnt[1]                        ; time_divider:td_half|cnt[0]    ; time_divider:td_1|clk_out    ; time_divider:td_1|clk_out ; 0.000        ; 0.000      ; 1.942      ;
+; 1.846  ; controller:center_control|fsm:central_fsm|state[1] ; timer:time_counter|time_shi[0] ; clk                          ; time_divider:td_1|clk_out ; 0.000        ; 0.122      ; 2.189      ;
+; 1.913  ; controller:center_control|fsm:central_fsm|state[0] ; timer:time_counter|time_ge[0]  ; clk                          ; time_divider:td_1|clk_out ; 0.000        ; 0.122      ; 2.256      ;
+; 1.917  ; controller:center_control|fsm:central_fsm|state[0] ; timer:time_counter|time_ge[1]  ; clk                          ; time_divider:td_1|clk_out ; 0.000        ; 0.122      ; 2.260      ;
+; 1.938  ; time_divider:td_half|cnt[0]                        ; time_divider:td_half|cnt[0]    ; time_divider:td_1|clk_out    ; time_divider:td_1|clk_out ; 0.000        ; 0.000      ; 2.159      ;
+; 1.941  ; time_divider:td_half|cnt[0]                        ; time_divider:td_half|clk_out   ; time_divider:td_1|clk_out    ; time_divider:td_1|clk_out ; 0.000        ; 0.000      ; 2.162      ;
+; 1.946  ; time_divider:td_half|cnt[0]                        ; time_divider:td_half|cnt[1]    ; time_divider:td_1|clk_out    ; time_divider:td_1|clk_out ; 0.000        ; 0.000      ; 2.167      ;
+; 2.249  ; timer:time_counter|time_shi[2]                     ; timer:time_counter|time_shi[2] ; time_divider:td_1|clk_out    ; time_divider:td_1|clk_out ; 0.000        ; 0.000      ; 2.470      ;
+; 2.261  ; timer:time_counter|time_shi[3]                     ; timer:time_counter|time_shi[3] ; time_divider:td_1|clk_out    ; time_divider:td_1|clk_out ; 0.000        ; 0.000      ; 2.482      ;
+; 2.531  ; timer:time_counter|time_ge[0]                      ; timer:time_counter|time_ge[0]  ; time_divider:td_1|clk_out    ; time_divider:td_1|clk_out ; 0.000        ; 0.000      ; 2.752      ;
+; 2.572  ; timer:time_counter|time_ge[3]                      ; timer:time_counter|time_ge[3]  ; time_divider:td_1|clk_out    ; time_divider:td_1|clk_out ; 0.000        ; 0.000      ; 2.793      ;
+; 2.675  ; controller:center_control|fsm:central_fsm|state[1] ; timer:time_counter|time_ge[0]  ; clk                          ; time_divider:td_1|clk_out ; 0.000        ; 0.122      ; 3.018      ;
+; 2.938  ; controller:center_control|fsm:central_fsm|state[0] ; timer:time_counter|time_ge[2]  ; clk                          ; time_divider:td_1|clk_out ; 0.000        ; 0.122      ; 3.281      ;
+; 3.015  ; controller:center_control|fsm:central_fsm|state[1] ; timer:time_counter|time_ge[1]  ; clk                          ; time_divider:td_1|clk_out ; 0.000        ; 0.122      ; 3.358      ;
+; 3.030  ; controller:center_control|fsm:central_fsm|state[1] ; timer:time_counter|time_ge[2]  ; clk                          ; time_divider:td_1|clk_out ; 0.000        ; 0.122      ; 3.373      ;
+; 3.121  ; timer:time_counter|time_shi[0]                     ; timer:time_counter|time_shi[1] ; time_divider:td_1|clk_out    ; time_divider:td_1|clk_out ; 0.000        ; 0.000      ; 3.342      ;
+; 3.132  ; timer:time_counter|time_ge[1]                      ; timer:time_counter|time_ge[2]  ; time_divider:td_1|clk_out    ; time_divider:td_1|clk_out ; 0.000        ; 0.000      ; 3.353      ;
+; 3.136  ; timer:time_counter|time_ge[1]                      ; timer:time_counter|time_ge[1]  ; time_divider:td_1|clk_out    ; time_divider:td_1|clk_out ; 0.000        ; 0.000      ; 3.357      ;
+; 3.172  ; controller:center_control|fsm:central_fsm|state[0] ; timer:time_counter|time_shi[0] ; clk                          ; time_divider:td_1|clk_out ; 0.000        ; 0.122      ; 3.515      ;
+; 3.275  ; controller:center_control|fsm:central_fsm|state[1] ; timer:time_counter|time_shi[1] ; clk                          ; time_divider:td_1|clk_out ; 0.000        ; 0.122      ; 3.618      ;
+; 3.284  ; controller:center_control|fsm:central_fsm|state[1] ; timer:time_counter|time_shi[2] ; clk                          ; time_divider:td_1|clk_out ; 0.000        ; 0.122      ; 3.627      ;
+; 3.285  ; controller:center_control|fsm:central_fsm|state[1] ; timer:time_counter|time_shi[3] ; clk                          ; time_divider:td_1|clk_out ; 0.000        ; 0.122      ; 3.628      ;
+; 3.358  ; timer:time_counter|time_ge[0]                      ; timer:time_counter|time_ge[2]  ; time_divider:td_1|clk_out    ; time_divider:td_1|clk_out ; 0.000        ; 0.000      ; 3.579      ;
+; 3.359  ; timer:time_counter|time_ge[0]                      ; timer:time_counter|time_ge[1]  ; time_divider:td_1|clk_out    ; time_divider:td_1|clk_out ; 0.000        ; 0.000      ; 3.580      ;
+; 3.377  ; controller:center_control|fsm:central_fsm|state[0] ; timer:time_counter|time_shi[1] ; clk                          ; time_divider:td_1|clk_out ; 0.000        ; 0.122      ; 3.720      ;
+; 3.386  ; controller:center_control|fsm:central_fsm|state[0] ; timer:time_counter|time_shi[2] ; clk                          ; time_divider:td_1|clk_out ; 0.000        ; 0.122      ; 3.729      ;
+; 3.387  ; controller:center_control|fsm:central_fsm|state[0] ; timer:time_counter|time_shi[3] ; clk                          ; time_divider:td_1|clk_out ; 0.000        ; 0.122      ; 3.730      ;
+; 3.412  ; timer:time_counter|time_ge[3]                      ; timer:time_counter|time_ge[2]  ; time_divider:td_1|clk_out    ; time_divider:td_1|clk_out ; 0.000        ; 0.000      ; 3.633      ;
+; 3.427  ; timer:time_counter|time_shi[0]                     ; timer:time_counter|time_shi[0] ; time_divider:td_1|clk_out    ; time_divider:td_1|clk_out ; 0.000        ; 0.000      ; 3.648      ;
+; 3.474  ; timer:time_counter|time_shi[1]                     ; timer:time_counter|time_shi[1] ; time_divider:td_1|clk_out    ; time_divider:td_1|clk_out ; 0.000        ; 0.000      ; 3.695      ;
+; 3.583  ; timer:time_counter|time_ge[2]                      ; timer:time_counter|time_ge[2]  ; time_divider:td_1|clk_out    ; time_divider:td_1|clk_out ; 0.000        ; 0.000      ; 3.804      ;
+; 3.593  ; timer:time_counter|time_shi[2]                     ; timer:time_counter|time_ge[3]  ; time_divider:td_1|clk_out    ; time_divider:td_1|clk_out ; 0.000        ; 0.000      ; 3.814      ;
+; 3.736  ; timer:time_counter|time_ge[2]                      ; timer:time_counter|time_ge[3]  ; time_divider:td_1|clk_out    ; time_divider:td_1|clk_out ; 0.000        ; 0.000      ; 3.957      ;
+; 3.786  ; timer:time_counter|time_shi[0]                     ; timer:time_counter|time_shi[2] ; time_divider:td_1|clk_out    ; time_divider:td_1|clk_out ; 0.000        ; 0.000      ; 4.007      ;
+; 3.885  ; timer:time_counter|time_shi[2]                     ; timer:time_counter|time_ge[0]  ; time_divider:td_1|clk_out    ; time_divider:td_1|clk_out ; 0.000        ; 0.000      ; 4.106      ;
+; 3.937  ; timer:time_counter|time_shi[1]                     ; timer:time_counter|time_ge[3]  ; time_divider:td_1|clk_out    ; time_divider:td_1|clk_out ; 0.000        ; 0.000      ; 4.158      ;
+; 3.976  ; timer:time_counter|time_shi[2]                     ; timer:time_counter|time_shi[3] ; time_divider:td_1|clk_out    ; time_divider:td_1|clk_out ; 0.000        ; 0.000      ; 4.197      ;
+; 3.977  ; timer:time_counter|time_ge[2]                      ; timer:time_counter|time_ge[0]  ; time_divider:td_1|clk_out    ; time_divider:td_1|clk_out ; 0.000        ; 0.000      ; 4.198      ;
+; 4.003  ; timer:time_counter|time_ge[2]                      ; timer:time_counter|time_shi[0] ; time_divider:td_1|clk_out    ; time_divider:td_1|clk_out ; 0.000        ; 0.000      ; 4.224      ;
+; 4.004  ; timer:time_counter|time_ge[2]                      ; timer:time_counter|time_shi[1] ; time_divider:td_1|clk_out    ; time_divider:td_1|clk_out ; 0.000        ; 0.000      ; 4.225      ;
+; 4.013  ; timer:time_counter|time_ge[2]                      ; timer:time_counter|time_shi[2] ; time_divider:td_1|clk_out    ; time_divider:td_1|clk_out ; 0.000        ; 0.000      ; 4.234      ;
+; 4.014  ; timer:time_counter|time_ge[2]                      ; timer:time_counter|time_shi[3] ; time_divider:td_1|clk_out    ; time_divider:td_1|clk_out ; 0.000        ; 0.000      ; 4.235      ;
+; 4.017  ; timer:time_counter|time_ge[0]                      ; timer:time_counter|time_ge[3]  ; time_divider:td_1|clk_out    ; time_divider:td_1|clk_out ; 0.000        ; 0.000      ; 4.238      ;
+; 4.050  ; timer:time_counter|time_shi[1]                     ; timer:time_counter|time_shi[2] ; time_divider:td_1|clk_out    ; time_divider:td_1|clk_out ; 0.000        ; 0.000      ; 4.271      ;
+; 4.071  ; timer:time_counter|time_shi[1]                     ; timer:time_counter|time_shi[3] ; time_divider:td_1|clk_out    ; time_divider:td_1|clk_out ; 0.000        ; 0.000      ; 4.292      ;
+; 4.081  ; controller:center_control|fsm:central_fsm|state[0] ; timer:time_counter|time_ge[3]  ; clk                          ; time_divider:td_1|clk_out ; 0.000        ; 0.122      ; 4.424      ;
+; 4.152  ; timer:time_counter|time_shi[0]                     ; timer:time_counter|time_ge[3]  ; time_divider:td_1|clk_out    ; time_divider:td_1|clk_out ; 0.000        ; 0.000      ; 4.373      ;
+; 4.177  ; controller:center_control|fsm:central_fsm|state[1] ; timer:time_counter|time_ge[3]  ; clk                          ; time_divider:td_1|clk_out ; 0.000        ; 0.122      ; 4.520      ;
+; 4.183  ; timer:time_counter|time_shi[2]                     ; timer:time_counter|time_shi[0] ; time_divider:td_1|clk_out    ; time_divider:td_1|clk_out ; 0.000        ; 0.000      ; 4.404      ;
+; 4.184  ; timer:time_counter|time_shi[2]                     ; timer:time_counter|time_shi[1] ; time_divider:td_1|clk_out    ; time_divider:td_1|clk_out ; 0.000        ; 0.000      ; 4.405      ;
+; 4.229  ; timer:time_counter|time_shi[1]                     ; timer:time_counter|time_ge[0]  ; time_divider:td_1|clk_out    ; time_divider:td_1|clk_out ; 0.000        ; 0.000      ; 4.450      ;
+; 4.302  ; timer:time_counter|time_shi[3]                     ; timer:time_counter|time_ge[3]  ; time_divider:td_1|clk_out    ; time_divider:td_1|clk_out ; 0.000        ; 0.000      ; 4.523      ;
+; 4.303  ; timer:time_counter|time_ge[1]                      ; timer:time_counter|time_ge[3]  ; time_divider:td_1|clk_out    ; time_divider:td_1|clk_out ; 0.000        ; 0.000      ; 4.524      ;
+; 4.341  ; timer:time_counter|time_ge[1]                      ; timer:time_counter|time_ge[0]  ; time_divider:td_1|clk_out    ; time_divider:td_1|clk_out ; 0.000        ; 0.000      ; 4.562      ;
+; 4.367  ; timer:time_counter|time_ge[1]                      ; timer:time_counter|time_shi[0] ; time_divider:td_1|clk_out    ; time_divider:td_1|clk_out ; 0.000        ; 0.000      ; 4.588      ;
+; 4.368  ; timer:time_counter|time_ge[1]                      ; timer:time_counter|time_shi[1] ; time_divider:td_1|clk_out    ; time_divider:td_1|clk_out ; 0.000        ; 0.000      ; 4.589      ;
+; 4.377  ; timer:time_counter|time_ge[1]                      ; timer:time_counter|time_shi[2] ; time_divider:td_1|clk_out    ; time_divider:td_1|clk_out ; 0.000        ; 0.000      ; 4.598      ;
+; 4.378  ; timer:time_counter|time_ge[1]                      ; timer:time_counter|time_shi[3] ; time_divider:td_1|clk_out    ; time_divider:td_1|clk_out ; 0.000        ; 0.000      ; 4.599      ;
+; 4.399  ; timer:time_counter|time_ge[2]                      ; timer:time_counter|time_ge[1]  ; time_divider:td_1|clk_out    ; time_divider:td_1|clk_out ; 0.000        ; 0.000      ; 4.620      ;
+; 4.444  ; timer:time_counter|time_shi[0]                     ; timer:time_counter|time_ge[0]  ; time_divider:td_1|clk_out    ; time_divider:td_1|clk_out ; 0.000        ; 0.000      ; 4.665      ;
+; 4.504  ; timer:time_counter|time_shi[0]                     ; timer:time_counter|time_shi[3] ; time_divider:td_1|clk_out    ; time_divider:td_1|clk_out ; 0.000        ; 0.000      ; 4.725      ;
+; 4.527  ; timer:time_counter|time_shi[1]                     ; timer:time_counter|time_shi[0] ; time_divider:td_1|clk_out    ; time_divider:td_1|clk_out ; 0.000        ; 0.000      ; 4.748      ;
+; 4.532  ; timer:time_counter|time_ge[0]                      ; timer:time_counter|time_shi[0] ; time_divider:td_1|clk_out    ; time_divider:td_1|clk_out ; 0.000        ; 0.000      ; 4.753      ;
+; 4.533  ; timer:time_counter|time_ge[0]                      ; timer:time_counter|time_shi[1] ; time_divider:td_1|clk_out    ; time_divider:td_1|clk_out ; 0.000        ; 0.000      ; 4.754      ;
+; 4.542  ; timer:time_counter|time_ge[0]                      ; timer:time_counter|time_shi[2] ; time_divider:td_1|clk_out    ; time_divider:td_1|clk_out ; 0.000        ; 0.000      ; 4.763      ;
+; 4.543  ; timer:time_counter|time_ge[0]                      ; timer:time_counter|time_shi[3] ; time_divider:td_1|clk_out    ; time_divider:td_1|clk_out ; 0.000        ; 0.000      ; 4.764      ;
+; 4.594  ; timer:time_counter|time_shi[3]                     ; timer:time_counter|time_ge[0]  ; time_divider:td_1|clk_out    ; time_divider:td_1|clk_out ; 0.000        ; 0.000      ; 4.815      ;
+; 4.669  ; timer:time_counter|time_ge[3]                      ; timer:time_counter|time_ge[0]  ; time_divider:td_1|clk_out    ; time_divider:td_1|clk_out ; 0.000        ; 0.000      ; 4.890      ;
+; 4.695  ; timer:time_counter|time_ge[3]                      ; timer:time_counter|time_shi[0] ; time_divider:td_1|clk_out    ; time_divider:td_1|clk_out ; 0.000        ; 0.000      ; 4.916      ;
+; 4.696  ; timer:time_counter|time_ge[3]                      ; timer:time_counter|time_shi[1] ; time_divider:td_1|clk_out    ; time_divider:td_1|clk_out ; 0.000        ; 0.000      ; 4.917      ;
+; 4.705  ; timer:time_counter|time_ge[3]                      ; timer:time_counter|time_shi[2] ; time_divider:td_1|clk_out    ; time_divider:td_1|clk_out ; 0.000        ; 0.000      ; 4.926      ;
+; 4.706  ; timer:time_counter|time_ge[3]                      ; timer:time_counter|time_shi[3] ; time_divider:td_1|clk_out    ; time_divider:td_1|clk_out ; 0.000        ; 0.000      ; 4.927      ;
+; 4.892  ; timer:time_counter|time_shi[3]                     ; timer:time_counter|time_shi[0] ; time_divider:td_1|clk_out    ; time_divider:td_1|clk_out ; 0.000        ; 0.000      ; 5.113      ;
+; 4.893  ; timer:time_counter|time_shi[3]                     ; timer:time_counter|time_shi[1] ; time_divider:td_1|clk_out    ; time_divider:td_1|clk_out ; 0.000        ; 0.000      ; 5.114      ;
+; 4.902  ; timer:time_counter|time_shi[3]                     ; timer:time_counter|time_shi[2] ; time_divider:td_1|clk_out    ; time_divider:td_1|clk_out ; 0.000        ; 0.000      ; 5.123      ;
+; 5.091  ; timer:time_counter|time_ge[3]                      ; timer:time_counter|time_ge[1]  ; time_divider:td_1|clk_out    ; time_divider:td_1|clk_out ; 0.000        ; 0.000      ; 5.312      ;
++--------+----------------------------------------------------+--------------------------------+------------------------------+---------------------------+--------------+------------+------------+
+
+
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Hold: 'time_divider:td_1k|clk_out'                                                                                                                                     ;
++--------+-----------------------------+-----------------------------+-----------------------------+----------------------------+--------------+------------+------------+
+; Slack  ; From Node                   ; To Node                     ; Launch Clock                ; Latch Clock                ; Relationship ; Clock Skew ; Data Delay ;
++--------+-----------------------------+-----------------------------+-----------------------------+----------------------------+--------------+------------+------------+
+; -1.327 ; time_divider:td_500|clk_out ; time_divider:td_500|clk_out ; time_divider:td_500|clk_out ; time_divider:td_1k|clk_out ; 0.000        ; 3.059      ; 2.329      ;
+; -0.827 ; time_divider:td_500|clk_out ; time_divider:td_500|clk_out ; time_divider:td_500|clk_out ; time_divider:td_1k|clk_out ; -0.500       ; 3.059      ; 2.329      ;
+; 1.459  ; dig_select[1]~reg0          ; dig_select[2]~reg0          ; time_divider:td_1k|clk_out  ; time_divider:td_1k|clk_out ; 0.000        ; 0.000      ; 1.680      ;
+; 1.471  ; dig_select[2]~reg0          ; dig_select[3]~reg0          ; time_divider:td_1k|clk_out  ; time_divider:td_1k|clk_out ; 0.000        ; 0.000      ; 1.692      ;
+; 1.672  ; dig_select[3]~reg0          ; dig_select[0]~reg0          ; time_divider:td_1k|clk_out  ; time_divider:td_1k|clk_out ; 0.000        ; 0.000      ; 1.893      ;
+; 1.674  ; dig_select[0]~reg0          ; dig_select[1]~reg0          ; time_divider:td_1k|clk_out  ; time_divider:td_1k|clk_out ; 0.000        ; 0.000      ; 1.895      ;
+; 1.679  ; time_divider:td_500|cnt[0]  ; time_divider:td_500|cnt[0]  ; time_divider:td_1k|clk_out  ; time_divider:td_1k|clk_out ; 0.000        ; 0.000      ; 1.900      ;
+; 1.681  ; time_divider:td_500|cnt[0]  ; time_divider:td_500|cnt[1]  ; time_divider:td_1k|clk_out  ; time_divider:td_1k|clk_out ; 0.000        ; 0.000      ; 1.902      ;
+; 1.685  ; time_divider:td_500|cnt[0]  ; time_divider:td_500|clk_out ; time_divider:td_1k|clk_out  ; time_divider:td_1k|clk_out ; 0.000        ; 0.000      ; 1.906      ;
+; 1.939  ; time_divider:td_500|cnt[1]  ; time_divider:td_500|cnt[1]  ; time_divider:td_1k|clk_out  ; time_divider:td_1k|clk_out ; 0.000        ; 0.000      ; 2.160      ;
+; 1.940  ; time_divider:td_500|cnt[1]  ; time_divider:td_500|cnt[0]  ; time_divider:td_1k|clk_out  ; time_divider:td_1k|clk_out ; 0.000        ; 0.000      ; 2.161      ;
+; 1.943  ; time_divider:td_500|cnt[1]  ; time_divider:td_500|clk_out ; time_divider:td_1k|clk_out  ; time_divider:td_1k|clk_out ; 0.000        ; 0.000      ; 2.164      ;
++--------+-----------------------------+-----------------------------+-----------------------------+----------------------------+--------------+------------+------------+
+
+
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Hold: 'time_divider:td_half|clk_out'                                                                                                                               ;
++-------+--------------------------+--------------------------+------------------------------+------------------------------+--------------+------------+------------+
+; Slack ; From Node                ; To Node                  ; Launch Clock                 ; Latch Clock                  ; Relationship ; Clock Skew ; Data Delay ;
++-------+--------------------------+--------------------------+------------------------------+------------------------------+--------------+------------+------------+
+; 1.676 ; getrandom:gr1|D_ff:FF2|Q ; getrandom:gr1|D_ff:FF3|Q ; time_divider:td_half|clk_out ; time_divider:td_half|clk_out ; 0.000        ; 0.000      ; 1.897      ;
+; 1.720 ; getrandom:gr1|D_ff:FF0|Q ; getrandom:gr1|D_ff:FF1|Q ; time_divider:td_half|clk_out ; time_divider:td_half|clk_out ; 0.000        ; 0.000      ; 1.941      ;
+; 1.949 ; getrandom:gr1|D_ff:FF5|Q ; getrandom:gr1|D_ff:FF0|Q ; time_divider:td_half|clk_out ; time_divider:td_half|clk_out ; 0.000        ; 0.000      ; 2.170      ;
+; 1.954 ; getrandom:gr1|D_ff:FF1|Q ; getrandom:gr1|D_ff:FF2|Q ; time_divider:td_half|clk_out ; time_divider:td_half|clk_out ; 0.000        ; 0.000      ; 2.175      ;
+; 2.105 ; getrandom:gr1|D_ff:FF3|Q ; getrandom:gr1|D_ff:FF4|Q ; time_divider:td_half|clk_out ; time_divider:td_half|clk_out ; 0.000        ; 0.005      ; 2.331      ;
+; 2.173 ; getrandom:gr1|D_ff:FF0|Q ; getrandom:gr1|D_ff:FF0|Q ; time_divider:td_half|clk_out ; time_divider:td_half|clk_out ; 0.000        ; 0.000      ; 2.394      ;
+; 2.456 ; getrandom:gr1|D_ff:FF4|Q ; getrandom:gr1|D_ff:FF5|Q ; time_divider:td_half|clk_out ; time_divider:td_half|clk_out ; 0.000        ; -0.005     ; 2.672      ;
+; 3.053 ; getrandom:gr1|D_ff:FF4|Q ; getrandom:gr1|D_ff:FF0|Q ; time_divider:td_half|clk_out ; time_divider:td_half|clk_out ; 0.000        ; -0.005     ; 3.269      ;
+; 3.112 ; getrandom:gr1|D_ff:FF2|Q ; getrandom:gr1|D_ff:FF0|Q ; time_divider:td_half|clk_out ; time_divider:td_half|clk_out ; 0.000        ; 0.000      ; 3.333      ;
+; 3.474 ; getrandom:gr1|D_ff:FF3|Q ; getrandom:gr1|D_ff:FF0|Q ; time_divider:td_half|clk_out ; time_divider:td_half|clk_out ; 0.000        ; 0.000      ; 3.695      ;
+; 3.821 ; getrandom:gr1|D_ff:FF1|Q ; getrandom:gr1|D_ff:FF0|Q ; time_divider:td_half|clk_out ; time_divider:td_half|clk_out ; 0.000        ; 0.000      ; 4.042      ;
++-------+--------------------------+--------------------------+------------------------------+------------------------------+--------------+------------+------------+
+
+
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Recovery: 'time_divider:td_half|clk_out'                                                                                                                        ;
++--------+-------------------------------+-------------------+----------------------------+------------------------------+--------------+------------+------------+
+; Slack  ; From Node                     ; To Node           ; Launch Clock               ; Latch Clock                  ; Relationship ; Clock Skew ; Data Delay ;
++--------+-------------------------------+-------------------+----------------------------+------------------------------+--------------+------------+------------+
+; -4.403 ; controller:center_control|hit ; buzzer:bz|hit_tmp ; time_divider:td_50|clk_out ; time_divider:td_half|clk_out ; 1.000        ; -1.869     ; 3.201      ;
++--------+-------------------------------+-------------------+----------------------------+------------------------------+--------------+------------+------------+
+
+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Removal: 'time_divider:td_half|clk_out'                                                                                                                        ;
++-------+-------------------------------+-------------------+----------------------------+------------------------------+--------------+------------+------------+
+; Slack ; From Node                     ; To Node           ; Launch Clock               ; Latch Clock                  ; Relationship ; Clock Skew ; Data Delay ;
++-------+-------------------------------+-------------------+----------------------------+------------------------------+--------------+------------+------------+
+; 4.849 ; controller:center_control|hit ; buzzer:bz|hit_tmp ; time_divider:td_50|clk_out ; time_divider:td_half|clk_out ; 0.000        ; -1.869     ; 3.201      ;
++-------+-------------------------------+-------------------+----------------------------+------------------------------+--------------+------------+------------+
+
+
++---------------------------------------------------------------------------------------------------------+
+; Setup Transfers                                                                                         ;
++------------------------------+------------------------------+----------+----------+----------+----------+
+; From Clock                   ; To Clock                     ; RR Paths ; FR Paths ; RF Paths ; FF Paths ;
++------------------------------+------------------------------+----------+----------+----------+----------+
+; clk                          ; clk                          ; 590      ; 0        ; 0        ; 0        ;
+; time_divider:td_1k|clk_out   ; clk                          ; 1        ; 1        ; 0        ; 0        ;
+; time_divider:td_1|clk_out    ; clk                          ; 8        ; 0        ; 0        ; 0        ;
+; time_divider:td_50|clk_out   ; clk                          ; 8        ; 0        ; 0        ; 0        ;
+; time_divider:td_1k|clk_out   ; time_divider:td_1k|clk_out   ; 10       ; 0        ; 0        ; 0        ;
+; time_divider:td_500|clk_out  ; time_divider:td_1k|clk_out   ; 1        ; 1        ; 0        ; 0        ;
+; clk                          ; time_divider:td_1|clk_out    ; 30       ; 0        ; 0        ; 0        ;
+; time_divider:td_1|clk_out    ; time_divider:td_1|clk_out    ; 80       ; 0        ; 0        ; 0        ;
+; time_divider:td_half|clk_out ; time_divider:td_1|clk_out    ; 1        ; 1        ; 0        ; 0        ;
+; clk                          ; time_divider:td_50|clk_out   ; 4        ; 0        ; 0        ; 0        ;
+; time_divider:td_1|clk_out    ; time_divider:td_50|clk_out   ; 1        ; 1        ; 0        ; 0        ;
+; time_divider:td_50|clk_out   ; time_divider:td_50|clk_out   ; 120      ; 0        ; 0        ; 0        ;
+; time_divider:td_half|clk_out ; time_divider:td_50|clk_out   ; 7        ; 0        ; 0        ; 0        ;
+; time_divider:td_50|clk_out   ; time_divider:td_500|clk_out  ; 1        ; 1        ; 0        ; 0        ;
+; time_divider:td_500|clk_out  ; time_divider:td_500|clk_out  ; 24       ; 0        ; 0        ; 0        ;
+; time_divider:td_half|clk_out ; time_divider:td_half|clk_out ; 13       ; 0        ; 0        ; 0        ;
++------------------------------+------------------------------+----------+----------+----------+----------+
+Entries labeled "false path" only account for clock-to-clock false paths and not path-based false paths. As a result, actual path counts may be lower than reported.
+
+
++---------------------------------------------------------------------------------------------------------+
+; Hold Transfers                                                                                          ;
++------------------------------+------------------------------+----------+----------+----------+----------+
+; From Clock                   ; To Clock                     ; RR Paths ; FR Paths ; RF Paths ; FF Paths ;
++------------------------------+------------------------------+----------+----------+----------+----------+
+; clk                          ; clk                          ; 590      ; 0        ; 0        ; 0        ;
+; time_divider:td_1k|clk_out   ; clk                          ; 1        ; 1        ; 0        ; 0        ;
+; time_divider:td_1|clk_out    ; clk                          ; 8        ; 0        ; 0        ; 0        ;
+; time_divider:td_50|clk_out   ; clk                          ; 8        ; 0        ; 0        ; 0        ;
+; time_divider:td_1k|clk_out   ; time_divider:td_1k|clk_out   ; 10       ; 0        ; 0        ; 0        ;
+; time_divider:td_500|clk_out  ; time_divider:td_1k|clk_out   ; 1        ; 1        ; 0        ; 0        ;
+; clk                          ; time_divider:td_1|clk_out    ; 30       ; 0        ; 0        ; 0        ;
+; time_divider:td_1|clk_out    ; time_divider:td_1|clk_out    ; 80       ; 0        ; 0        ; 0        ;
+; time_divider:td_half|clk_out ; time_divider:td_1|clk_out    ; 1        ; 1        ; 0        ; 0        ;
+; clk                          ; time_divider:td_50|clk_out   ; 4        ; 0        ; 0        ; 0        ;
+; time_divider:td_1|clk_out    ; time_divider:td_50|clk_out   ; 1        ; 1        ; 0        ; 0        ;
+; time_divider:td_50|clk_out   ; time_divider:td_50|clk_out   ; 120      ; 0        ; 0        ; 0        ;
+; time_divider:td_half|clk_out ; time_divider:td_50|clk_out   ; 7        ; 0        ; 0        ; 0        ;
+; time_divider:td_50|clk_out   ; time_divider:td_500|clk_out  ; 1        ; 1        ; 0        ; 0        ;
+; time_divider:td_500|clk_out  ; time_divider:td_500|clk_out  ; 24       ; 0        ; 0        ; 0        ;
+; time_divider:td_half|clk_out ; time_divider:td_half|clk_out ; 13       ; 0        ; 0        ; 0        ;
++------------------------------+------------------------------+----------+----------+----------+----------+
+Entries labeled "false path" only account for clock-to-clock false paths and not path-based false paths. As a result, actual path counts may be lower than reported.
+
+
++-------------------------------------------------------------------------------------------------------+
+; Recovery Transfers                                                                                    ;
++----------------------------+------------------------------+----------+----------+----------+----------+
+; From Clock                 ; To Clock                     ; RR Paths ; FR Paths ; RF Paths ; FF Paths ;
++----------------------------+------------------------------+----------+----------+----------+----------+
+; time_divider:td_50|clk_out ; time_divider:td_half|clk_out ; 1        ; 0        ; 0        ; 0        ;
++----------------------------+------------------------------+----------+----------+----------+----------+
+Entries labeled "false path" only account for clock-to-clock false paths and not path-based false paths. As a result, actual path counts may be lower than reported.
+
+
++-------------------------------------------------------------------------------------------------------+
+; Removal Transfers                                                                                     ;
++----------------------------+------------------------------+----------+----------+----------+----------+
+; From Clock                 ; To Clock                     ; RR Paths ; FR Paths ; RF Paths ; FF Paths ;
++----------------------------+------------------------------+----------+----------+----------+----------+
+; time_divider:td_50|clk_out ; time_divider:td_half|clk_out ; 1        ; 0        ; 0        ; 0        ;
++----------------------------+------------------------------+----------+----------+----------+----------+
+Entries labeled "false path" only account for clock-to-clock false paths and not path-based false paths. As a result, actual path counts may be lower than reported.
+
+
+---------------
+; Report TCCS ;
+---------------
+No dedicated SERDES Transmitter circuitry present in device or used in design
+
+
+---------------
+; Report RSKM ;
+---------------
+No non-DPA dedicated SERDES Receiver circuitry present in device or used in design
+
+
++------------------------------------------------+
+; Unconstrained Paths Summary                    ;
++---------------------------------+-------+------+
+; Property                        ; Setup ; Hold ;
++---------------------------------+-------+------+
+; Illegal Clocks                  ; 0     ; 0    ;
+; Unconstrained Clocks            ; 0     ; 0    ;
+; Unconstrained Input Ports       ; 5     ; 5    ;
+; Unconstrained Input Port Paths  ; 87    ; 87   ;
+; Unconstrained Output Ports      ; 40    ; 40   ;
+; Unconstrained Output Port Paths ; 276   ; 276  ;
++---------------------------------+-------+------+
+
+
++----------------------------------------------------------------------------------+
+; Clock Status Summary                                                             ;
++------------------------------+------------------------------+------+-------------+
+; Target                       ; Clock                        ; Type ; Status      ;
++------------------------------+------------------------------+------+-------------+
+; clk                          ; clk                          ; Base ; Constrained ;
+; time_divider:td_1k|clk_out   ; time_divider:td_1k|clk_out   ; Base ; Constrained ;
+; time_divider:td_1|clk_out    ; time_divider:td_1|clk_out    ; Base ; Constrained ;
+; time_divider:td_50|clk_out   ; time_divider:td_50|clk_out   ; Base ; Constrained ;
+; time_divider:td_500|clk_out  ; time_divider:td_500|clk_out  ; Base ; Constrained ;
+; time_divider:td_half|clk_out ; time_divider:td_half|clk_out ; Base ; Constrained ;
++------------------------------+------------------------------+------+-------------+
+
+
++---------------------------------------------------------------------------------------------------+
+; Unconstrained Input Ports                                                                         ;
++------------+--------------------------------------------------------------------------------------+
+; Input Port ; Comment                                                                              ;
++------------+--------------------------------------------------------------------------------------+
+; row_b[0]   ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; row_b[1]   ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; row_b[2]   ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; row_b[3]   ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; rst        ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
++------------+--------------------------------------------------------------------------------------+
+
+
++-------------------------------------------------------------------------------------------------------+
+; Unconstrained Output Ports                                                                            ;
++---------------+---------------------------------------------------------------------------------------+
+; Output Port   ; Comment                                                                               ;
++---------------+---------------------------------------------------------------------------------------+
+; beep          ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; col[0]        ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; col[1]        ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; col[2]        ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; col[3]        ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; dig_select[0] ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; dig_select[1] ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; dig_select[2] ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; dig_select[3] ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; matcol_g[0]   ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; matcol_g[1]   ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; matcol_g[2]   ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; matcol_g[3]   ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; matcol_g[4]   ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; matcol_g[5]   ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; matcol_g[6]   ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; matcol_g[7]   ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; matcol_r[0]   ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; matcol_r[1]   ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; matcol_r[2]   ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; matcol_r[3]   ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; matcol_r[4]   ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; matcol_r[5]   ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; matcol_r[6]   ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; matcol_r[7]   ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; matrow[0]     ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; matrow[1]     ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; matrow[2]     ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; matrow[3]     ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; matrow[4]     ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; matrow[5]     ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; matrow[6]     ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; matrow[7]     ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; seg_select[1] ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; seg_select[2] ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; seg_select[3] ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; seg_select[4] ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; seg_select[5] ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; seg_select[6] ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; seg_select[7] ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
++---------------+---------------------------------------------------------------------------------------+
+
+
++---------------------------------------------------------------------------------------------------+
+; Unconstrained Input Ports                                                                         ;
++------------+--------------------------------------------------------------------------------------+
+; Input Port ; Comment                                                                              ;
++------------+--------------------------------------------------------------------------------------+
+; row_b[0]   ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; row_b[1]   ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; row_b[2]   ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; row_b[3]   ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; rst        ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
++------------+--------------------------------------------------------------------------------------+
+
+
++-------------------------------------------------------------------------------------------------------+
+; Unconstrained Output Ports                                                                            ;
++---------------+---------------------------------------------------------------------------------------+
+; Output Port   ; Comment                                                                               ;
++---------------+---------------------------------------------------------------------------------------+
+; beep          ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; col[0]        ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; col[1]        ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; col[2]        ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; col[3]        ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; dig_select[0] ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; dig_select[1] ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; dig_select[2] ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; dig_select[3] ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; matcol_g[0]   ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; matcol_g[1]   ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; matcol_g[2]   ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; matcol_g[3]   ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; matcol_g[4]   ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; matcol_g[5]   ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; matcol_g[6]   ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; matcol_g[7]   ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; matcol_r[0]   ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; matcol_r[1]   ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; matcol_r[2]   ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; matcol_r[3]   ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; matcol_r[4]   ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; matcol_r[5]   ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; matcol_r[6]   ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; matcol_r[7]   ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; matrow[0]     ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; matrow[1]     ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; matrow[2]     ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; matrow[3]     ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; matrow[4]     ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; matrow[5]     ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; matrow[6]     ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; matrow[7]     ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; seg_select[1] ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; seg_select[2] ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; seg_select[3] ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; seg_select[4] ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; seg_select[5] ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; seg_select[6] ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; seg_select[7] ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
++---------------+---------------------------------------------------------------------------------------+
+
+
++--------------------------+
+; Timing Analyzer Messages ;
++--------------------------+
+Info: *******************************************************************
+Info: Running Quartus Prime Timing Analyzer
+    Info: Version 18.0.0 Build 614 04/24/2018 SJ Lite Edition
+    Info: Processing started: Thu Dec 27 11:17:25 2018
+Info: Command: quartus_sta whack_a_mole_sim -c whack_a_mole_sim
+Info: qsta_default_script.tcl version: #2
+Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
+Info (20030): Parallel compilation is enabled and will use 4 of the 4 processors detected
+Info (21077): Low junction temperature is 0 degrees C
+Info (21077): High junction temperature is 85 degrees C
+Info (334003): Started post-fitting delay annotation
+Info (334004): Delay annotation completed successfully
+Critical Warning (332012): Synopsys Design Constraints File file not found: 'whack_a_mole_sim.sdc'. A Synopsys Design Constraints File is required by the Timing Analyzer to get proper timing constraints. Without it, the Compiler will not properly optimize the design.
+Info (332142): No user constrained base clocks found in the design. Calling "derive_clocks -period 1.0"
+Info (332105): Deriving Clocks
+    Info (332105): create_clock -period 1.000 -name clk clk
+    Info (332105): create_clock -period 1.000 -name time_divider:td_500|clk_out time_divider:td_500|clk_out
+    Info (332105): create_clock -period 1.000 -name time_divider:td_1k|clk_out time_divider:td_1k|clk_out
+    Info (332105): create_clock -period 1.000 -name time_divider:td_half|clk_out time_divider:td_half|clk_out
+    Info (332105): create_clock -period 1.000 -name time_divider:td_1|clk_out time_divider:td_1|clk_out
+    Info (332105): create_clock -period 1.000 -name time_divider:td_50|clk_out time_divider:td_50|clk_out
+Info: Found TIMING_ANALYZER_REPORT_SCRIPT_INCLUDE_DEFAULT_ANALYSIS = ON
+Info: Can't run Report Timing Closure Recommendations. The current device family is not supported.
+Critical Warning (332148): Timing requirements not met
+Info (332146): Worst-case setup slack is -6.601
+    Info (332119):     Slack       End Point TNS Clock 
+    Info (332119): ========= =================== =====================
+    Info (332119):    -6.601            -180.260 clk 
+    Info (332119):    -5.504             -70.792 time_divider:td_50|clk_out 
+    Info (332119):    -4.645             -38.853 time_divider:td_1|clk_out 
+    Info (332119):    -3.375             -11.056 time_divider:td_half|clk_out 
+    Info (332119):    -2.394             -15.309 time_divider:td_500|clk_out 
+    Info (332119):    -1.497              -8.976 time_divider:td_1k|clk_out 
+Info (332146): Worst-case hold slack is -2.774
+    Info (332119):     Slack       End Point TNS Clock 
+    Info (332119): ========= =================== =====================
+    Info (332119):    -2.774              -2.981 time_divider:td_50|clk_out 
+    Info (332119):    -2.521              -2.521 clk 
+    Info (332119):    -2.379              -2.379 time_divider:td_500|clk_out 
+    Info (332119):    -2.156              -2.156 time_divider:td_1|clk_out 
+    Info (332119):    -1.327              -1.327 time_divider:td_1k|clk_out 
+    Info (332119):     1.676               0.000 time_divider:td_half|clk_out 
+Info (332146): Worst-case recovery slack is -4.403
+    Info (332119):     Slack       End Point TNS Clock 
+    Info (332119): ========= =================== =====================
+    Info (332119):    -4.403              -4.403 time_divider:td_half|clk_out 
+Info (332146): Worst-case removal slack is 4.849
+    Info (332119):     Slack       End Point TNS Clock 
+    Info (332119): ========= =================== =====================
+    Info (332119):     4.849               0.000 time_divider:td_half|clk_out 
+Info (332146): Worst-case minimum pulse width slack is -2.289
+    Info (332119):     Slack       End Point TNS Clock 
+    Info (332119): ========= =================== =====================
+    Info (332119):    -2.289              -2.289 clk 
+    Info (332119):     0.234               0.000 time_divider:td_1k|clk_out 
+    Info (332119):     0.234               0.000 time_divider:td_1|clk_out 
+    Info (332119):     0.234               0.000 time_divider:td_500|clk_out 
+    Info (332119):     0.234               0.000 time_divider:td_50|clk_out 
+    Info (332119):     0.234               0.000 time_divider:td_half|clk_out 
+Info (332001): The selected device family is not supported by the report_metastability command.
+Info (332102): Design is not fully constrained for setup requirements
+Info (332102): Design is not fully constrained for hold requirements
+Info: Quartus Prime Timing Analyzer was successful. 0 errors, 3 warnings
+    Info: Peak virtual memory: 4697 megabytes
+    Info: Processing ended: Thu Dec 27 11:17:27 2018
+    Info: Elapsed time: 00:00:02
+    Info: Total CPU time (on all processors): 00:00:02
+
+

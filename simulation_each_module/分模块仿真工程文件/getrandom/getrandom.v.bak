@@ -1,0 +1,28 @@
+module getrandom #(	//生成随机数，clk接0.5Hz
+parameter MIN=0,
+	MAX=7) (clk,rst,ran);
+input clk,rst;
+output [2:0] ran;
+reg [2:0] ran_tmp;
+wire w,z;
+wire y;
+
+nor nr1(z,ran_tmp[0],ran_tmp[1],ran_tmp[2]);
+xor xr1(w,ran_tmp[0],ran_tmp[2]);
+xor xr2(y,w,z);
+always@(posedge clk)	//下降沿触发，在有效电平到来前提供稳定随机数输出
+begin
+	if(rst) begin
+	ran_tmp<=3'b001;
+	end
+	else begin
+	ran_tmp[1]<=ran_tmp[0];
+	ran_tmp[2]<=ran_tmp[1];
+	ran_tmp[0]<=y;
+
+	end
+end
+
+assign ran=2+ran_tmp%(MAX-MIN+1);
+
+endmodule

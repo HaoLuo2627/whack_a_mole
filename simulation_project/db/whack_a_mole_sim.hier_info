@@ -1,0 +1,482 @@
+|whack_a_mole_sim
+clk => clk.IN4
+rst => rst.IN12
+matrow[0] <= led_88:ld.row
+matrow[1] <= led_88:ld.row
+matrow[2] <= led_88:ld.row
+matrow[3] <= led_88:ld.row
+matrow[4] <= led_88:ld.row
+matrow[5] <= led_88:ld.row
+matrow[6] <= led_88:ld.row
+matrow[7] <= led_88:ld.row
+matcol_r[0] <= led_88:ld.col_r
+matcol_r[1] <= led_88:ld.col_r
+matcol_r[2] <= led_88:ld.col_r
+matcol_r[3] <= led_88:ld.col_r
+matcol_r[4] <= led_88:ld.col_r
+matcol_r[5] <= led_88:ld.col_r
+matcol_r[6] <= led_88:ld.col_r
+matcol_r[7] <= led_88:ld.col_r
+matcol_g[0] <= led_88:ld.col_g
+matcol_g[1] <= led_88:ld.col_g
+matcol_g[2] <= led_88:ld.col_g
+matcol_g[3] <= led_88:ld.col_g
+matcol_g[4] <= led_88:ld.col_g
+matcol_g[5] <= led_88:ld.col_g
+matcol_g[6] <= led_88:ld.col_g
+matcol_g[7] <= led_88:ld.col_g
+row_b[0] => row_b[0].IN1
+row_b[1] => row_b[1].IN1
+row_b[2] => row_b[2].IN1
+row_b[3] => row_b[3].IN1
+col[0] <= keyboard_scan:kb.col
+col[1] <= keyboard_scan:kb.col
+col[2] <= keyboard_scan:kb.col
+col[3] <= keyboard_scan:kb.col
+seg_select[0] <= Mux7.DB_MAX_OUTPUT_PORT_TYPE
+seg_select[1] <= Mux6.DB_MAX_OUTPUT_PORT_TYPE
+seg_select[2] <= Mux5.DB_MAX_OUTPUT_PORT_TYPE
+seg_select[3] <= Mux4.DB_MAX_OUTPUT_PORT_TYPE
+seg_select[4] <= Mux3.DB_MAX_OUTPUT_PORT_TYPE
+seg_select[5] <= Mux2.DB_MAX_OUTPUT_PORT_TYPE
+seg_select[6] <= Mux1.DB_MAX_OUTPUT_PORT_TYPE
+seg_select[7] <= Mux0.DB_MAX_OUTPUT_PORT_TYPE
+dig_select[0] <= dig_select[0]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+dig_select[1] <= dig_select[1]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+dig_select[2] <= dig_select[2]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+dig_select[3] <= dig_select[3]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+dig_select[4] <= dig_select[4]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+dig_select[5] <= dig_select[5]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+dig_select[6] <= dig_select[6]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+dig_select[7] <= dig_select[7]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+beep <= buzzer:bz.beep
+
+
+|whack_a_mole_sim|time_divider:td_1k
+clk => clk_out~reg0.CLK
+clk => cnt[0].CLK
+clk => cnt[1].CLK
+clk => cnt[2].CLK
+clk => cnt[3].CLK
+clk => cnt[4].CLK
+clk => cnt[5].CLK
+clk => cnt[6].CLK
+clk => cnt[7].CLK
+clk => cnt[8].CLK
+clk => cnt[9].CLK
+clk => cnt[10].CLK
+clk => cnt[11].CLK
+clk => cnt[12].CLK
+clk => cnt[13].CLK
+clk => cnt[14].CLK
+rst => clk_out~reg0.ACLR
+rst => cnt[0].ACLR
+rst => cnt[1].ACLR
+rst => cnt[2].ACLR
+rst => cnt[3].ACLR
+rst => cnt[4].ACLR
+rst => cnt[5].ACLR
+rst => cnt[6].ACLR
+rst => cnt[7].ACLR
+rst => cnt[8].ACLR
+rst => cnt[9].ACLR
+rst => cnt[10].ACLR
+rst => cnt[11].ACLR
+rst => cnt[12].ACLR
+rst => cnt[13].ACLR
+rst => cnt[14].ACLR
+clk_out <= clk_out~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|whack_a_mole_sim|time_divider:td_500
+clk => clk_out~reg0.CLK
+clk => cnt[0].CLK
+clk => cnt[1].CLK
+rst => clk_out~reg0.ACLR
+rst => cnt[0].ACLR
+rst => cnt[1].ACLR
+clk_out <= clk_out~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|whack_a_mole_sim|time_divider:td_50
+clk => clk_out~reg0.CLK
+clk => cnt[0].CLK
+clk => cnt[1].CLK
+clk => cnt[2].CLK
+clk => cnt[3].CLK
+rst => clk_out~reg0.ACLR
+rst => cnt[0].ACLR
+rst => cnt[1].ACLR
+rst => cnt[2].ACLR
+rst => cnt[3].ACLR
+clk_out <= clk_out~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|whack_a_mole_sim|time_divider:td_1
+clk => clk_out~reg0.CLK
+clk => cnt[0].CLK
+clk => cnt[1].CLK
+clk => cnt[2].CLK
+clk => cnt[3].CLK
+clk => cnt[4].CLK
+clk => cnt[5].CLK
+rst => clk_out~reg0.ACLR
+rst => cnt[0].ACLR
+rst => cnt[1].ACLR
+rst => cnt[2].ACLR
+rst => cnt[3].ACLR
+rst => cnt[4].ACLR
+rst => cnt[5].ACLR
+clk_out <= clk_out~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|whack_a_mole_sim|time_divider:td_half
+clk => clk_out~reg0.CLK
+clk => cnt[0].CLK
+clk => cnt[1].CLK
+rst => clk_out~reg0.ACLR
+rst => cnt[0].ACLR
+rst => cnt[1].ACLR
+clk_out <= clk_out~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|whack_a_mole_sim|time_divider:td_fa
+clk => clk_out~reg0.CLK
+clk => cnt[0].CLK
+clk => cnt[1].CLK
+clk => cnt[2].CLK
+clk => cnt[3].CLK
+clk => cnt[4].CLK
+clk => cnt[5].CLK
+clk => cnt[6].CLK
+clk => cnt[7].CLK
+clk => cnt[8].CLK
+clk => cnt[9].CLK
+clk => cnt[10].CLK
+clk => cnt[11].CLK
+clk => cnt[12].CLK
+clk => cnt[13].CLK
+clk => cnt[14].CLK
+rst => clk_out~reg0.ACLR
+rst => cnt[0].ACLR
+rst => cnt[1].ACLR
+rst => cnt[2].ACLR
+rst => cnt[3].ACLR
+rst => cnt[4].ACLR
+rst => cnt[5].ACLR
+rst => cnt[6].ACLR
+rst => cnt[7].ACLR
+rst => cnt[8].ACLR
+rst => cnt[9].ACLR
+rst => cnt[10].ACLR
+rst => cnt[11].ACLR
+rst => cnt[12].ACLR
+rst => cnt[13].ACLR
+rst => cnt[14].ACLR
+clk_out <= clk_out~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|whack_a_mole_sim|getrandom:gr1
+clk => clk.IN6
+rst => rst.IN6
+ran1[0] <= ran_tmp3.DB_MAX_OUTPUT_PORT_TYPE
+ran1[1] <= Add0.DB_MAX_OUTPUT_PORT_TYPE
+ran1[2] <= Add0.DB_MAX_OUTPUT_PORT_TYPE
+ran2[0] <= ran_tmp0.DB_MAX_OUTPUT_PORT_TYPE
+ran2[1] <= Add1.DB_MAX_OUTPUT_PORT_TYPE
+ran2[2] <= Add1.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|whack_a_mole_sim|getrandom:gr1|D_ff:FF0
+clk => Q~reg0.CLK
+clr => Q.OUTPUTSELECT
+D => Q.DATAA
+Q <= Q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|whack_a_mole_sim|getrandom:gr1|D_ff:FF1
+clk => Q~reg0.CLK
+clr => Q.OUTPUTSELECT
+D => Q.DATAA
+Q <= Q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|whack_a_mole_sim|getrandom:gr1|D_ff:FF2
+clk => Q~reg0.CLK
+clr => Q.OUTPUTSELECT
+D => Q.DATAA
+Q <= Q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|whack_a_mole_sim|getrandom:gr1|D_ff:FF3
+clk => Q~reg0.CLK
+clr => Q.OUTPUTSELECT
+D => Q.DATAA
+Q <= Q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|whack_a_mole_sim|getrandom:gr1|D_ff:FF4
+clk => Q~reg0.CLK
+clr => Q.OUTPUTSELECT
+D => Q.DATAA
+Q <= Q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|whack_a_mole_sim|getrandom:gr1|D_ff:FF5
+clk => Q~reg0.CLK
+clr => Q.OUTPUTSELECT
+D => Q.DATAA
+Q <= Q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|whack_a_mole_sim|keyboard_scan:kb
+clk => cnt[0].CLK
+clk => cnt[1].CLK
+rst => cnt[0].ACLR
+rst => cnt[1].ACLR
+row_b[0] => Equal1.IN3
+row_b[0] => row_location.OUTPUTSELECT
+row_b[0] => row_location.OUTPUTSELECT
+row_b[1] => row_location.DATAA
+row_b[1] => row_location.OUTPUTSELECT
+row_b[1] => Equal1.IN2
+row_b[2] => row_location.DATAB
+row_b[2] => Equal1.IN1
+row_b[3] => Equal1.IN0
+col[0] <= Decoder0.DB_MAX_OUTPUT_PORT_TYPE
+col[1] <= Decoder0.DB_MAX_OUTPUT_PORT_TYPE
+col[2] <= Decoder0.DB_MAX_OUTPUT_PORT_TYPE
+col[3] <= Decoder0.DB_MAX_OUTPUT_PORT_TYPE
+row_location[0] <= row_location.DB_MAX_OUTPUT_PORT_TYPE
+row_location[1] <= row_location.DB_MAX_OUTPUT_PORT_TYPE
+row_location[2] <= Equal1.DB_MAX_OUTPUT_PORT_TYPE
+col_location[0] <= Mux1.DB_MAX_OUTPUT_PORT_TYPE
+col_location[1] <= Mux0.DB_MAX_OUTPUT_PORT_TYPE
+col_location[2] <= Equal1.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|whack_a_mole_sim|timer:time_counter
+clk_1 => time_ge[0]~reg0.CLK
+clk_1 => time_ge[1]~reg0.CLK
+clk_1 => time_ge[2]~reg0.CLK
+clk_1 => time_ge[3]~reg0.CLK
+clk_1 => time_shi[0]~reg0.CLK
+clk_1 => time_shi[1]~reg0.CLK
+clk_1 => time_shi[2]~reg0.CLK
+clk_1 => time_shi[3]~reg0.CLK
+state[0] => Equal0.IN1
+state[0] => Equal1.IN0
+state[1] => Equal0.IN0
+state[1] => Equal1.IN1
+rst => time_ge[0]~reg0.ACLR
+rst => time_ge[1]~reg0.ACLR
+rst => time_ge[2]~reg0.ACLR
+rst => time_ge[3]~reg0.ACLR
+rst => time_shi[0]~reg0.ACLR
+rst => time_shi[1]~reg0.ACLR
+rst => time_shi[2]~reg0.PRESET
+rst => time_shi[3]~reg0.ACLR
+time_shi[0] <= time_shi[0]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+time_shi[1] <= time_shi[1]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+time_shi[2] <= time_shi[2]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+time_shi[3] <= time_shi[3]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+time_ge[0] <= time_ge[0]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+time_ge[1] <= time_ge[1]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+time_ge[2] <= time_ge[2]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+time_ge[3] <= time_ge[3]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|whack_a_mole_sim|controller:center_control
+rowran[0] => Equal1.IN62
+rowran[1] => Equal1.IN61
+rowran[2] => Equal1.IN60
+colran[0] => Equal2.IN62
+colran[1] => Equal2.IN61
+colran[2] => Equal2.IN60
+row[0] => Equal1.IN63
+row[1] => Add0.IN4
+row[2] => Add0.IN3
+col[0] => Equal2.IN63
+col[1] => Add1.IN4
+col[2] => Add1.IN3
+time_shi[0] => Equal4.IN31
+time_shi[1] => Equal4.IN30
+time_shi[2] => Equal4.IN29
+time_shi[3] => Equal4.IN28
+time_ge[0] => Equal5.IN31
+time_ge[1] => Equal5.IN30
+time_ge[2] => Equal5.IN29
+time_ge[3] => Equal5.IN28
+clk => clk.IN1
+clk_50 => score_ge[0]~reg0.CLK
+clk_50 => score_ge[1]~reg0.CLK
+clk_50 => score_ge[2]~reg0.CLK
+clk_50 => score_ge[3]~reg0.CLK
+clk_50 => score_shi[0]~reg0.CLK
+clk_50 => score_shi[1]~reg0.CLK
+clk_50 => score_shi[2]~reg0.CLK
+clk_50 => score_shi[3]~reg0.CLK
+clk_50 => flag.CLK
+clk_50 => hit~reg0.CLK
+clk_half => hit_tmp.CLK
+rst => rst.IN1
+hit <= hit~reg0.DB_MAX_OUTPUT_PORT_TYPE
+state[0] <= fsm:central_fsm.port2
+state[1] <= fsm:central_fsm.port2
+score_shi[0] <= score_shi[0]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+score_shi[1] <= score_shi[1]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+score_shi[2] <= score_shi[2]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+score_shi[3] <= score_shi[3]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+score_ge[0] <= score_ge[0]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+score_ge[1] <= score_ge[1]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+score_ge[2] <= score_ge[2]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+score_ge[3] <= score_ge[3]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|whack_a_mole_sim|controller:center_control|fsm:central_fsm
+clk => state[0]~reg0.CLK
+clk => state[1]~reg0.CLK
+rst => state[0]~reg0.ACLR
+rst => state[1]~reg0.ACLR
+rst => Mux0.IN2
+rst => Mux0.IN3
+rst => Mux1.IN2
+rst => Mux1.IN3
+state[0] <= state[0]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+state[1] <= state[1]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+Ts => next_state.OUTPUTSELECT
+Ts => Mux1.IN1
+Tt => next_state.DATAA
+
+
+|whack_a_mole_sim|led_88:ld
+clk => cnt[0].CLK
+clk => cnt[1].CLK
+clk => cnt[2].CLK
+clk_half => hit_tmp.CLK
+rst => cnt.OUTPUTSELECT
+rst => cnt.OUTPUTSELECT
+rst => cnt.OUTPUTSELECT
+hit => hit_tmp.PRESET
+row[0] <= Decoder1.DB_MAX_OUTPUT_PORT_TYPE
+row[1] <= Decoder1.DB_MAX_OUTPUT_PORT_TYPE
+row[2] <= Decoder1.DB_MAX_OUTPUT_PORT_TYPE
+row[3] <= Decoder1.DB_MAX_OUTPUT_PORT_TYPE
+row[4] <= Decoder1.DB_MAX_OUTPUT_PORT_TYPE
+row[5] <= Decoder1.DB_MAX_OUTPUT_PORT_TYPE
+row[6] <= Decoder1.DB_MAX_OUTPUT_PORT_TYPE
+row[7] <= Decoder1.DB_MAX_OUTPUT_PORT_TYPE
+col_r[0] <= col_r.DB_MAX_OUTPUT_PORT_TYPE
+col_r[1] <= Mux11.DB_MAX_OUTPUT_PORT_TYPE
+col_r[2] <= Mux10.DB_MAX_OUTPUT_PORT_TYPE
+col_r[3] <= Mux9.DB_MAX_OUTPUT_PORT_TYPE
+col_r[4] <= Mux8.DB_MAX_OUTPUT_PORT_TYPE
+col_r[5] <= Mux7.DB_MAX_OUTPUT_PORT_TYPE
+col_r[6] <= Mux6.DB_MAX_OUTPUT_PORT_TYPE
+col_r[7] <= col_r.DB_MAX_OUTPUT_PORT_TYPE
+col_g[0] <= col_g.DB_MAX_OUTPUT_PORT_TYPE
+col_g[1] <= Mux5.DB_MAX_OUTPUT_PORT_TYPE
+col_g[2] <= Mux4.DB_MAX_OUTPUT_PORT_TYPE
+col_g[3] <= Mux3.DB_MAX_OUTPUT_PORT_TYPE
+col_g[4] <= Mux2.DB_MAX_OUTPUT_PORT_TYPE
+col_g[5] <= Mux1.DB_MAX_OUTPUT_PORT_TYPE
+col_g[6] <= Mux0.DB_MAX_OUTPUT_PORT_TYPE
+col_g[7] <= col_g.DB_MAX_OUTPUT_PORT_TYPE
+state[0] => Equal4.IN1
+state[0] => Equal5.IN1
+state[0] => Equal6.IN0
+state[0] => Equal8.IN1
+state[1] => Equal4.IN0
+state[1] => Equal5.IN0
+state[1] => Equal6.IN1
+state[1] => Equal8.IN0
+rowran[0] => Equal1.IN5
+rowran[0] => Equal2.IN5
+rowran[0] => Equal3.IN5
+rowran[0] => Equal7.IN5
+rowran[1] => Equal1.IN4
+rowran[1] => Equal2.IN4
+rowran[1] => Equal3.IN4
+rowran[1] => Equal7.IN4
+rowran[2] => Equal1.IN3
+rowran[2] => Equal2.IN3
+rowran[2] => Equal3.IN3
+rowran[2] => Equal7.IN3
+colran[0] => Decoder0.IN2
+colran[1] => Decoder0.IN1
+colran[2] => Decoder0.IN0
+
+
+|whack_a_mole_sim|decoder:deco_time_shi
+num[0] => seg.RADDR
+num[1] => seg.RADDR1
+num[2] => seg.RADDR2
+num[3] => seg.RADDR3
+seg_led[0] <= seg.DATAOUT
+seg_led[1] <= seg.DATAOUT1
+seg_led[2] <= seg.DATAOUT2
+seg_led[3] <= seg.DATAOUT3
+seg_led[4] <= seg.DATAOUT4
+seg_led[5] <= seg.DATAOUT5
+seg_led[6] <= seg.DATAOUT6
+seg_led[7] <= seg.DATAOUT7
+
+
+|whack_a_mole_sim|decoder:deco_time_ge
+num[0] => seg.RADDR
+num[1] => seg.RADDR1
+num[2] => seg.RADDR2
+num[3] => seg.RADDR3
+seg_led[0] <= seg.DATAOUT
+seg_led[1] <= seg.DATAOUT1
+seg_led[2] <= seg.DATAOUT2
+seg_led[3] <= seg.DATAOUT3
+seg_led[4] <= seg.DATAOUT4
+seg_led[5] <= seg.DATAOUT5
+seg_led[6] <= seg.DATAOUT6
+seg_led[7] <= seg.DATAOUT7
+
+
+|whack_a_mole_sim|decoder:deco_score_shi
+num[0] => seg.RADDR
+num[1] => seg.RADDR1
+num[2] => seg.RADDR2
+num[3] => seg.RADDR3
+seg_led[0] <= seg.DATAOUT
+seg_led[1] <= seg.DATAOUT1
+seg_led[2] <= seg.DATAOUT2
+seg_led[3] <= seg.DATAOUT3
+seg_led[4] <= seg.DATAOUT4
+seg_led[5] <= seg.DATAOUT5
+seg_led[6] <= seg.DATAOUT6
+seg_led[7] <= seg.DATAOUT7
+
+
+|whack_a_mole_sim|decoder:deco_score_ge
+num[0] => seg.RADDR
+num[1] => seg.RADDR1
+num[2] => seg.RADDR2
+num[3] => seg.RADDR3
+seg_led[0] <= seg.DATAOUT
+seg_led[1] <= seg.DATAOUT1
+seg_led[2] <= seg.DATAOUT2
+seg_led[3] <= seg.DATAOUT3
+seg_led[4] <= seg.DATAOUT4
+seg_led[5] <= seg.DATAOUT5
+seg_led[6] <= seg.DATAOUT6
+seg_led[7] <= seg.DATAOUT7
+
+
+|whack_a_mole_sim|buzzer:bz
+clk_la => beep.DATAB
+clk_50 => en.CLK
+clk_50 => flag.CLK
+clk_half => hit_tmp.CLK
+hit => always1.IN1
+hit => hit_tmp.PRESET
+hit => en.OUTPUTSELECT
+rst => en.ACLR
+rst => flag.PRESET
+beep <= beep.DB_MAX_OUTPUT_PORT_TYPE
+
+

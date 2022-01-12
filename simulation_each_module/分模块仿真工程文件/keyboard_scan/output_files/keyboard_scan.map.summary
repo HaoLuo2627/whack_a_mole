@@ -1,0 +1,9 @@
+Analysis & Synthesis Status : Successful - Wed Dec 26 16:08:51 2018
+Quartus Prime Version : 18.0.0 Build 614 04/24/2018 SJ Lite Edition
+Revision Name : keyboard_scan
+Top-level Entity Name : keyboard_scan
+Family : MAX II
+Total logic elements : 17
+Total pins : 16
+Total virtual pins : 0
+UFM blocks : 0 / 1 ( 0 % )

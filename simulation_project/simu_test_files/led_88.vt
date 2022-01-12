@@ -1,0 +1,148 @@
+// Copyright (C) 2018  Intel Corporation. All rights reserved.
+// Your use of Intel Corporation's design tools, logic functions 
+// and other software and tools, and its AMPP partner logic 
+// functions, and any output files from any of the foregoing 
+// (including device programming or simulation files), and any 
+// associated documentation or information are expressly subject 
+// to the terms and conditions of the Intel Program License 
+// Subscription Agreement, the Intel Quartus Prime License Agreement,
+// the Intel FPGA IP License Agreement, or other applicable license
+// agreement, including, without limitation, that your use is for
+// the sole purpose of programming logic devices manufactured by
+// Intel and sold by Intel or its authorized distributors.  Please
+// refer to the applicable agreement for further details.
+
+// *****************************************************************************
+// This file contains a Verilog test bench template that is freely editable to  
+// suit user's needs .Comments are provided in each section to help the user    
+// fill out necessary details.                                                  
+// *****************************************************************************
+// Generated on "12/26/2018 16:47:10"
+                                                                                
+// Verilog Test Bench template for design : led_88
+// 
+// Simulation tool : ModelSim-Altera (Verilog)
+// 
+
+`timescale 1 ps/ 1 ps
+module led_88_vlg_tst();
+// constants                                           
+// general purpose registers
+
+// test vector input registers
+reg clk;
+reg clk_half;
+reg [2:0] colran;
+reg hit;
+reg [2:0] rowran;
+reg rst;
+reg [1:0] state;
+// wires                                               
+wire [7:0]  col_g;
+wire [7:0]  col_r;
+wire [7:0]  row;
+
+// assign statements (if any)                          
+led_88 i1 (
+// port map - connection between master ports and signals/registers   
+	.clk(clk),
+	.clk_half(clk_half),
+	.col_g(col_g),
+	.col_r(col_r),
+	.colran(colran),
+	.hit(hit),
+	.row(row),
+	.rowran(rowran),
+	.rst(rst),
+	.state(state)
+);
+initial                                                
+begin                                                  
+	clk=1;
+	clk_half=1;
+	hit=0;
+	rst=1;state=2'b00;
+	#1000 rst=0;state=2'b01;
+	rowran=2;colran=4;//remaining 40 s
+	#2000 rowran=2;colran=2;//38
+	#2000 rowran=3;colran=3;//36
+	#2000 rowran=5;colran=4;//34
+	#2000 rowran=2;colran=5;//32
+	#2000 rowran=4;colran=4;//30
+	#2000 rowran=3;colran=4;//28
+	#2000 rowran=4;colran=2;//26
+	#2000 rowran=4;colran=3;//24
+	#2000 rowran=5;colran=2;//22
+	#2000 rowran=2;colran=5;//20
+	#2000 rowran=3;colran=2;//18
+	#2000 rowran=5;colran=4;//16
+	#2000 rowran=4;colran=3;//14
+	#2000 rowran=4;colran=2;//12
+	#2000 rowran=2;colran=4;//10
+	#2000 rowran=3;colran=5;//8
+	#2000 rowran=2;colran=2;//6
+	#2000 rowran=5;colran=2;//4
+	#2000 rowran=5;colran=5;//2
+	#2000 rowran=2;colran=5;//0
+	state=2'b11;				//game over
+	#5000 rst=1;state=2'b00;//play again
+	#1000 rst=0;state=2'b01;
+	 rowran=2;colran=2;//40 hit
+	#2000 rowran=3;colran=3;//38
+	#2000 rowran=5;colran=4;//36 hit
+	#2000 rowran=2;colran=5;//34 hit
+	#2000 rowran=4;colran=4;//32
+	#2000 rowran=3;colran=4;//30 hit
+	#2000 rowran=4;colran=2;//28 hit
+	#2000 rowran=4;colran=3;//26 hit
+	#2000 rowran=5;colran=2;//24
+	#2000 rowran=2;colran=5;//22 hit
+	#2000 rowran=3;colran=2;//20 hit
+	#2000 rowran=5;colran=4;//18
+	#2000 rowran=4;colran=3;//16 hit
+	#2000 rowran=4;colran=2;//14 hit
+	state=2'b10;
+	#5000 rst=1'b1;state=2'b00;
+	#1000 rst=1'b0;state=2'b01;
+	#1000 $stop;
+$display("Running testbench");                       
+end  
+initial
+begin
+	#5200 hit=1;
+	#1000 hit=0;
+	#7000 hit=1;
+	#1000 hit=0;
+	#1300 hit=1;
+	#500 hit=0;
+	#500 hit=1;
+	#500 hit=0;
+	#29500 hit=1;
+	#500 hit=0;
+	#300 hit=1;
+	#500 hit=0;
+	#2500 hit=1;
+	#500 hit=0;
+	#1800 hit=1;
+	#700 hit=0;
+	#3000 hit=1;
+	#600 hit=0;
+	#1100 hit=1;
+	#1000 hit=0;
+	#500 hit=1;
+	#1500 hit=0;
+	#2600 hit=1;
+	#400 hit=0;
+	#2100 hit=1;
+	#400 hit=0;
+	#1000 hit=1;
+	#500 hit=0;
+	#4000 hit=1;
+	#500 hit=0;
+	#1500 hit=1;
+	#1000 hit=0;
+end
+always clk= #1 ~clk;
+always clk_half=#1000 ~clk_half;   //1000 time units equal 1 second                                          
+endmodule
+

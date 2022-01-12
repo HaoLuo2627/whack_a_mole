@@ -1,0 +1,38 @@
+module timer(clk_1,state,rst,time_shi,time_ge);
+input clk_1,rst;
+input [1:0] state;
+output reg [3:0] time_shi,time_ge;
+
+always@(posedge clk_1 or posedge rst)
+begin
+	if(rst)
+	begin
+		time_shi<=4'b0110;
+		time_ge<=4'b0000;
+	end
+	else if(state==2'b00)
+	begin
+		time_shi<=4'b0110;
+		time_ge<=4'b0000;
+	end
+	else if(state==2'b01)
+	begin
+		if(time_ge==0&&time_shi!=0)
+		begin
+			time_ge<=4'b1001;
+			time_shi<=time_shi-1;
+		end
+		else if(time_ge==0&&time_shi==0)
+		begin
+			time_ge<=time_ge;
+			time_shi<=time_shi;
+		end
+		else time_ge<=time_ge-1;
+	end
+	else begin
+		time_ge<=time_ge;
+		time_shi<=time_shi;
+	end
+end
+
+endmodule 

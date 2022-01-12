@@ -1,0 +1,54 @@
+m255
+K4
+z2
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+Z0 dE:/intelProjects/timer/simulation/modelsim
+vtimer
+Z1 !s110 1545822928
+!i10b 1
+!s100 S:ZXM]<iMK7><NZWn1A;:1
+I85iFd:T;kEWXFaD[7:mJP2
+Z2 VDg1SIo80bB@j0V0VzS_@n1
+R0
+w1545822211
+8E:/intelProjects/timer/timer.v
+FE:/intelProjects/timer/timer.v
+L0 1
+Z3 OV;L;10.5b;63
+r1
+!s85 0
+31
+Z4 !s108 1545822928.000000
+!s107 E:/intelProjects/timer/timer.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+E:/intelProjects/timer|E:/intelProjects/timer/timer.v|
+!i113 1
+Z5 o-vlog01compat -work work
+!s92 -vlog01compat -work work +incdir+E:/intelProjects/timer
+Z6 tCvgOpt 0
+vtimer_vlg_tst
+R1
+!i10b 1
+!s100 ZHX[H6cdB66h[`6fL5D=<2
+IC:[dM9R>hzl5QB<FKk=U^0
+R2
+R0
+w1545822917
+8E:/intelProjects/timer/simulation/modelsim/timer.vt
+FE:/intelProjects/timer/simulation/modelsim/timer.vt
+L0 28
+R3
+r1
+!s85 0
+31
+R4
+!s107 E:/intelProjects/timer/simulation/modelsim/timer.vt|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+E:/intelProjects/timer/simulation/modelsim|E:/intelProjects/timer/simulation/modelsim/timer.vt|
+!i113 1
+R5
+!s92 -vlog01compat -work work +incdir+E:/intelProjects/timer/simulation/modelsim
+R6

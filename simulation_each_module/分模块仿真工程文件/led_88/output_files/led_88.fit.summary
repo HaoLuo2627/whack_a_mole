@@ -1,0 +1,11 @@
+Fitter Status : Successful - Wed Dec 26 16:43:12 2018
+Quartus Prime Version : 18.0.0 Build 614 04/24/2018 SJ Lite Edition
+Revision Name : led_88
+Top-level Entity Name : led_88
+Family : MAX II
+Device : EPM1270T144C5
+Timing Models : Final
+Total logic elements : 34 / 1,270 ( 3 % )
+Total pins : 36 / 116 ( 31 % )
+Total virtual pins : 0
+UFM blocks : 0 / 1 ( 0 % )

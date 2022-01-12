@@ -1,0 +1,398 @@
+Timing Analyzer report for keyboard_scan
+Wed Dec 26 16:09:00 2018
+Quartus Prime Version 18.0.0 Build 614 04/24/2018 SJ Lite Edition
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. Timing Analyzer Summary
+  3. Parallel Compilation
+  4. Clocks
+  5. Fmax Summary
+  6. Setup Summary
+  7. Hold Summary
+  8. Recovery Summary
+  9. Removal Summary
+ 10. Minimum Pulse Width Summary
+ 11. Setup: 'clk'
+ 12. Setup: 'time_divider:td|clk_out'
+ 13. Hold: 'clk'
+ 14. Hold: 'time_divider:td|clk_out'
+ 15. Setup Transfers
+ 16. Hold Transfers
+ 17. Report TCCS
+ 18. Report RSKM
+ 19. Unconstrained Paths Summary
+ 20. Clock Status Summary
+ 21. Unconstrained Input Ports
+ 22. Unconstrained Output Ports
+ 23. Unconstrained Input Ports
+ 24. Unconstrained Output Ports
+ 25. Timing Analyzer Messages
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 2018  Intel Corporation. All rights reserved.
+Your use of Intel Corporation's design tools, logic functions 
+and other software and tools, and its AMPP partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Intel Program License 
+Subscription Agreement, the Intel Quartus Prime License Agreement,
+the Intel FPGA IP License Agreement, or other applicable license
+agreement, including, without limitation, that your use is for
+the sole purpose of programming logic devices manufactured by
+Intel and sold by Intel or its authorized distributors.  Please
+refer to the applicable agreement for further details.
+
+
+
++-----------------------------------------------------------------------------+
+; Timing Analyzer Summary                                                     ;
++-----------------------+-----------------------------------------------------+
+; Quartus Prime Version ; Version 18.0.0 Build 614 04/24/2018 SJ Lite Edition ;
+; Timing Analyzer       ; Legacy Timing Analyzer                              ;
+; Revision Name         ; keyboard_scan                                       ;
+; Device Family         ; MAX II                                              ;
+; Device Name           ; EPM1270T144C5                                       ;
+; Timing Models         ; Final                                               ;
+; Delay Model           ; Slow Model                                          ;
+; Rise/Fall Delays      ; Unavailable                                         ;
++-----------------------+-----------------------------------------------------+
+
+
++------------------------------------------+
+; Parallel Compilation                     ;
++----------------------------+-------------+
+; Processors                 ; Number      ;
++----------------------------+-------------+
+; Number detected on machine ; 4           ;
+; Maximum allowed            ; 4           ;
+;                            ;             ;
+; Average used               ; 1.00        ;
+; Maximum used               ; 1           ;
+;                            ;             ;
+; Usage by Processor         ; % Time Used ;
+;     Processor 1            ; 100.0%      ;
++----------------------------+-------------+
+
+
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Clocks                                                                                                                                                                                                           ;
++-------------------------+------+--------+------------+-------+-------+------------+-----------+-------------+-------+--------+-----------+------------+----------+--------+--------+-----------------------------+
+; Clock Name              ; Type ; Period ; Frequency  ; Rise  ; Fall  ; Duty Cycle ; Divide by ; Multiply by ; Phase ; Offset ; Edge List ; Edge Shift ; Inverted ; Master ; Source ; Targets                     ;
++-------------------------+------+--------+------------+-------+-------+------------+-----------+-------------+-------+--------+-----------+------------+----------+--------+--------+-----------------------------+
+; clk                     ; Base ; 1.000  ; 1000.0 MHz ; 0.000 ; 0.500 ;            ;           ;             ;       ;        ;           ;            ;          ;        ;        ; { clk }                     ;
+; time_divider:td|clk_out ; Base ; 1.000  ; 1000.0 MHz ; 0.000 ; 0.500 ;            ;           ;             ;       ;        ;           ;            ;          ;        ;        ; { time_divider:td|clk_out } ;
++-------------------------+------+--------+------------+-------+-------+------------+-----------+-------------+-------+--------+-----------+------------+----------+--------+--------+-----------------------------+
+
+
++---------------------------------------------------------------+
+; Fmax Summary                                                  ;
++------------+-----------------+-------------------------+------+
+; Fmax       ; Restricted Fmax ; Clock Name              ; Note ;
++------------+-----------------+-------------------------+------+
+; 284.58 MHz ; 284.58 MHz      ; clk                     ;      ;
+; 407.83 MHz ; 407.83 MHz      ; time_divider:td|clk_out ;      ;
++------------+-----------------+-------------------------+------+
+This panel reports FMAX for every clock in the design, regardless of the user-specified clock periods.  FMAX is only computed for paths where the source and destination registers or ports are driven by the same clock.  Paths of different clocks, including generated clocks, are ignored.  For paths between a clock and its inversion, FMAX is computed as if the rising and falling edges are scaled along with FMAX, such that the duty cycle (in terms of a percentage) is maintained. Altera recommends that you always use clock constraints and other slack reports for sign-off analysis.
+
+
++--------------------------------------------------+
+; Setup Summary                                    ;
++-------------------------+--------+---------------+
+; Clock                   ; Slack  ; End Point TNS ;
++-------------------------+--------+---------------+
+; clk                     ; -2.514 ; -9.677        ;
+; time_divider:td|clk_out ; -1.452 ; -2.667        ;
++-------------------------+--------+---------------+
+
+
++--------------------------------------------------+
+; Hold Summary                                     ;
++-------------------------+--------+---------------+
+; Clock                   ; Slack  ; End Point TNS ;
++-------------------------+--------+---------------+
+; clk                     ; -2.228 ; -2.228        ;
+; time_divider:td|clk_out ; 1.661  ; 0.000         ;
++-------------------------+--------+---------------+
+
+
+--------------------
+; Recovery Summary ;
+--------------------
+No paths to report.
+
+
+-------------------
+; Removal Summary ;
+-------------------
+No paths to report.
+
+
++--------------------------------------------------+
+; Minimum Pulse Width Summary                      ;
++-------------------------+--------+---------------+
+; Clock                   ; Slack  ; End Point TNS ;
++-------------------------+--------+---------------+
+; clk                     ; -2.289 ; -2.289        ;
+; time_divider:td|clk_out ; 0.234  ; 0.000         ;
++-------------------------+--------+---------------+
+
+
++---------------------------------------------------------------------------------------------------------------------------------------------+
+; Setup: 'clk'                                                                                                                                ;
++--------+-------------------------+-------------------------+-------------------------+-------------+--------------+------------+------------+
+; Slack  ; From Node               ; To Node                 ; Launch Clock            ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
++--------+-------------------------+-------------------------+-------------------------+-------------+--------------+------------+------------+
+; -2.514 ; time_divider:td|cnt[3]  ; time_divider:td|clk_out ; clk                     ; clk         ; 1.000        ; 0.000      ; 3.181      ;
+; -2.315 ; time_divider:td|cnt[1]  ; time_divider:td|clk_out ; clk                     ; clk         ; 1.000        ; 0.000      ; 2.982      ;
+; -2.167 ; time_divider:td|cnt[2]  ; time_divider:td|clk_out ; clk                     ; clk         ; 1.000        ; 0.000      ; 2.834      ;
+; -1.883 ; time_divider:td|cnt[2]  ; time_divider:td|cnt[0]  ; clk                     ; clk         ; 1.000        ; 0.000      ; 2.550      ;
+; -1.879 ; time_divider:td|cnt[2]  ; time_divider:td|cnt[3]  ; clk                     ; clk         ; 1.000        ; 0.000      ; 2.546      ;
+; -1.877 ; time_divider:td|cnt[3]  ; time_divider:td|cnt[2]  ; clk                     ; clk         ; 1.000        ; 0.000      ; 2.544      ;
+; -1.761 ; time_divider:td|cnt[0]  ; time_divider:td|clk_out ; clk                     ; clk         ; 1.000        ; 0.000      ; 2.428      ;
+; -1.735 ; time_divider:td|cnt[1]  ; time_divider:td|cnt[2]  ; clk                     ; clk         ; 1.000        ; 0.000      ; 2.402      ;
+; -1.735 ; time_divider:td|cnt[1]  ; time_divider:td|cnt[0]  ; clk                     ; clk         ; 1.000        ; 0.000      ; 2.402      ;
+; -1.735 ; time_divider:td|cnt[1]  ; time_divider:td|cnt[3]  ; clk                     ; clk         ; 1.000        ; 0.000      ; 2.402      ;
+; -1.613 ; time_divider:td|cnt[0]  ; time_divider:td|cnt[0]  ; clk                     ; clk         ; 1.000        ; 0.000      ; 2.280      ;
+; -1.555 ; time_divider:td|cnt[3]  ; time_divider:td|cnt[0]  ; clk                     ; clk         ; 1.000        ; 0.000      ; 2.222      ;
+; -1.549 ; time_divider:td|cnt[3]  ; time_divider:td|cnt[3]  ; clk                     ; clk         ; 1.000        ; 0.000      ; 2.216      ;
+; -1.547 ; time_divider:td|cnt[2]  ; time_divider:td|cnt[2]  ; clk                     ; clk         ; 1.000        ; 0.000      ; 2.214      ;
+; -1.524 ; time_divider:td|cnt[1]  ; time_divider:td|cnt[1]  ; clk                     ; clk         ; 1.000        ; 0.000      ; 2.191      ;
+; -1.255 ; time_divider:td|cnt[0]  ; time_divider:td|cnt[2]  ; clk                     ; clk         ; 1.000        ; 0.000      ; 1.922      ;
+; -1.254 ; time_divider:td|cnt[0]  ; time_divider:td|cnt[3]  ; clk                     ; clk         ; 1.000        ; 0.000      ; 1.921      ;
+; -1.253 ; time_divider:td|cnt[0]  ; time_divider:td|cnt[1]  ; clk                     ; clk         ; 1.000        ; 0.000      ; 1.920      ;
+; 2.174  ; time_divider:td|clk_out ; time_divider:td|clk_out ; time_divider:td|clk_out ; clk         ; 0.500        ; 3.819      ; 2.188      ;
+; 2.674  ; time_divider:td|clk_out ; time_divider:td|clk_out ; time_divider:td|clk_out ; clk         ; 1.000        ; 3.819      ; 2.188      ;
++--------+-------------------------+-------------------------+-------------------------+-------------+--------------+------------+------------+
+
+
++---------------------------------------------------------------------------------------------------------------------------+
+; Setup: 'time_divider:td|clk_out'                                                                                          ;
++--------+-----------+---------+-------------------------+-------------------------+--------------+------------+------------+
+; Slack  ; From Node ; To Node ; Launch Clock            ; Latch Clock             ; Relationship ; Clock Skew ; Data Delay ;
++--------+-----------+---------+-------------------------+-------------------------+--------------+------------+------------+
+; -1.452 ; cnt[1]    ; cnt[1]  ; time_divider:td|clk_out ; time_divider:td|clk_out ; 1.000        ; 0.000      ; 2.119      ;
+; -1.218 ; cnt[0]    ; cnt[1]  ; time_divider:td|clk_out ; time_divider:td|clk_out ; 1.000        ; 0.000      ; 1.885      ;
+; -1.215 ; cnt[0]    ; cnt[0]  ; time_divider:td|clk_out ; time_divider:td|clk_out ; 1.000        ; 0.000      ; 1.882      ;
++--------+-----------+---------+-------------------------+-------------------------+--------------+------------+------------+
+
+
++---------------------------------------------------------------------------------------------------------------------------------------------+
+; Hold: 'clk'                                                                                                                                 ;
++--------+-------------------------+-------------------------+-------------------------+-------------+--------------+------------+------------+
+; Slack  ; From Node               ; To Node                 ; Launch Clock            ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
++--------+-------------------------+-------------------------+-------------------------+-------------+--------------+------------+------------+
+; -2.228 ; time_divider:td|clk_out ; time_divider:td|clk_out ; time_divider:td|clk_out ; clk         ; 0.000        ; 3.819      ; 2.188      ;
+; -1.728 ; time_divider:td|clk_out ; time_divider:td|clk_out ; time_divider:td|clk_out ; clk         ; -0.500       ; 3.819      ; 2.188      ;
+; 1.699  ; time_divider:td|cnt[0]  ; time_divider:td|cnt[1]  ; clk                     ; clk         ; 0.000        ; 0.000      ; 1.920      ;
+; 1.700  ; time_divider:td|cnt[0]  ; time_divider:td|cnt[3]  ; clk                     ; clk         ; 0.000        ; 0.000      ; 1.921      ;
+; 1.701  ; time_divider:td|cnt[0]  ; time_divider:td|cnt[2]  ; clk                     ; clk         ; 0.000        ; 0.000      ; 1.922      ;
+; 1.970  ; time_divider:td|cnt[1]  ; time_divider:td|cnt[1]  ; clk                     ; clk         ; 0.000        ; 0.000      ; 2.191      ;
+; 1.993  ; time_divider:td|cnt[2]  ; time_divider:td|cnt[2]  ; clk                     ; clk         ; 0.000        ; 0.000      ; 2.214      ;
+; 1.995  ; time_divider:td|cnt[3]  ; time_divider:td|cnt[3]  ; clk                     ; clk         ; 0.000        ; 0.000      ; 2.216      ;
+; 2.001  ; time_divider:td|cnt[3]  ; time_divider:td|cnt[0]  ; clk                     ; clk         ; 0.000        ; 0.000      ; 2.222      ;
+; 2.059  ; time_divider:td|cnt[0]  ; time_divider:td|cnt[0]  ; clk                     ; clk         ; 0.000        ; 0.000      ; 2.280      ;
+; 2.181  ; time_divider:td|cnt[1]  ; time_divider:td|cnt[2]  ; clk                     ; clk         ; 0.000        ; 0.000      ; 2.402      ;
+; 2.181  ; time_divider:td|cnt[1]  ; time_divider:td|cnt[0]  ; clk                     ; clk         ; 0.000        ; 0.000      ; 2.402      ;
+; 2.181  ; time_divider:td|cnt[1]  ; time_divider:td|cnt[3]  ; clk                     ; clk         ; 0.000        ; 0.000      ; 2.402      ;
+; 2.207  ; time_divider:td|cnt[0]  ; time_divider:td|clk_out ; clk                     ; clk         ; 0.000        ; 0.000      ; 2.428      ;
+; 2.323  ; time_divider:td|cnt[3]  ; time_divider:td|cnt[2]  ; clk                     ; clk         ; 0.000        ; 0.000      ; 2.544      ;
+; 2.325  ; time_divider:td|cnt[2]  ; time_divider:td|cnt[3]  ; clk                     ; clk         ; 0.000        ; 0.000      ; 2.546      ;
+; 2.329  ; time_divider:td|cnt[2]  ; time_divider:td|cnt[0]  ; clk                     ; clk         ; 0.000        ; 0.000      ; 2.550      ;
+; 2.613  ; time_divider:td|cnt[2]  ; time_divider:td|clk_out ; clk                     ; clk         ; 0.000        ; 0.000      ; 2.834      ;
+; 2.761  ; time_divider:td|cnt[1]  ; time_divider:td|clk_out ; clk                     ; clk         ; 0.000        ; 0.000      ; 2.982      ;
+; 2.960  ; time_divider:td|cnt[3]  ; time_divider:td|clk_out ; clk                     ; clk         ; 0.000        ; 0.000      ; 3.181      ;
++--------+-------------------------+-------------------------+-------------------------+-------------+--------------+------------+------------+
+
+
++--------------------------------------------------------------------------------------------------------------------------+
+; Hold: 'time_divider:td|clk_out'                                                                                          ;
++-------+-----------+---------+-------------------------+-------------------------+--------------+------------+------------+
+; Slack ; From Node ; To Node ; Launch Clock            ; Latch Clock             ; Relationship ; Clock Skew ; Data Delay ;
++-------+-----------+---------+-------------------------+-------------------------+--------------+------------+------------+
+; 1.661 ; cnt[0]    ; cnt[0]  ; time_divider:td|clk_out ; time_divider:td|clk_out ; 0.000        ; 0.000      ; 1.882      ;
+; 1.664 ; cnt[0]    ; cnt[1]  ; time_divider:td|clk_out ; time_divider:td|clk_out ; 0.000        ; 0.000      ; 1.885      ;
+; 1.898 ; cnt[1]    ; cnt[1]  ; time_divider:td|clk_out ; time_divider:td|clk_out ; 0.000        ; 0.000      ; 2.119      ;
++-------+-----------+---------+-------------------------+-------------------------+--------------+------------+------------+
+
+
++-----------------------------------------------------------------------------------------------+
+; Setup Transfers                                                                               ;
++-------------------------+-------------------------+----------+----------+----------+----------+
+; From Clock              ; To Clock                ; RR Paths ; FR Paths ; RF Paths ; FF Paths ;
++-------------------------+-------------------------+----------+----------+----------+----------+
+; clk                     ; clk                     ; 18       ; 0        ; 0        ; 0        ;
+; time_divider:td|clk_out ; clk                     ; 1        ; 1        ; 0        ; 0        ;
+; time_divider:td|clk_out ; time_divider:td|clk_out ; 3        ; 0        ; 0        ; 0        ;
++-------------------------+-------------------------+----------+----------+----------+----------+
+Entries labeled "false path" only account for clock-to-clock false paths and not path-based false paths. As a result, actual path counts may be lower than reported.
+
+
++-----------------------------------------------------------------------------------------------+
+; Hold Transfers                                                                                ;
++-------------------------+-------------------------+----------+----------+----------+----------+
+; From Clock              ; To Clock                ; RR Paths ; FR Paths ; RF Paths ; FF Paths ;
++-------------------------+-------------------------+----------+----------+----------+----------+
+; clk                     ; clk                     ; 18       ; 0        ; 0        ; 0        ;
+; time_divider:td|clk_out ; clk                     ; 1        ; 1        ; 0        ; 0        ;
+; time_divider:td|clk_out ; time_divider:td|clk_out ; 3        ; 0        ; 0        ; 0        ;
++-------------------------+-------------------------+----------+----------+----------+----------+
+Entries labeled "false path" only account for clock-to-clock false paths and not path-based false paths. As a result, actual path counts may be lower than reported.
+
+
+---------------
+; Report TCCS ;
+---------------
+No dedicated SERDES Transmitter circuitry present in device or used in design
+
+
+---------------
+; Report RSKM ;
+---------------
+No non-DPA dedicated SERDES Receiver circuitry present in device or used in design
+
+
++------------------------------------------------+
+; Unconstrained Paths Summary                    ;
++---------------------------------+-------+------+
+; Property                        ; Setup ; Hold ;
++---------------------------------+-------+------+
+; Illegal Clocks                  ; 0     ; 0    ;
+; Unconstrained Clocks            ; 0     ; 0    ;
+; Unconstrained Input Ports       ; 5     ; 5    ;
+; Unconstrained Input Port Paths  ; 31    ; 31   ;
+; Unconstrained Output Ports      ; 10    ; 10   ;
+; Unconstrained Output Port Paths ; 34    ; 34   ;
++---------------------------------+-------+------+
+
+
++------------------------------------------------------------------------+
+; Clock Status Summary                                                   ;
++-------------------------+-------------------------+------+-------------+
+; Target                  ; Clock                   ; Type ; Status      ;
++-------------------------+-------------------------+------+-------------+
+; clk                     ; clk                     ; Base ; Constrained ;
+; time_divider:td|clk_out ; time_divider:td|clk_out ; Base ; Constrained ;
++-------------------------+-------------------------+------+-------------+
+
+
++---------------------------------------------------------------------------------------------------+
+; Unconstrained Input Ports                                                                         ;
++------------+--------------------------------------------------------------------------------------+
+; Input Port ; Comment                                                                              ;
++------------+--------------------------------------------------------------------------------------+
+; row_b[0]   ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; row_b[1]   ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; row_b[2]   ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; row_b[3]   ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; rst        ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
++------------+--------------------------------------------------------------------------------------+
+
+
++---------------------------------------------------------------------------------------------------------+
+; Unconstrained Output Ports                                                                              ;
++-----------------+---------------------------------------------------------------------------------------+
+; Output Port     ; Comment                                                                               ;
++-----------------+---------------------------------------------------------------------------------------+
+; col[0]          ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; col[1]          ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; col[2]          ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; col[3]          ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; col_location[0] ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; col_location[1] ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; col_location[2] ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; row_location[0] ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; row_location[1] ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; row_location[2] ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
++-----------------+---------------------------------------------------------------------------------------+
+
+
++---------------------------------------------------------------------------------------------------+
+; Unconstrained Input Ports                                                                         ;
++------------+--------------------------------------------------------------------------------------+
+; Input Port ; Comment                                                                              ;
++------------+--------------------------------------------------------------------------------------+
+; row_b[0]   ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; row_b[1]   ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; row_b[2]   ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; row_b[3]   ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; rst        ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
++------------+--------------------------------------------------------------------------------------+
+
+
++---------------------------------------------------------------------------------------------------------+
+; Unconstrained Output Ports                                                                              ;
++-----------------+---------------------------------------------------------------------------------------+
+; Output Port     ; Comment                                                                               ;
++-----------------+---------------------------------------------------------------------------------------+
+; col[0]          ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; col[1]          ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; col[2]          ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; col[3]          ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; col_location[0] ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; col_location[1] ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; col_location[2] ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; row_location[0] ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; row_location[1] ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; row_location[2] ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
++-----------------+---------------------------------------------------------------------------------------+
+
+
++--------------------------+
+; Timing Analyzer Messages ;
++--------------------------+
+Info: *******************************************************************
+Info: Running Quartus Prime Timing Analyzer
+    Info: Version 18.0.0 Build 614 04/24/2018 SJ Lite Edition
+    Info: Processing started: Wed Dec 26 16:08:58 2018
+Info: Command: quartus_sta keyboard_scan -c keyboard_scan
+Info: qsta_default_script.tcl version: #2
+Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
+Info (20030): Parallel compilation is enabled and will use 4 of the 4 processors detected
+Info (21077): Low junction temperature is 0 degrees C
+Info (21077): High junction temperature is 85 degrees C
+Info (334003): Started post-fitting delay annotation
+Info (334004): Delay annotation completed successfully
+Critical Warning (332012): Synopsys Design Constraints File file not found: 'keyboard_scan.sdc'. A Synopsys Design Constraints File is required by the Timing Analyzer to get proper timing constraints. Without it, the Compiler will not properly optimize the design.
+Info (332142): No user constrained base clocks found in the design. Calling "derive_clocks -period 1.0"
+Info (332105): Deriving Clocks
+    Info (332105): create_clock -period 1.000 -name time_divider:td|clk_out time_divider:td|clk_out
+    Info (332105): create_clock -period 1.000 -name clk clk
+Info: Found TIMING_ANALYZER_REPORT_SCRIPT_INCLUDE_DEFAULT_ANALYSIS = ON
+Info: Can't run Report Timing Closure Recommendations. The current device family is not supported.
+Critical Warning (332148): Timing requirements not met
+Info (332146): Worst-case setup slack is -2.514
+    Info (332119):     Slack       End Point TNS Clock 
+    Info (332119): ========= =================== =====================
+    Info (332119):    -2.514              -9.677 clk 
+    Info (332119):    -1.452              -2.667 time_divider:td|clk_out 
+Info (332146): Worst-case hold slack is -2.228
+    Info (332119):     Slack       End Point TNS Clock 
+    Info (332119): ========= =================== =====================
+    Info (332119):    -2.228              -2.228 clk 
+    Info (332119):     1.661               0.000 time_divider:td|clk_out 
+Info (332140): No Recovery paths to report
+Info (332140): No Removal paths to report
+Info (332146): Worst-case minimum pulse width slack is -2.289
+    Info (332119):     Slack       End Point TNS Clock 
+    Info (332119): ========= =================== =====================
+    Info (332119):    -2.289              -2.289 clk 
+    Info (332119):     0.234               0.000 time_divider:td|clk_out 
+Info (332001): The selected device family is not supported by the report_metastability command.
+Info (332102): Design is not fully constrained for setup requirements
+Info (332102): Design is not fully constrained for hold requirements
+Info: Quartus Prime Timing Analyzer was successful. 0 errors, 3 warnings
+    Info: Peak virtual memory: 4696 megabytes
+    Info: Processing ended: Wed Dec 26 16:09:00 2018
+    Info: Elapsed time: 00:00:02
+    Info: Total CPU time (on all processors): 00:00:02
+
+

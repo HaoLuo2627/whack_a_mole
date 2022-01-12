@@ -1,0 +1,11 @@
+Fitter Status : Successful - Wed Dec 26 16:08:55 2018
+Quartus Prime Version : 18.0.0 Build 614 04/24/2018 SJ Lite Edition
+Revision Name : keyboard_scan
+Top-level Entity Name : keyboard_scan
+Family : MAX II
+Device : EPM1270T144C5
+Timing Models : Final
+Total logic elements : 17 / 1,270 ( 1 % )
+Total pins : 16 / 116 ( 14 % )
+Total virtual pins : 0
+UFM blocks : 0 / 1 ( 0 % )

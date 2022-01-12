@@ -1,0 +1,76 @@
+m255
+K4
+z2
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+Z0 dE:/intelProjects/keyboard_scan/simulation/modelsim
+vkeyboard_scan
+Z1 !s110 1545813278
+!i10b 1
+!s100 Vj5o?S5z^JVe>>9CkYzT>1
+I1]hnCAN7NQ;f8lOY2@Rh:2
+Z2 VDg1SIo80bB@j0V0VzS_@n1
+R0
+w1545811717
+8E:/intelProjects/keyboard_scan/keyboard_scan.v
+FE:/intelProjects/keyboard_scan/keyboard_scan.v
+L0 1
+Z3 OV;L;10.5b;63
+r1
+!s85 0
+31
+Z4 !s108 1545813278.000000
+!s107 E:/intelProjects/keyboard_scan/keyboard_scan.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+E:/intelProjects/keyboard_scan|E:/intelProjects/keyboard_scan/keyboard_scan.v|
+!i113 1
+Z5 o-vlog01compat -work work
+Z6 !s92 -vlog01compat -work work +incdir+E:/intelProjects/keyboard_scan
+Z7 tCvgOpt 0
+vkeyboard_scan_vlg_tst
+!s110 1545813279
+!i10b 1
+!s100 Ij77MVZC7HlX;oBD1Ji`M3
+I_=[JB5[>4?LYOdQ^zdZ4z2
+R2
+R0
+w1545813261
+8E:/intelProjects/keyboard_scan/simulation/modelsim/keyboard_scan.vt
+FE:/intelProjects/keyboard_scan/simulation/modelsim/keyboard_scan.vt
+L0 28
+R3
+r1
+!s85 0
+31
+R4
+!s107 E:/intelProjects/keyboard_scan/simulation/modelsim/keyboard_scan.vt|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+E:/intelProjects/keyboard_scan/simulation/modelsim|E:/intelProjects/keyboard_scan/simulation/modelsim/keyboard_scan.vt|
+!i113 1
+R5
+!s92 -vlog01compat -work work +incdir+E:/intelProjects/keyboard_scan/simulation/modelsim
+R7
+vtime_divider
+R1
+!i10b 1
+!s100 dXXSAC1e:[QeXB]lmnE;@0
+IMeVX8Q^l;QL_K=RCMNkFF1
+R2
+R0
+w1544454527
+8E:/intelProjects/keyboard_scan/time_divider.v
+FE:/intelProjects/keyboard_scan/time_divider.v
+L0 1
+R3
+r1
+!s85 0
+31
+R4
+!s107 E:/intelProjects/keyboard_scan/time_divider.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+E:/intelProjects/keyboard_scan|E:/intelProjects/keyboard_scan/time_divider.v|
+!i113 1
+R5
+R6
+R7

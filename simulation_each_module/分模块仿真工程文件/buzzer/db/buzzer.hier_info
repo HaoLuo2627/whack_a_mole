@@ -1,0 +1,13 @@
+|buzzer
+clk_fa => beep.DATAB
+clk_50 => en.CLK
+clk_50 => flag.CLK
+clk_half => hit_tmp.CLK
+hit => always1.IN1
+hit => hit_tmp.PRESET
+hit => en.OUTPUTSELECT
+rst => en.ACLR
+rst => flag.PRESET
+beep <= beep.DB_MAX_OUTPUT_PORT_TYPE
+
+

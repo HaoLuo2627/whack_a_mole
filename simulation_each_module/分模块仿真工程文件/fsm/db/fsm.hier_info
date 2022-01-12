@@ -1,0 +1,16 @@
+|fsm
+clk => state[0]~reg0.CLK
+clk => state[1]~reg0.CLK
+rst => state[0]~reg0.ACLR
+rst => state[1]~reg0.ACLR
+rst => Mux0.IN2
+rst => Mux0.IN3
+rst => Mux1.IN2
+rst => Mux1.IN3
+state[0] <= state[0]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+state[1] <= state[1]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+Ts => next_state.OUTPUTSELECT
+Ts => Mux1.IN1
+Tt => next_state.DATAA
+
+

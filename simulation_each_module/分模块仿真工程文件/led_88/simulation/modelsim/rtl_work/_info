@@ -1,0 +1,54 @@
+m255
+K4
+z2
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+Z0 dE:/intelProjects/led_88/simulation/modelsim
+vled_88
+Z1 !s110 1545816337
+!i10b 1
+!s100 MGgkLe=Q]Om=OVBUP^1^a3
+IX2N?>Na^F9S`AkO6]gmCj2
+Z2 VDg1SIo80bB@j0V0VzS_@n1
+R0
+w1545813619
+8E:/intelProjects/led_88/led_88.v
+FE:/intelProjects/led_88/led_88.v
+L0 1
+Z3 OV;L;10.5b;63
+r1
+!s85 0
+31
+Z4 !s108 1545816337.000000
+!s107 E:/intelProjects/led_88/led_88.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+E:/intelProjects/led_88|E:/intelProjects/led_88/led_88.v|
+!i113 1
+Z5 o-vlog01compat -work work
+!s92 -vlog01compat -work work +incdir+E:/intelProjects/led_88
+Z6 tCvgOpt 0
+vled_88_vlg_tst
+R1
+!i10b 1
+!s100 OCHIE;PB?kil3FaijB@J[3
+I1IVlPRzNKogJ7kRJDI5Iz1
+R2
+R0
+w1545816321
+8E:/intelProjects/led_88/simulation/modelsim/led_88.vt
+FE:/intelProjects/led_88/simulation/modelsim/led_88.vt
+L0 28
+R3
+r1
+!s85 0
+31
+R4
+!s107 E:/intelProjects/led_88/simulation/modelsim/led_88.vt|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+E:/intelProjects/led_88/simulation/modelsim|E:/intelProjects/led_88/simulation/modelsim/led_88.vt|
+!i113 1
+R5
+!s92 -vlog01compat -work work +incdir+E:/intelProjects/led_88/simulation/modelsim
+R6

@@ -1,0 +1,181 @@
+// Copyright (C) 2018  Intel Corporation. All rights reserved.
+// Your use of Intel Corporation's design tools, logic functions 
+// and other software and tools, and its AMPP partner logic 
+// functions, and any output files from any of the foregoing 
+// (including device programming or simulation files), and any 
+// associated documentation or information are expressly subject 
+// to the terms and conditions of the Intel Program License 
+// Subscription Agreement, the Intel Quartus Prime License Agreement,
+// the Intel FPGA IP License Agreement, or other applicable license
+// agreement, including, without limitation, that your use is for
+// the sole purpose of programming logic devices manufactured by
+// Intel and sold by Intel or its authorized distributors.  Please
+// refer to the applicable agreement for further details.
+
+// *****************************************************************************
+// This file contains a Verilog test bench template that is freely editable to  
+// suit user's needs .Comments are provided in each section to help the user    
+// fill out necessary details.                                                  
+// *****************************************************************************
+// Generated on "12/27/2018 10:30:02"
+                                                                                
+// Verilog Test Bench template for design : whack_a_mole_sim
+// 
+// Simulation tool : ModelSim-Altera (Verilog)
+// 
+
+`timescale 1 ps/ 1 ps
+module whack_a_mole_sim_vlg_tst();
+// constants                                           
+// general purpose registers
+
+// test vector input registers
+reg clk;
+reg [3:0] row_b;
+reg rst;
+// wires                                               
+wire beep;
+wire [3:0]  col;
+wire [7:0]  dig_select;
+wire [7:0]  matcol_g;
+wire [7:0]  matcol_r;
+wire [7:0]  matrow;
+wire [7:0]  seg_select;
+
+// assign statements (if any)                          
+whack_a_mole_sim i1 (
+// port map - connection between master ports and signals/registers   
+	.beep(beep),
+	.clk(clk),
+	.col(col),
+	.dig_select(dig_select),
+	.matcol_g(matcol_g),
+	.matcol_r(matcol_r),
+	.matrow(matrow),
+	.row_b(row_b),
+	.rst(rst),
+	.seg_select(seg_select)
+);
+initial                                                
+begin                                                  
+	clk=1;
+	rst=1;
+	row_b=4'b1111;
+	#1000000 rst=0;       //40 s remaining
+	#500002 row_b=4'b1110;
+	#2 row_b=4'b1111;
+	#6 row_b=4'b1110;
+	#2 row_b=4'b1111;
+	#6 row_b=4'b1110;
+	#2 row_b=4'b1111;
+	#6 row_b=4'b1110;
+	#2 row_b=4'b1111;
+	#6 row_b=4'b1110;
+	#2 row_b=4'b1111;    //press(0,1)
+	#1499964 row_b=4'b1111;//38 s
+	#300006 row_b=4'b1110;
+	#2 row_b=4'b1111;    //press(0,3)
+	#6 row_b=4'b1110;
+	#2 row_b=4'b1111;
+	#6 row_b=4'b1110;
+	#2 row_b=4'b1111;
+	#6 row_b=4'b1110;
+	#2 row_b=4'b1111;
+	#6 row_b=4'b1110;
+	#2 row_b=4'b1111;
+	#1699960 row_b=4'b1111;//36 s
+	#700006 row_b=4'b1110;
+	#2 row_b=4'b1111;    //press(0,3)
+	#6 row_b=4'b1110;
+	#2 row_b=4'b1111;
+	#6 row_b=4'b1110;
+	#2 row_b=4'b1111;
+	#6 row_b=4'b1110;
+	#2 row_b=4'b1111;
+	#6 row_b=4'b1110;
+	#2 row_b=4'b1111;
+	#1299960 row_b=4'b1111;//34 s
+	#400006 row_b=4'b1101;
+	#2 row_b=4'b1111;    //press(1,3)
+	#6 row_b=4'b1101;
+	#2 row_b=4'b1111;
+	#6 row_b=4'b1101;
+	#2 row_b=4'b1111;
+	#6 row_b=4'b1101;
+	#2 row_b=4'b1111;
+	#6 row_b=4'b1101;
+	#2 row_b=4'b1111;
+	#1599960 row_b=4'b1111;//32 s
+	#1200006 row_b=4'b0111;
+	#2 row_b=4'b1111;    //press(3,3)
+	#6 row_b=4'b0111;
+	#2 row_b=4'b1111;
+	#6 row_b=4'b0111;
+	#2 row_b=4'b1111;
+	#6 row_b=4'b0111;
+	#2 row_b=4'b1111;
+	#6 row_b=4'b0111;
+	#2 row_b=4'b1111;
+	#799960 row_b=4'b1111;//30 s
+	#600006 row_b=4'b0111;
+	#2 row_b=4'b1111;    //press(3,3)
+	#6 row_b=4'b0111;
+	#2 row_b=4'b1111;
+	#6 row_b=4'b0111;
+	#2 row_b=4'b1111;
+	#6 row_b=4'b0111;
+	#2 row_b=4'b1111;
+	#6 row_b=4'b0111;
+	#2 row_b=4'b1111;
+	#1399960 row_b=4'b1111;//28 s
+	#1500004 row_b=4'b0111;
+	#2 row_b=4'b1111;    //press(3,2)
+	#6 row_b=4'b0111;
+	#2 row_b=4'b1111;
+	#6 row_b=4'b0111;
+	#2 row_b=4'b1111;
+	#6 row_b=4'b0111;
+	#2 row_b=4'b1111;
+	#6 row_b=4'b0111;
+	#2 row_b=4'b1111;
+	#499962 row_b=4'b1111;//26 s
+	#900002 row_b=4'b0111;
+	#2 row_b=4'b1111;    //press(3,1)
+	#6 row_b=4'b0111;
+	#2 row_b=4'b1111;
+	#6 row_b=4'b0111;
+	#2 row_b=4'b1111;
+	#6 row_b=4'b0111;
+	#2 row_b=4'b1111;
+	#6 row_b=4'b0111;
+	#2 row_b=4'b1111;
+	#1099964 row_b=4'b1111;//24 s
+	#200004 row_b=4'b0111;
+	#2 row_b=4'b1111;    //press(3,2)
+	#6 row_b=4'b0111;
+	#2 row_b=4'b1111;
+	#6 row_b=4'b0111;
+	#2 row_b=4'b1111;
+	#6 row_b=4'b0111;
+	#2 row_b=4'b1111;
+	#6 row_b=4'b0111;
+	#2 row_b=4'b1111;
+	#1799962 row_b=4'b1111;//22 s
+	#120002 row_b=4'b1011;
+	#2 row_b=4'b1111;    //press(2,1)
+	#6 row_b=4'b1011;
+	#2 row_b=4'b1111;
+	#6 row_b=4'b1011;
+	#2 row_b=4'b1111;
+	#6 row_b=4'b1011;
+	#2 row_b=4'b1111;
+	#6 row_b=4'b1011;
+	#2 row_b=4'b1111;
+	#799964 row_b=4'b1111;//20 s,game win
+	#5000000 rst=1; //press the reset key
+	#1000000 rst=0; //play again
+	#45000000 $stop;//game over                   
+end                                                    
+always clk=#1 ~clk;                                             
+endmodule
+

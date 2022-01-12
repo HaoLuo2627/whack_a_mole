@@ -1,0 +1,80 @@
+// Copyright (C) 2018  Intel Corporation. All rights reserved.
+// Your use of Intel Corporation's design tools, logic functions 
+// and other software and tools, and its AMPP partner logic 
+// functions, and any output files from any of the foregoing 
+// (including device programming or simulation files), and any 
+// associated documentation or information are expressly subject 
+// to the terms and conditions of the Intel Program License 
+// Subscription Agreement, the Intel Quartus Prime License Agreement,
+// the Intel FPGA IP License Agreement, or other applicable license
+// agreement, including, without limitation, that your use is for
+// the sole purpose of programming logic devices manufactured by
+// Intel and sold by Intel or its authorized distributors.  Please
+// refer to the applicable agreement for further details.
+
+// *****************************************************************************
+// This file contains a Verilog test bench template that is freely editable to  
+// suit user's needs .Comments are provided in each section to help the user    
+// fill out necessary details.                                                  
+// *****************************************************************************
+// Generated on "12/15/2018 19:40:07"
+                                                                                
+// Verilog Test Bench template for design : keyboard_scan
+// 
+// Simulation tool : ModelSim-Altera (Verilog)
+// 
+
+`timescale 1 ps/ 1 ps
+module keyboard_scan_vlg_tst();
+// constants                                           
+// general purpose registers
+
+// test vector input registers
+reg clk;
+reg [3:0] row_b;
+reg rst;
+// wires                                               
+wire [3:0]  col;
+wire [2:0]  col_location;
+wire [2:0]  row_location;
+
+// assign statements (if any)                          
+keyboard_scan i1 (
+// port map - connection between master ports and signals/registers   
+	.clk(clk),
+	.col(col),
+	.col_location(col_location),
+	.row_b(row_b),
+	.row_location(row_location),
+	.rst(rst)
+);
+initial                                                
+begin                                                  
+	clk=1'b0;
+	rst=1'b1;
+	row_b=4'b1111;
+	#50 rst=1'b0;
+	#29 row_b=4'b1011;	//(2,2)
+	#20 row_b=4'b1111;
+	#100 row_b=4'b0111;	//(3,0)
+	#20 row_b=4'b1111;
+	#40 row_b=4'b1101;	//(1,3)
+	#20 row_b=4'b1111;
+	#80 row_b=4'b1101;	//(1,0)
+	#20 row_b=4'b1111;
+	#80 row_b=4'b0111;   //(3,1)
+	#20 row_b=4'b1111;
+	#60 row_b=4'b1101;	//(1,1)
+	#20 row_b=4'b1111;
+	#20 row_b=4'b1110;	//(0,3)
+	#20 row_b=4'b1111;
+	#40 row_b=4'b0111;	//(3,2)
+	#20 row_b=4'b1111;
+	#60 row_b=4'b1011;	//(2,2)
+	#20 row_b=4'b1111;
+	$display("Running testbench");   
+	#1000 $stop;                    
+end     
+always #1 clk=~clk;                                                     
+endmodule
+

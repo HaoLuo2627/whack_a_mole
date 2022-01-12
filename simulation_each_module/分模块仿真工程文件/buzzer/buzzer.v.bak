@@ -1,0 +1,31 @@
+module buzzer(clk_fa,clk_50,clk_half,hit,rst,beep);
+	input clk_fa,clk_50,clk_half,hit,rst;
+	output beep;
+	reg en,hit_tmp,flag;
+	always@(posedge clk_half or posedge hit)
+	begin
+		if(hit) hit_tmp=1;
+		else hit_tmp=0;
+	end
+	always@(posedge clk_50 or posedge rst)
+	begin
+		if(rst)
+		begin
+			flag=1;
+			en=0;
+		end
+		else if((hit==1)&&(flag==1)==1)
+		begin
+			en=1;
+			flag=0;
+		end
+		else begin
+			if(hit_tmp==0) flag=1;
+			else flag=flag;
+			if(hit==0) en=0;
+			else en=en;
+		end
+	end
+
+	assign beep=en?clk_fa:0;
+endmodule

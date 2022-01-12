@@ -1,0 +1,31 @@
+|timer
+clk_1 => time_ge[0]~reg0.CLK
+clk_1 => time_ge[1]~reg0.CLK
+clk_1 => time_ge[2]~reg0.CLK
+clk_1 => time_ge[3]~reg0.CLK
+clk_1 => time_shi[0]~reg0.CLK
+clk_1 => time_shi[1]~reg0.CLK
+clk_1 => time_shi[2]~reg0.CLK
+clk_1 => time_shi[3]~reg0.CLK
+state[0] => Equal0.IN1
+state[0] => Equal1.IN0
+state[1] => Equal0.IN0
+state[1] => Equal1.IN1
+rst => time_ge[0]~reg0.ACLR
+rst => time_ge[1]~reg0.ACLR
+rst => time_ge[2]~reg0.ACLR
+rst => time_ge[3]~reg0.ACLR
+rst => time_shi[0]~reg0.ACLR
+rst => time_shi[1]~reg0.ACLR
+rst => time_shi[2]~reg0.PRESET
+rst => time_shi[3]~reg0.ACLR
+time_shi[0] <= time_shi[0]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+time_shi[1] <= time_shi[1]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+time_shi[2] <= time_shi[2]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+time_shi[3] <= time_shi[3]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+time_ge[0] <= time_ge[0]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+time_ge[1] <= time_ge[1]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+time_ge[2] <= time_ge[2]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+time_ge[3] <= time_ge[3]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+

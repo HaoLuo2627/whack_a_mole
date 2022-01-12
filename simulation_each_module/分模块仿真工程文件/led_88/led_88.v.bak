@@ -1,0 +1,116 @@
+module led_88(clk,rst,row,col_r,col_g,state,hit,rowran,colran);	//点阵扫描模块，假定使用1kHz频率扫描
+input clk,rst;
+input [1:0] state;
+input [2:0] colran,rowran;
+output reg[7:0] row,col_r,col_g;
+input hit;
+reg [2:0] cnt;
+
+always@(posedge clk)
+begin
+	if(rst)	cnt<=0;
+	else if(cnt==3'b111) cnt<=0;
+	else	cnt<=cnt+1;
+end
+always @(posedge clk)
+begin
+	case(cnt)		//依次选择各行
+	3'b000:begin
+		row<=8'b1111_1110;
+		if(state!=2'b11)	col_r<=8'h00;
+		else col_r<=8'b1111_1111;
+		if(state!=2'b10)	col_g<=8'h00;
+		else col_g<=8'b1110_0111;
+
+	end
+	3'b001:begin
+		row<=8'b1111_1101;
+		if(state!=2'b11)	col_r<=8'h00;
+		else col_r<=8'b1011_1101;
+		if(state==2'b00||state==2'b01) col_g<=8'b0111_1110;
+		else if(state==2'b10) col_g<=8'b1101_1011;
+		else col_g<=8'h00;
+	end
+	3'b010:begin
+		row<=8'b1111_1011;
+		if(state==2'b00||state==2'b01) col_g<=8'b0100_0010;
+		else if(state==2'b10) col_g<=8'b1011_1101;
+		else col_g<=8'h00;
+		if(state==2'b00) col_r<=8'h00;
+		else if(state==2'b01) begin
+		if(cnt==rowran) begin
+			if(hit==0) col_r[colran]<=1;else col_r[colran]<=0;
+//			col_r[0:colran-1]<=0;
+//			col_r[colran+1:7]<=0;
+		end
+		else if(state==2'b10) col_r<=8'h00;
+		else col_r<=8'b1100_0011;
+	end
+	end
+	3'b011:begin
+		row<=8'b1111_0111;
+		if(state==2'b00||state==2'b01) col_g<=8'b0100_0010;
+		else if(state==2'b10) col_g<=8'hff;
+		else col_g<=8'h00;
+		if(state==2'b00) col_r<=8'h00;
+		else if(state==2'b01) begin
+		if(cnt==rowran) begin
+			if(hit==0) col_r[colran]<=1; else col_r[colran]<=0;
+//			col_r[0:colran-1]<=0;
+//			col_r[colran+1:7]<=0;
+		end
+		else if(state==2'b10) col_r<=8'h00;
+		else col_r<=8'hff;
+	end
+	end
+	3'b100:begin
+		row<=8'b1110_1111;
+		if(state==2'b00||state==2'b01) col_g<=8'b0100_0010;
+		else if(state==2'b10) col_g<=8'hff;
+		else col_g<=8'h00;
+		if(state==2'b00) col_r<=8'h00;
+		else if(state==2'b01) begin
+		if(cnt==rowran) begin
+			if(hit==0) col_r[colran]<=1;	else col_r[colran]<=0;
+//			col_r[0:colran-1]<=0;
+//			col_r[colran+1:7]<=0;
+		end
+		else if(state==2'b10) col_r<=8'h00;
+		else col_r<=8'hff;
+	end
+	end
+	3'b101:begin
+		row<=8'b1101_1111;
+		if(state==2'b00||state==2'b01) col_g<=8'b0100_0010;
+		else if(state==2'b10) col_g<=8'b0101_1010;
+		else col_g<=8'h00;
+		if(state==2'b00) col_r<=8'h00;
+		else if(state==2'b01) begin
+		if(cnt==rowran) begin
+			if(hit==0) col_r[colran]<=1;	else col_r[colran]<=0;
+//			col_r[0:colran-1]<=0;
+//			col_r[colran+1:7]<=0;
+		end
+		else if(state==2'b10) col_r<=8'h00;
+		else col_r<=8'b1001_1001;
+	end
+	end
+	3'b110:begin
+		row<=8'b1011_1111;
+		if(state!=2'b11) col_r<=8'h00;
+		else col_r<=8'b0101_1010;
+		if(state==2'b00||state==2'b01) col_g<=8'b0111_1110;
+		else if(state==2'b10) col_g<=8'b1011_1101;
+		else col_g<=8'h00;
+	end
+	3'b111:begin
+		row<=8'b0111_1111;
+		if(state!=2'b11) col_r<=8'h00;
+		else col_r<=8'hff;
+		if(state!=2'b10) col_g<=8'h00;
+		else col_g<=8'hff;
+	end
+endcase
+end
+
+endmodule

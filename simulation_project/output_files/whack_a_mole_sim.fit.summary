@@ -1,0 +1,11 @@
+Fitter Status : Successful - Thu Dec 27 11:17:22 2018
+Quartus Prime Version : 18.0.0 Build 614 04/24/2018 SJ Lite Edition
+Revision Name : whack_a_mole_sim
+Top-level Entity Name : whack_a_mole_sim
+Family : MAX II
+Device : EPM1270T144C5
+Timing Models : Final
+Total logic elements : 241 / 1,270 ( 19 % )
+Total pins : 51 / 116 ( 44 % )
+Total virtual pins : 0
+UFM blocks : 0 / 1 ( 0 % )

@@ -1,0 +1,84 @@
+module keyboard_scan(clk,rst,row_b,col,row_location,col_location);	//clk接系统时钟
+input clk,rst;
+input [3:0] row_b;
+output reg [3:0] col;
+output reg [2:0] row_location,col_location;
+wire [3:0] row;
+reg[1:0] cnt;
+wire clk_1k;
+
+time_divider #(50000,15) td(clk,rst,clk_1k);
+debounce db0(clk,rst,row_b[0],row[0]);
+debounce db1(clk,rst,row_b[1],row[1]);
+debounce db2(clk,rst,row_b[2],row[2]);
+debounce db3(clk,rst,row_b[3],row[3]);
+
+always@(posedge clk_1k or posedge rst)
+begin
+	if(rst) cnt<=0;
+	else if(cnt==2'b11) cnt<=0;
+	else cnt<=cnt+1;
+end
+
+always @(cnt or row)
+begin
+	case(cnt)
+	2'b00:begin
+		col<=4'b1110;
+		if(row!=4'b0000) begin
+			col_location<=3'b000;
+		if(row[0]==1) 	row_location<=3'b000;
+		else if(row[1]==1) row_location<=3'b001;
+		else if(row[2]==1) row_location<=3'b010;
+		else row_location<=3'b011;
+		end
+		else begin
+		row_location<=3'b100;
+		col_location<=3'b100;
+		end
+	end
+	2'b01:begin
+		col<=4'b1101;
+		if(row!=4'b0000) begin
+			col_location<=3'b001;
+		if(row[0]==1) 	row_location<=3'b000;
+		else if(row[1]==1) row_location<=3'b001;
+		else if(row[2]==1) row_location<=3'b010;
+		else row_location<=3'b011;
+		end
+		else begin
+		row_location<=3'b100;
+		col_location<=3'b100;
+		end
+	end
+	2'b10:begin
+		col<=4'b1011;
+		if(row!=4'b0000) begin
+			col_location<=3'b010;
+		if(row[0]==1) 	row_location<=3'b000;
+		else if(row[1]==1) row_location<=3'b001;
+		else if(row[2]==1) row_location<=3'b010;
+		else row_location<=3'b011;
+		end
+		else begin
+		row_location<=3'b100;
+		col_location<=3'b100;
+		end
+	end
+	2'b11:begin
+		col<=4'b0111;
+		if(row!=4'b0000) begin
+			col_location<=3'b011;
+		if(row[0]==1)	row_location<=3'b000;
+		else if(row[1]==1) row_location<=3'b001;
+		else if(row[2]==1) row_location<=3'b010;
+		else row_location<=3'b011;
+		end
+		else begin
+		row_location<=3'b100;
+		col_location<=3'b100;
+		end
+	end
+	endcase
+end
+endmodule

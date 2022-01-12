@@ -1,0 +1,38 @@
+|keyboard_scan
+clk => clk.IN1
+rst => rst.IN1
+row_b[0] => Equal1.IN3
+row_b[0] => row_location.OUTPUTSELECT
+row_b[0] => row_location.OUTPUTSELECT
+row_b[1] => row_location.DATAA
+row_b[1] => row_location.OUTPUTSELECT
+row_b[1] => Equal1.IN2
+row_b[2] => row_location.DATAB
+row_b[2] => Equal1.IN1
+row_b[3] => Equal1.IN0
+col[0] <= Decoder0.DB_MAX_OUTPUT_PORT_TYPE
+col[1] <= Decoder0.DB_MAX_OUTPUT_PORT_TYPE
+col[2] <= Decoder0.DB_MAX_OUTPUT_PORT_TYPE
+col[3] <= Decoder0.DB_MAX_OUTPUT_PORT_TYPE
+row_location[0] <= row_location.DB_MAX_OUTPUT_PORT_TYPE
+row_location[1] <= row_location.DB_MAX_OUTPUT_PORT_TYPE
+row_location[2] <= Equal1.DB_MAX_OUTPUT_PORT_TYPE
+col_location[0] <= Mux1.DB_MAX_OUTPUT_PORT_TYPE
+col_location[1] <= Mux0.DB_MAX_OUTPUT_PORT_TYPE
+col_location[2] <= Equal1.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|keyboard_scan|time_divider:td
+clk => clk_out~reg0.CLK
+clk => cnt[0].CLK
+clk => cnt[1].CLK
+clk => cnt[2].CLK
+clk => cnt[3].CLK
+rst => clk_out~reg0.ACLR
+rst => cnt[0].ACLR
+rst => cnt[1].ACLR
+rst => cnt[2].ACLR
+rst => cnt[3].ACLR
+clk_out <= clk_out~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+

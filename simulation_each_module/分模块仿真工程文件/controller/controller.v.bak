@@ -1,0 +1,62 @@
+module controller(rowran,colran,row,col,time_shi,time_ge,clk,clk_1,rst,hit,state,score_shi,score_ge);
+input [2:0] rowran,colran,row,col;
+input clk,rst,clk_1;
+input [3:0] time_shi,time_ge;
+output reg hit;
+output [1:0] state;
+output reg [3:0] score_shi,score_ge;
+reg Ts,Tt;
+reg [9:0] time_tmp;
+reg enable;
+
+initial
+begin
+	score_shi=4'b0000;
+	score_ge=4'b0000;
+end
+always@(posedge clk_1 or posedge rst)
+begin
+	if(rst) time_tmp<=2'b00;
+	else if(time_tmp==2'b10) time_tmp<=2'b00;
+	else if(enable) time_tmp<=time_tmp+1'b1;
+	else time_tmp<=2'b00;
+end
+fsm central_fsm(clk,rst,state,Ts,Tt);
+always@(row or col)
+begin
+	if((rowran==row+2'b10)&&(colran==col+2'b10))
+	begin
+		enable=1;
+		if(score_ge<9) begin
+			score_ge=score_ge+1'b1;
+			score_shi=4'b0000;
+		end
+		else begin
+			score_ge=4'b0000;
+			score_shi=4'b0001;
+		end
+		if(time_tmp<2) hit=1;
+		else hit=0;
+	end
+	else begin
+		enable=0;
+		hit=0;
+		score_shi=score_shi;
+		score_ge=score_ge;
+	end
+end
+always @(score_shi[0] or rst)
+begin
+	if(rst) Ts=0;
+	else if(score_shi[0]==1)
+	Ts=1;
+	else Ts=0;
+end
+always @(time_shi or time_ge or rst)
+begin
+	if(rst) Tt=0;
+	else if(time_shi==0&&time_ge==0) 
+	Tt=1;
+	else Tt=0;
+end
+endmodule

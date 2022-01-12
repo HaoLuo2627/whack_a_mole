@@ -1,0 +1,481 @@
+Analysis & Synthesis report for whack_a_mole_sim
+Thu Dec 27 11:17:18 2018
+Quartus Prime Version 18.0.0 Build 614 04/24/2018 SJ Lite Edition
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. Analysis & Synthesis Summary
+  3. Analysis & Synthesis Settings
+  4. Parallel Compilation
+  5. Analysis & Synthesis Source Files Read
+  6. Analysis & Synthesis Resource Usage Summary
+  7. Analysis & Synthesis Resource Utilization by Entity
+  8. Registers Removed During Synthesis
+  9. General Register Statistics
+ 10. Inverted Register Statistics
+ 11. Multiplexer Restructuring Statistics (Restructuring Performed)
+ 12. Parameter Settings for User Entity Instance: time_divider:td_1k
+ 13. Parameter Settings for User Entity Instance: time_divider:td_500
+ 14. Parameter Settings for User Entity Instance: time_divider:td_50
+ 15. Parameter Settings for User Entity Instance: time_divider:td_1
+ 16. Parameter Settings for User Entity Instance: time_divider:td_half
+ 17. Parameter Settings for User Entity Instance: time_divider:td_fa
+ 18. Parameter Settings for User Entity Instance: getrandom:gr1
+ 19. Parameter Settings for User Entity Instance: controller:center_control|fsm:central_fsm
+ 20. Analysis & Synthesis Messages
+ 21. Analysis & Synthesis Suppressed Messages
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 2018  Intel Corporation. All rights reserved.
+Your use of Intel Corporation's design tools, logic functions 
+and other software and tools, and its AMPP partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Intel Program License 
+Subscription Agreement, the Intel Quartus Prime License Agreement,
+the Intel FPGA IP License Agreement, or other applicable license
+agreement, including, without limitation, that your use is for
+the sole purpose of programming logic devices manufactured by
+Intel and sold by Intel or its authorized distributors.  Please
+refer to the applicable agreement for further details.
+
+
+
++---------------------------------------------------------------------------+
+; Analysis & Synthesis Summary                                              ;
++-----------------------------+---------------------------------------------+
+; Analysis & Synthesis Status ; Successful - Thu Dec 27 11:17:18 2018       ;
+; Quartus Prime Version       ; 18.0.0 Build 614 04/24/2018 SJ Lite Edition ;
+; Revision Name               ; whack_a_mole_sim                            ;
+; Top-level Entity Name       ; whack_a_mole_sim                            ;
+; Family                      ; MAX II                                      ;
+; Total logic elements        ; 251                                         ;
+; Total pins                  ; 51                                          ;
+; Total virtual pins          ; 0                                           ;
+; UFM blocks                  ; 0 / 1 ( 0 % )                               ;
++-----------------------------+---------------------------------------------+
+
+
++------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Settings                                                                              ;
++------------------------------------------------------------------+--------------------+--------------------+
+; Option                                                           ; Setting            ; Default Value      ;
++------------------------------------------------------------------+--------------------+--------------------+
+; Device                                                           ; EPM1270T144C5      ;                    ;
+; Top-level entity name                                            ; whack_a_mole_sim   ; whack_a_mole_sim   ;
+; Family name                                                      ; MAX II             ; Cyclone V          ;
+; Use smart compilation                                            ; Off                ; Off                ;
+; Enable parallel Assembler and Timing Analyzer during compilation ; On                 ; On                 ;
+; Enable compact report table                                      ; Off                ; Off                ;
+; Restructure Multiplexers                                         ; Auto               ; Auto               ;
+; Create Debugging Nodes for IP Cores                              ; Off                ; Off                ;
+; Preserve fewer node names                                        ; On                 ; On                 ;
+; Intel FPGA IP Evaluation Mode                                    ; Enable             ; Enable             ;
+; Verilog Version                                                  ; Verilog_2001       ; Verilog_2001       ;
+; VHDL Version                                                     ; VHDL_1993          ; VHDL_1993          ;
+; State Machine Processing                                         ; Auto               ; Auto               ;
+; Safe State Machine                                               ; Off                ; Off                ;
+; Extract Verilog State Machines                                   ; On                 ; On                 ;
+; Extract VHDL State Machines                                      ; On                 ; On                 ;
+; Ignore Verilog initial constructs                                ; Off                ; Off                ;
+; Iteration limit for constant Verilog loops                       ; 5000               ; 5000               ;
+; Iteration limit for non-constant Verilog loops                   ; 250                ; 250                ;
+; Add Pass-Through Logic to Inferred RAMs                          ; On                 ; On                 ;
+; Infer RAMs from Raw Logic                                        ; On                 ; On                 ;
+; Parallel Synthesis                                               ; On                 ; On                 ;
+; NOT Gate Push-Back                                               ; On                 ; On                 ;
+; Power-Up Don't Care                                              ; On                 ; On                 ;
+; Remove Redundant Logic Cells                                     ; Off                ; Off                ;
+; Remove Duplicate Registers                                       ; On                 ; On                 ;
+; Ignore CARRY Buffers                                             ; Off                ; Off                ;
+; Ignore CASCADE Buffers                                           ; Off                ; Off                ;
+; Ignore GLOBAL Buffers                                            ; Off                ; Off                ;
+; Ignore ROW GLOBAL Buffers                                        ; Off                ; Off                ;
+; Ignore LCELL Buffers                                             ; Off                ; Off                ;
+; Ignore SOFT Buffers                                              ; On                 ; On                 ;
+; Limit AHDL Integers to 32 Bits                                   ; Off                ; Off                ;
+; Optimization Technique                                           ; Balanced           ; Balanced           ;
+; Carry Chain Length                                               ; 70                 ; 70                 ;
+; Auto Carry Chains                                                ; On                 ; On                 ;
+; Auto Open-Drain Pins                                             ; On                 ; On                 ;
+; Perform WYSIWYG Primitive Resynthesis                            ; Off                ; Off                ;
+; Auto Shift Register Replacement                                  ; Auto               ; Auto               ;
+; Allow Shift Register Merging across Hierarchies                  ; Auto               ; Auto               ;
+; Auto Clock Enable Replacement                                    ; On                 ; On                 ;
+; Allow Synchronous Control Signals                                ; On                 ; On                 ;
+; Force Use of Synchronous Clear Signals                           ; Off                ; Off                ;
+; Auto Resource Sharing                                            ; Off                ; Off                ;
+; Use LogicLock Constraints during Resource Balancing              ; On                 ; On                 ;
+; Ignore translate_off and synthesis_off directives                ; Off                ; Off                ;
+; Report Parameter Settings                                        ; On                 ; On                 ;
+; Report Source Assignments                                        ; On                 ; On                 ;
+; Report Connectivity Checks                                       ; On                 ; On                 ;
+; Ignore Maximum Fan-Out Assignments                               ; Off                ; Off                ;
+; Synchronization Register Chain Length                            ; 2                  ; 2                  ;
+; Power Optimization During Synthesis                              ; Normal compilation ; Normal compilation ;
+; HDL message level                                                ; Level2             ; Level2             ;
+; Suppress Register Optimization Related Messages                  ; Off                ; Off                ;
+; Number of Removed Registers Reported in Synthesis Report         ; 5000               ; 5000               ;
+; Number of Swept Nodes Reported in Synthesis Report               ; 5000               ; 5000               ;
+; Number of Inverted Registers Reported in Synthesis Report        ; 100                ; 100                ;
+; Clock MUX Protection                                             ; On                 ; On                 ;
+; Block Design Naming                                              ; Auto               ; Auto               ;
+; Synthesis Effort                                                 ; Auto               ; Auto               ;
+; Shift Register Replacement - Allow Asynchronous Clear Signal     ; On                 ; On                 ;
+; Analysis & Synthesis Message Level                               ; Medium             ; Medium             ;
+; Disable Register Merging Across Hierarchies                      ; Auto               ; Auto               ;
++------------------------------------------------------------------+--------------------+--------------------+
+
+
++------------------------------------------+
+; Parallel Compilation                     ;
++----------------------------+-------------+
+; Processors                 ; Number      ;
++----------------------------+-------------+
+; Number detected on machine ; 4           ;
+; Maximum allowed            ; 4           ;
+;                            ;             ;
+; Average used               ; 1.00        ;
+; Maximum used               ; 1           ;
+;                            ;             ;
+; Usage by Processor         ; % Time Used ;
+;     Processor 1            ; 100.0%      ;
++----------------------------+-------------+
+
+
++----------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                                       ;
++----------------------------------+-----------------+------------------------+------------------------------------------------------+---------+
+; File Name with User-Entered Path ; Used in Netlist ; File Type              ; File Name with Absolute Path                         ; Library ;
++----------------------------------+-----------------+------------------------+------------------------------------------------------+---------+
+; whack_a_mole_sim.v               ; yes             ; User Verilog HDL File  ; E:/intelProjects/whack_a_mole_sim/whack_a_mole_sim.v ;         ;
+; buzzer.v                         ; yes             ; User Verilog HDL File  ; E:/intelProjects/whack_a_mole_sim/buzzer.v           ;         ;
+; controller.v                     ; yes             ; User Verilog HDL File  ; E:/intelProjects/whack_a_mole_sim/controller.v       ;         ;
+; fsm.v                            ; yes             ; User Verilog HDL File  ; E:/intelProjects/whack_a_mole_sim/fsm.v              ;         ;
+; getrandom.v                      ; yes             ; User Verilog HDL File  ; E:/intelProjects/whack_a_mole_sim/getrandom.v        ;         ;
+; led_88.v                         ; yes             ; User Verilog HDL File  ; E:/intelProjects/whack_a_mole_sim/led_88.v           ;         ;
+; time_divider.v                   ; yes             ; User Verilog HDL File  ; E:/intelProjects/whack_a_mole_sim/time_divider.v     ;         ;
+; timer.v                          ; yes             ; User Verilog HDL File  ; E:/intelProjects/whack_a_mole_sim/timer.v            ;         ;
+; decoder.v                        ; yes             ; User Verilog HDL File  ; E:/intelProjects/whack_a_mole_sim/decoder.v          ;         ;
+; keyboard_scan.v                  ; yes             ; User Verilog HDL File  ; E:/intelProjects/whack_a_mole_sim/keyboard_scan.v    ;         ;
++----------------------------------+-----------------+------------------------+------------------------------------------------------+---------+
+
+
++-----------------------------------------------------+
+; Analysis & Synthesis Resource Usage Summary         ;
++---------------------------------------------+-------+
+; Resource                                    ; Usage ;
++---------------------------------------------+-------+
+; Total logic elements                        ; 251   ;
+;     -- Combinational with no register       ; 167   ;
+;     -- Register only                        ; 23    ;
+;     -- Combinational with a register        ; 61    ;
+;                                             ;       ;
+; Logic element usage by number of LUT inputs ;       ;
+;     -- 4 input functions                    ; 119   ;
+;     -- 3 input functions                    ; 36    ;
+;     -- 2 input functions                    ; 68    ;
+;     -- 1 input functions                    ; 4     ;
+;     -- 0 input functions                    ; 1     ;
+;                                             ;       ;
+; Logic elements by mode                      ;       ;
+;     -- normal mode                          ; 220   ;
+;     -- arithmetic mode                      ; 31    ;
+;     -- qfbk mode                            ; 0     ;
+;     -- register cascade mode                ; 0     ;
+;     -- synchronous clear/load mode          ; 3     ;
+;     -- asynchronous clear/load mode         ; 75    ;
+;                                             ;       ;
+; Total registers                             ; 84    ;
+; Total logic cells in carry chains           ; 34    ;
+; I/O pins                                    ; 51    ;
+; Maximum fan-out node                        ; rst   ;
+; Maximum fan-out                             ; 84    ;
+; Total fan-out                               ; 954   ;
+; Average fan-out                             ; 3.16  ;
++---------------------------------------------+-------+
+
+
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                                                                                                 ;
++--------------------------------+-------------+--------------+------------+------+--------------+--------------+-------------------+------------------+-----------------+------------+-------------------------------------------------------------+------------------+--------------+
+; Compilation Hierarchy Node     ; Logic Cells ; LC Registers ; UFM Blocks ; Pins ; Virtual Pins ; LUT-Only LCs ; Register-Only LCs ; LUT/Register LCs ; Carry Chain LCs ; Packed LCs ; Full Hierarchy Name                                         ; Entity Name      ; Library Name ;
++--------------------------------+-------------+--------------+------------+------+--------------+--------------+-------------------+------------------+-----------------+------------+-------------------------------------------------------------+------------------+--------------+
+; |whack_a_mole_sim              ; 251 (42)    ; 84           ; 0          ; 51   ; 0            ; 167 (38)     ; 23 (2)            ; 61 (2)           ; 34 (0)          ; 0 (0)      ; |whack_a_mole_sim                                           ; whack_a_mole_sim ; work         ;
+;    |buzzer:bz|                 ; 4 (4)       ; 3            ; 0          ; 0    ; 0            ; 1 (1)        ; 0 (0)             ; 3 (3)            ; 0 (0)           ; 0 (0)      ; |whack_a_mole_sim|buzzer:bz                                 ; buzzer           ; work         ;
+;    |controller:center_control| ; 24 (18)     ; 11           ; 0          ; 0    ; 0            ; 13 (9)       ; 0 (0)             ; 11 (9)           ; 0 (0)           ; 0 (0)      ; |whack_a_mole_sim|controller:center_control                 ; controller       ; work         ;
+;       |fsm:central_fsm|        ; 6 (6)       ; 2            ; 0          ; 0    ; 0            ; 4 (4)        ; 0 (0)             ; 2 (2)            ; 0 (0)           ; 0 (0)      ; |whack_a_mole_sim|controller:center_control|fsm:central_fsm ; fsm              ; work         ;
+;    |decoder:deco_score_ge|     ; 7 (7)       ; 0            ; 0          ; 0    ; 0            ; 7 (7)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |whack_a_mole_sim|decoder:deco_score_ge                     ; decoder          ; work         ;
+;    |decoder:deco_score_shi|    ; 7 (7)       ; 0            ; 0          ; 0    ; 0            ; 7 (7)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |whack_a_mole_sim|decoder:deco_score_shi                    ; decoder          ; work         ;
+;    |decoder:deco_time_ge|      ; 7 (7)       ; 0            ; 0          ; 0    ; 0            ; 7 (7)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |whack_a_mole_sim|decoder:deco_time_ge                      ; decoder          ; work         ;
+;    |decoder:deco_time_shi|     ; 7 (7)       ; 0            ; 0          ; 0    ; 0            ; 7 (7)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |whack_a_mole_sim|decoder:deco_time_shi                     ; decoder          ; work         ;
+;    |getrandom:gr1|             ; 8 (2)       ; 6            ; 0          ; 0    ; 0            ; 2 (2)        ; 0 (0)             ; 6 (0)            ; 0 (0)           ; 0 (0)      ; |whack_a_mole_sim|getrandom:gr1                             ; getrandom        ; work         ;
+;       |D_ff:FF0|               ; 1 (1)       ; 1            ; 0          ; 0    ; 0            ; 0 (0)        ; 0 (0)             ; 1 (1)            ; 0 (0)           ; 0 (0)      ; |whack_a_mole_sim|getrandom:gr1|D_ff:FF0                    ; D_ff             ; work         ;
+;       |D_ff:FF1|               ; 1 (1)       ; 1            ; 0          ; 0    ; 0            ; 0 (0)        ; 0 (0)             ; 1 (1)            ; 0 (0)           ; 0 (0)      ; |whack_a_mole_sim|getrandom:gr1|D_ff:FF1                    ; D_ff             ; work         ;
+;       |D_ff:FF2|               ; 1 (1)       ; 1            ; 0          ; 0    ; 0            ; 0 (0)        ; 0 (0)             ; 1 (1)            ; 0 (0)           ; 0 (0)      ; |whack_a_mole_sim|getrandom:gr1|D_ff:FF2                    ; D_ff             ; work         ;
+;       |D_ff:FF3|               ; 1 (1)       ; 1            ; 0          ; 0    ; 0            ; 0 (0)        ; 0 (0)             ; 1 (1)            ; 0 (0)           ; 0 (0)      ; |whack_a_mole_sim|getrandom:gr1|D_ff:FF3                    ; D_ff             ; work         ;
+;       |D_ff:FF4|               ; 1 (1)       ; 1            ; 0          ; 0    ; 0            ; 0 (0)        ; 0 (0)             ; 1 (1)            ; 0 (0)           ; 0 (0)      ; |whack_a_mole_sim|getrandom:gr1|D_ff:FF4                    ; D_ff             ; work         ;
+;       |D_ff:FF5|               ; 1 (1)       ; 1            ; 0          ; 0    ; 0            ; 0 (0)        ; 0 (0)             ; 1 (1)            ; 0 (0)           ; 0 (0)      ; |whack_a_mole_sim|getrandom:gr1|D_ff:FF5                    ; D_ff             ; work         ;
+;    |keyboard_scan:kb|          ; 5 (5)       ; 2            ; 0          ; 0    ; 0            ; 3 (3)        ; 1 (1)             ; 1 (1)            ; 0 (0)           ; 0 (0)      ; |whack_a_mole_sim|keyboard_scan:kb                          ; keyboard_scan    ; work         ;
+;    |led_88:ld|                 ; 33 (33)     ; 3            ; 0          ; 0    ; 0            ; 30 (30)      ; 0 (0)             ; 3 (3)            ; 0 (0)           ; 0 (0)      ; |whack_a_mole_sim|led_88:ld                                 ; led_88           ; work         ;
+;    |time_divider:td_1k|        ; 33 (33)     ; 15           ; 0          ; 0    ; 0            ; 18 (18)      ; 8 (8)             ; 7 (7)            ; 14 (14)         ; 0 (0)      ; |whack_a_mole_sim|time_divider:td_1k                        ; time_divider     ; work         ;
+;    |time_divider:td_1|         ; 14 (14)     ; 7            ; 0          ; 0    ; 0            ; 7 (7)        ; 3 (3)             ; 4 (4)            ; 6 (6)           ; 0 (0)      ; |whack_a_mole_sim|time_divider:td_1                         ; time_divider     ; work         ;
+;    |time_divider:td_500|       ; 3 (3)       ; 3            ; 0          ; 0    ; 0            ; 0 (0)        ; 0 (0)             ; 3 (3)            ; 0 (0)           ; 0 (0)      ; |whack_a_mole_sim|time_divider:td_500                       ; time_divider     ; work         ;
+;    |time_divider:td_50|        ; 6 (6)       ; 5            ; 0          ; 0    ; 0            ; 1 (1)        ; 0 (0)             ; 5 (5)            ; 0 (0)           ; 0 (0)      ; |whack_a_mole_sim|time_divider:td_50                        ; time_divider     ; work         ;
+;    |time_divider:td_fa|        ; 33 (33)     ; 14           ; 0          ; 0    ; 0            ; 19 (19)      ; 9 (9)             ; 5 (5)            ; 14 (14)         ; 0 (0)      ; |whack_a_mole_sim|time_divider:td_fa                        ; time_divider     ; work         ;
+;    |time_divider:td_half|      ; 3 (3)       ; 3            ; 0          ; 0    ; 0            ; 0 (0)        ; 0 (0)             ; 3 (3)            ; 0 (0)           ; 0 (0)      ; |whack_a_mole_sim|time_divider:td_half                      ; time_divider     ; work         ;
+;    |timer:time_counter|        ; 15 (15)     ; 8            ; 0          ; 0    ; 0            ; 7 (7)        ; 0 (0)             ; 8 (8)            ; 0 (0)           ; 0 (0)      ; |whack_a_mole_sim|timer:time_counter                        ; timer            ; work         ;
++--------------------------------+-------------+--------------+------------+------+--------------+--------------+-------------------+------------------+-----------------+------------+-------------------------------------------------------------+------------------+--------------+
+Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
+
+
++---------------------------------------------------------------------------------+
+; Registers Removed During Synthesis                                              ;
++----------------------------------------+----------------------------------------+
+; Register name                          ; Reason for Removal                     ;
++----------------------------------------+----------------------------------------+
+; dig_select[7]~reg0                     ; Stuck at VCC due to stuck port data_in ;
+; dig_select[6]~reg0                     ; Stuck at VCC due to stuck port data_in ;
+; dig_select[5]~reg0                     ; Stuck at VCC due to stuck port data_in ;
+; dig_select[4]~reg0                     ; Stuck at VCC due to stuck port data_in ;
+; controller:center_control|hit_tmp      ; Merged with led_88:ld|hit_tmp          ;
+; led_88:ld|hit_tmp                      ; Merged with buzzer:bz|hit_tmp          ;
+; controller:center_control|flag         ; Merged with buzzer:bz|flag             ;
+; time_divider:td_fa|cnt[0]              ; Merged with keyboard_scan:kb|cnt[0]    ;
+; time_divider:td_1k|cnt[0]              ; Merged with keyboard_scan:kb|cnt[0]    ;
+; time_divider:td_fa|cnt[1]              ; Merged with keyboard_scan:kb|cnt[1]    ;
+; Total Number of Removed Registers = 10 ;                                        ;
++----------------------------------------+----------------------------------------+
+
+
++------------------------------------------------------+
+; General Register Statistics                          ;
++----------------------------------------------+-------+
+; Statistic                                    ; Value ;
++----------------------------------------------+-------+
+; Total registers                              ; 84    ;
+; Number of registers using Synchronous Clear  ; 3     ;
+; Number of registers using Synchronous Load   ; 1     ;
+; Number of registers using Asynchronous Clear ; 75    ;
+; Number of registers using Asynchronous Load  ; 0     ;
+; Number of registers using Clock Enable       ; 4     ;
+; Number of registers using Preset             ; 0     ;
++----------------------------------------------+-------+
+
+
++--------------------------------------------------+
+; Inverted Register Statistics                     ;
++----------------------------------------+---------+
+; Inverted Register                      ; Fan out ;
++----------------------------------------+---------+
+; buzzer:bz|hit_tmp                      ; 2       ;
+; timer:time_counter|time_shi[2]         ; 10      ;
+; dig_select[1]~reg0                     ; 18      ;
+; dig_select[3]~reg0                     ; 5       ;
+; dig_select[2]~reg0                     ; 12      ;
+; buzzer:bz|flag                         ; 5       ;
+; Total number of inverted registers = 6 ;         ;
++----------------------------------------+---------+
+
+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                                                 ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+--------------------------------------------------+
+; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output                       ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+--------------------------------------------------+
+; 3:1                ; 3 bits    ; 6 LEs         ; 3 LEs                ; 3 LEs                  ; Yes        ; |whack_a_mole_sim|led_88:ld|cnt[0]               ;
+; 3:1                ; 3 bits    ; 6 LEs         ; 3 LEs                ; 3 LEs                  ; Yes        ; |whack_a_mole_sim|timer:time_counter|time_shi[1] ;
+; 5:1                ; 4 bits    ; 12 LEs        ; 8 LEs                ; 4 LEs                  ; Yes        ; |whack_a_mole_sim|timer:time_counter|time_ge[0]  ;
+; 16:1               ; 7 bits    ; 70 LEs        ; 28 LEs               ; 42 LEs                 ; No         ; |whack_a_mole_sim|Mux0                           ;
+; 16:1               ; 2 bits    ; 20 LEs        ; 4 LEs                ; 16 LEs                 ; No         ; |whack_a_mole_sim|led_88:ld|Mux8                 ;
+; 14:1               ; 2 bits    ; 18 LEs        ; 8 LEs                ; 10 LEs                 ; No         ; |whack_a_mole_sim|led_88:ld|Mux7                 ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+--------------------------------------------------+
+
+
++-----------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: time_divider:td_1k ;
++----------------+-------+----------------------------------------+
+; Parameter Name ; Value ; Type                                   ;
++----------------+-------+----------------------------------------+
+; N              ; 500   ; Signed Integer                         ;
+; WIDTH          ; 15    ; Signed Integer                         ;
++----------------+-------+----------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: time_divider:td_500 ;
++----------------+-------+-----------------------------------------+
+; Parameter Name ; Value ; Type                                    ;
++----------------+-------+-----------------------------------------+
+; N              ; 2     ; Signed Integer                          ;
+; WIDTH          ; 2     ; Signed Integer                          ;
++----------------+-------+-----------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-----------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: time_divider:td_50 ;
++----------------+-------+----------------------------------------+
+; Parameter Name ; Value ; Type                                   ;
++----------------+-------+----------------------------------------+
+; N              ; 10    ; Signed Integer                         ;
+; WIDTH          ; 4     ; Signed Integer                         ;
++----------------+-------+----------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++----------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: time_divider:td_1 ;
++----------------+-------+---------------------------------------+
+; Parameter Name ; Value ; Type                                  ;
++----------------+-------+---------------------------------------+
+; N              ; 50    ; Signed Integer                        ;
+; WIDTH          ; 6     ; Signed Integer                        ;
++----------------+-------+---------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: time_divider:td_half ;
++----------------+-------+------------------------------------------+
+; Parameter Name ; Value ; Type                                     ;
++----------------+-------+------------------------------------------+
+; N              ; 2     ; Signed Integer                           ;
+; WIDTH          ; 2     ; Signed Integer                           ;
++----------------+-------+------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-----------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: time_divider:td_fa ;
++----------------+-------+----------------------------------------+
+; Parameter Name ; Value ; Type                                   ;
++----------------+-------+----------------------------------------+
+; N              ; 568   ; Signed Integer                         ;
+; WIDTH          ; 15    ; Signed Integer                         ;
++----------------+-------+----------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: getrandom:gr1 ;
++----------------+-------+-----------------------------------+
+; Parameter Name ; Value ; Type                              ;
++----------------+-------+-----------------------------------+
+; MIN            ; 2     ; Signed Integer                    ;
+; MAX            ; 5     ; Signed Integer                    ;
++----------------+-------+-----------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++----------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: controller:center_control|fsm:central_fsm ;
++----------------+-------+---------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                          ;
++----------------+-------+---------------------------------------------------------------+
+; state0         ; 00    ; Unsigned Binary                                               ;
+; state1         ; 01    ; Unsigned Binary                                               ;
+; state2         ; 10    ; Unsigned Binary                                               ;
+; state3         ; 11    ; Unsigned Binary                                               ;
++----------------+-------+---------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-------------------------------+
+; Analysis & Synthesis Messages ;
++-------------------------------+
+Info: *******************************************************************
+Info: Running Quartus Prime Analysis & Synthesis
+    Info: Version 18.0.0 Build 614 04/24/2018 SJ Lite Edition
+    Info: Processing started: Thu Dec 27 11:17:06 2018
+Info: Command: quartus_map --read_settings_files=on --write_settings_files=off whack_a_mole_sim -c whack_a_mole_sim
+Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
+Info (20030): Parallel compilation is enabled and will use 4 of the 4 processors detected
+Info (12021): Found 1 design units, including 1 entities, in source file whack_a_mole_sim.v
+    Info (12023): Found entity 1: whack_a_mole_sim File: E:/intelProjects/whack_a_mole_sim/whack_a_mole_sim.v Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file buzzer.v
+    Info (12023): Found entity 1: buzzer File: E:/intelProjects/whack_a_mole_sim/buzzer.v Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file controller.v
+    Info (12023): Found entity 1: controller File: E:/intelProjects/whack_a_mole_sim/controller.v Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file fsm.v
+    Info (12023): Found entity 1: fsm File: E:/intelProjects/whack_a_mole_sim/fsm.v Line: 1
+Info (12021): Found 2 design units, including 2 entities, in source file getrandom.v
+    Info (12023): Found entity 1: getrandom File: E:/intelProjects/whack_a_mole_sim/getrandom.v Line: 1
+    Info (12023): Found entity 2: D_ff File: E:/intelProjects/whack_a_mole_sim/getrandom.v Line: 27
+Warning (12019): Can't analyze file -- file keyboard_scan4.v is missing
+Info (12021): Found 1 design units, including 1 entities, in source file led_88.v
+    Info (12023): Found entity 1: led_88 File: E:/intelProjects/whack_a_mole_sim/led_88.v Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file time_divider.v
+    Info (12023): Found entity 1: time_divider File: E:/intelProjects/whack_a_mole_sim/time_divider.v Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file timer.v
+    Info (12023): Found entity 1: timer File: E:/intelProjects/whack_a_mole_sim/timer.v Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file decoder.v
+    Info (12023): Found entity 1: decoder File: E:/intelProjects/whack_a_mole_sim/decoder.v Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file keyboard_scan.v
+    Info (12023): Found entity 1: keyboard_scan File: E:/intelProjects/whack_a_mole_sim/keyboard_scan.v Line: 1
+Info (12127): Elaborating entity "whack_a_mole_sim" for the top level hierarchy
+Info (12128): Elaborating entity "time_divider" for hierarchy "time_divider:td_1k" File: E:/intelProjects/whack_a_mole_sim/whack_a_mole_sim.v Line: 21
+Warning (10230): Verilog HDL assignment warning at time_divider.v(20): truncated value with size 32 to match size of target (15) File: E:/intelProjects/whack_a_mole_sim/time_divider.v Line: 20
+Info (12128): Elaborating entity "time_divider" for hierarchy "time_divider:td_500" File: E:/intelProjects/whack_a_mole_sim/whack_a_mole_sim.v Line: 22
+Warning (10230): Verilog HDL assignment warning at time_divider.v(20): truncated value with size 32 to match size of target (2) File: E:/intelProjects/whack_a_mole_sim/time_divider.v Line: 20
+Info (12128): Elaborating entity "time_divider" for hierarchy "time_divider:td_50" File: E:/intelProjects/whack_a_mole_sim/whack_a_mole_sim.v Line: 23
+Warning (10230): Verilog HDL assignment warning at time_divider.v(20): truncated value with size 32 to match size of target (4) File: E:/intelProjects/whack_a_mole_sim/time_divider.v Line: 20
+Info (12128): Elaborating entity "time_divider" for hierarchy "time_divider:td_1" File: E:/intelProjects/whack_a_mole_sim/whack_a_mole_sim.v Line: 24
+Warning (10230): Verilog HDL assignment warning at time_divider.v(20): truncated value with size 32 to match size of target (6) File: E:/intelProjects/whack_a_mole_sim/time_divider.v Line: 20
+Info (12128): Elaborating entity "time_divider" for hierarchy "time_divider:td_fa" File: E:/intelProjects/whack_a_mole_sim/whack_a_mole_sim.v Line: 26
+Warning (10230): Verilog HDL assignment warning at time_divider.v(20): truncated value with size 32 to match size of target (15) File: E:/intelProjects/whack_a_mole_sim/time_divider.v Line: 20
+Info (12128): Elaborating entity "getrandom" for hierarchy "getrandom:gr1" File: E:/intelProjects/whack_a_mole_sim/whack_a_mole_sim.v Line: 27
+Warning (10230): Verilog HDL assignment warning at getrandom.v(22): truncated value with size 32 to match size of target (3) File: E:/intelProjects/whack_a_mole_sim/getrandom.v Line: 22
+Warning (10230): Verilog HDL assignment warning at getrandom.v(23): truncated value with size 32 to match size of target (3) File: E:/intelProjects/whack_a_mole_sim/getrandom.v Line: 23
+Info (12128): Elaborating entity "D_ff" for hierarchy "getrandom:gr1|D_ff:FF0" File: E:/intelProjects/whack_a_mole_sim/getrandom.v Line: 12
+Info (12128): Elaborating entity "keyboard_scan" for hierarchy "keyboard_scan:kb" File: E:/intelProjects/whack_a_mole_sim/whack_a_mole_sim.v Line: 30
+Info (12128): Elaborating entity "timer" for hierarchy "timer:time_counter" File: E:/intelProjects/whack_a_mole_sim/whack_a_mole_sim.v Line: 31
+Warning (10230): Verilog HDL assignment warning at timer.v(23): truncated value with size 32 to match size of target (4) File: E:/intelProjects/whack_a_mole_sim/timer.v Line: 23
+Warning (10230): Verilog HDL assignment warning at timer.v(30): truncated value with size 32 to match size of target (4) File: E:/intelProjects/whack_a_mole_sim/timer.v Line: 30
+Info (12128): Elaborating entity "controller" for hierarchy "controller:center_control" File: E:/intelProjects/whack_a_mole_sim/whack_a_mole_sim.v Line: 34
+Warning (10230): Verilog HDL assignment warning at controller.v(52): truncated value with size 32 to match size of target (4) File: E:/intelProjects/whack_a_mole_sim/controller.v Line: 52
+Warning (10230): Verilog HDL assignment warning at controller.v(57): truncated value with size 32 to match size of target (4) File: E:/intelProjects/whack_a_mole_sim/controller.v Line: 57
+Info (12128): Elaborating entity "fsm" for hierarchy "controller:center_control|fsm:central_fsm" File: E:/intelProjects/whack_a_mole_sim/controller.v Line: 12
+Info (12128): Elaborating entity "led_88" for hierarchy "led_88:ld" File: E:/intelProjects/whack_a_mole_sim/whack_a_mole_sim.v Line: 36
+Warning (10230): Verilog HDL assignment warning at led_88.v(32): truncated value with size 32 to match size of target (3) File: E:/intelProjects/whack_a_mole_sim/led_88.v Line: 32
+Info (12128): Elaborating entity "decoder" for hierarchy "decoder:deco_time_shi" File: E:/intelProjects/whack_a_mole_sim/whack_a_mole_sim.v Line: 47
+Warning (10030): Net "seg.data_a" at decoder.v(4) has no driver or initial value, using a default initial value '0' File: E:/intelProjects/whack_a_mole_sim/decoder.v Line: 4
+Warning (10030): Net "seg.waddr_a" at decoder.v(4) has no driver or initial value, using a default initial value '0' File: E:/intelProjects/whack_a_mole_sim/decoder.v Line: 4
+Warning (10030): Net "seg.we_a" at decoder.v(4) has no driver or initial value, using a default initial value '0' File: E:/intelProjects/whack_a_mole_sim/decoder.v Line: 4
+Info (12128): Elaborating entity "buzzer" for hierarchy "buzzer:bz" File: E:/intelProjects/whack_a_mole_sim/whack_a_mole_sim.v Line: 63
+Warning (10230): Verilog HDL assignment warning at buzzer.v(30): truncated value with size 32 to match size of target (1) File: E:/intelProjects/whack_a_mole_sim/buzzer.v Line: 30
+Critical Warning (127005): Memory depth (16) in the design file differs from memory depth (10) in the Memory Initialization File "E:/intelProjects/whack_a_mole_sim/db/whack_a_mole_sim.ram0_decoder_896c74ae.hdl.mif" -- setting initial value for remaining addresses to 0
+Warning (13024): Output pins are stuck at VCC or GND
+    Warning (13410): Pin "seg_select[0]" is stuck at GND File: E:/intelProjects/whack_a_mole_sim/whack_a_mole_sim.v Line: 7
+    Warning (13410): Pin "dig_select[4]" is stuck at VCC File: E:/intelProjects/whack_a_mole_sim/whack_a_mole_sim.v Line: 43
+    Warning (13410): Pin "dig_select[5]" is stuck at VCC File: E:/intelProjects/whack_a_mole_sim/whack_a_mole_sim.v Line: 43
+    Warning (13410): Pin "dig_select[6]" is stuck at VCC File: E:/intelProjects/whack_a_mole_sim/whack_a_mole_sim.v Line: 43
+    Warning (13410): Pin "dig_select[7]" is stuck at VCC File: E:/intelProjects/whack_a_mole_sim/whack_a_mole_sim.v Line: 43
+Info (18000): Registers with preset signals will power-up high File: E:/intelProjects/whack_a_mole_sim/buzzer.v Line: 4
+Info (21057): Implemented 302 device resources after synthesis - the final resource count might be different
+    Info (21058): Implemented 6 input pins
+    Info (21059): Implemented 45 output pins
+    Info (21061): Implemented 251 logic cells
+Info (144001): Generated suppressed messages file E:/intelProjects/whack_a_mole_sim/output_files/whack_a_mole_sim.map.smsg
+Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 25 warnings
+    Info: Peak virtual memory: 4728 megabytes
+    Info: Processing ended: Thu Dec 27 11:17:18 2018
+    Info: Elapsed time: 00:00:12
+    Info: Total CPU time (on all processors): 00:00:25
+
+
++------------------------------------------+
+; Analysis & Synthesis Suppressed Messages ;
++------------------------------------------+
+The suppressed messages can be found in E:/intelProjects/whack_a_mole_sim/output_files/whack_a_mole_sim.map.smsg.
+
+

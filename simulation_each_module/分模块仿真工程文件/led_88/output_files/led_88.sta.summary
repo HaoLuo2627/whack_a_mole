@@ -1,0 +1,21 @@
+------------------------------------------------------------
+Timing Analyzer Summary
+------------------------------------------------------------
+
+Type  : Setup 'clk'
+Slack : -1.662
+TNS   : -4.369
+
+Type  : Hold 'clk'
+Slack : 1.680
+TNS   : 0.000
+
+Type  : Minimum Pulse Width 'clk'
+Slack : -2.289
+TNS   : -2.289
+
+Type  : Minimum Pulse Width 'clk_half'
+Slack : -2.289
+TNS   : -2.289
+
+------------------------------------------------------------

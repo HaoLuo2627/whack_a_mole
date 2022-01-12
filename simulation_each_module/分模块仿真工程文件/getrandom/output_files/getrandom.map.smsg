@@ -1,0 +1,1 @@
+Warning (10268): Verilog HDL information at getrandom.v(14): always construct contains both blocking and non-blocking assignments File: E:/intelProjects/getrandom/getrandom.v Line: 14

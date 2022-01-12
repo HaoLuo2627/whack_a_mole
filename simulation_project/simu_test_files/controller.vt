@@ -1,0 +1,190 @@
+// Copyright (C) 2018  Intel Corporation. All rights reserved.
+// Your use of Intel Corporation's design tools, logic functions 
+// and other software and tools, and its AMPP partner logic 
+// functions, and any output files from any of the foregoing 
+// (including device programming or simulation files), and any 
+// associated documentation or information are expressly subject 
+// to the terms and conditions of the Intel Program License 
+// Subscription Agreement, the Intel Quartus Prime License Agreement,
+// the Intel FPGA IP License Agreement, or other applicable license
+// agreement, including, without limitation, that your use is for
+// the sole purpose of programming logic devices manufactured by
+// Intel and sold by Intel or its authorized distributors.  Please
+// refer to the applicable agreement for further details.
+
+// *****************************************************************************
+// This file contains a Verilog test bench template that is freely editable to  
+// suit user's needs .Comments are provided in each section to help the user    
+// fill out necessary details.                                                  
+// *****************************************************************************
+// Generated on "12/25/2018 23:31:36"
+                                                                                
+// Verilog Test Bench template for design : controller
+// 
+// Simulation tool : ModelSim-Altera (Verilog)
+// 
+
+`timescale 1 ps/ 1 ps
+module controller_vlg_tst();
+// constants                                           
+// general purpose registers
+
+// test vector input registers
+reg clk;
+reg clk_50;
+reg clk_half;
+reg clk_1;
+reg [2:0] col;
+reg [2:0] colran;
+reg [2:0] row;
+reg [2:0] rowran;
+reg rst;
+reg [3:0] time_ge;
+reg [3:0] time_shi;
+// wires                                               
+wire hit;
+wire [3:0]  score_ge;
+wire [3:0]  score_shi;
+wire [1:0]  state;
+
+//reg [7:0] cnt_50,cnt_1;
+//reg cnt_half;
+// assign statements (if any)                          
+controller i1 (
+// port map - connection between master ports and signals/registers   
+	.clk(clk),
+	.clk_50(clk_50),
+	.clk_half(clk_half),
+	.col(col),
+	.colran(colran),
+	.hit(hit),
+	.row(row),
+	.rowran(rowran),
+	.rst(rst),
+	.score_ge(score_ge),
+	.score_shi(score_shi),
+	.state(state),
+	.time_ge(time_ge),
+	.time_shi(time_shi)
+);
+
+initial                                                
+begin 
+	clk=1'b1;
+	clk_1=1'b1;
+	clk_50=1'b1;
+	clk_half=1'b1;
+    rst=1'b1;
+	 time_shi=4;
+	 time_ge=0;
+	 rowran=0;
+	 colran=0;
+	#5000 rst=1'b0;				//40
+	#10000 rowran=2;colran=2;	//38
+	#20000 rowran=2;colran=3;	//36
+	#20000 rowran=2;colran=4;	//34
+	#20000 rowran=2;colran=5;	//32
+	#20000 rowran=3;colran=2;//30
+	#20000 rowran=3;colran=3;//28
+	#20000 rowran=3;colran=4;//26
+	#20000 rowran=3;colran=5;//24
+	#20000 rowran=4;colran=2;//22
+	#20000 rowran=4;colran=3;//20
+	#20000 rowran=4;colran=4;//18
+	#20000 rowran=4;colran=5;//16
+	#20000 rowran=5;colran=2;//14
+	#20000 rowran=5;colran=3;//12
+	#20000 rowran=5;colran=4;//10
+	#20000 rowran=5;colran=5;//8
+	#90000 rst=1'b1;
+	#5000 rst=1'b0;
+	#5000 rowran=2;colran=2;
+$display("Running testbench");    
+#450000 $stop;                   
+end
+initial
+begin
+   row=4;col=4;
+	#5000 row=4;col=4;		//40
+	#10000 row=0;col=0;
+	#10000 row=4;col=4;	//38
+	#5000 row=0;col=1;	//hit for the first time
+	#5000 row=4;col=4;	
+	#5000 row=0;col=1;   //hit again
+	#5000 row=4;col=4;   //36
+	#1000 row=0;col=0;
+	#5000 row=4;col=4;
+	#4000 row=0;col=2;
+	#10000 row=4;col=4;	//34
+	#5000 row=0;col=3;
+	#15000 row=4;col=4;	//32
+	#5000 row=1;col=1;
+	#3000 row=4;col=4;
+	#5000 row=1;col=0;
+	#3000 row=4;col=4;
+	#2000 row=1;col=0;
+	#2000 row=4;col=4; //30
+	#3000 row=1;col=1;
+	#2000 row=4;col=4; 
+	#3000 row=1;col=1; //hit for the first time
+	#5000 row=4;col=4;
+	#2000 row=1;col=1; //hit again
+	#5000 row=4;col=4; //28
+	#5000 row=1;col=2;
+	#5000 row=4;col=4; //26
+	#30000 row=4;col=4; //24
+	#3000 row=2;col=0;
+	#5000 row=4;col=4;
+	#2000 row=2;col=0;
+	#5000 row=4;col=4;
+	#25000 row=0;col=0;	//20
+	#10000 row=4;col=4;
+	#10000 row=1;col=2;	//18
+	#5000 row=2;col=3;
+	#5000 row=3;col=0; //16
+	#5000 row=4;col=4;
+	#10000 row=2;col=1; //14
+	#5000 row=3;col=0;
+	#5000 row=3;col=1;
+	#10000 row=0;col=2; //12
+	#10000 row=3;col=2;
+	#10000 row=4;col=4; //10
+	#10000 row=3;col=3;
+	#10000 row=4;col=4; //8
+end
+	
+always clk = #1 ~clk;							//represents 50MHz
+always clk_50=#100 ~clk_50;               //50Hz
+always clk_1=#5000 ~clk_1;                //1Hz
+always clk_half=#10000 ~clk_half;         //0.5Hz
+
+always @(posedge clk_1 or posedge rst)                                                                
+begin 
+	if(rst) begin
+		time_shi<=4;  
+		time_ge<=0;
+	end 
+	else if(state==2'b00) begin
+		time_shi<=4'b0100;
+		time_ge<=4'b0000;
+	end
+	else if(state==2'b01) begin
+	if(time_ge==0&&time_shi!=0)
+	begin
+		time_ge<=4'b1001;
+		time_shi<=time_shi-1;
+	end
+	else if(time_ge==0&&time_shi==0)
+	begin
+		time_ge<=time_ge;
+		time_shi<=time_shi;
+	end
+	else time_ge<=time_ge-1;
+	end
+	else begin
+		time_shi<=time_shi;
+		time_ge<=time_ge;
+	end
+end                                                
+endmodule
+
